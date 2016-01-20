@@ -6,10 +6,10 @@ class User < ActiveRecord::Base
   validates_uniqueness_of :username
   validates_presence_of :username, :first_name
 
-  has_many :comments
-  has_many :user_bills
+  has_many :comments, dependent: :destroy
+  has_many :user_bills, dependent: :destroy
   has_many :bills, through: :user_bills
-  has_many :user_groups
+  has_many :user_groups, dependent: :destroy
   has_many :groups, through: :user_groups
 
 
