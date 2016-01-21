@@ -1,8 +1,1 @@
-= @groups[0].name
-- @upcoming_bills.each do |bill|
-    %p=bill.name
-    %p=bill.amount_total
-    %p=bill.due_date
-    %p=bill.id
-    %p=bill.group_id
-%h1 something
+= react_component('Dashboard', {groups: @groups, upcoming: @upcoming_bills, dashboard: true})
