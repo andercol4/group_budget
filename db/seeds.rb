@@ -16,6 +16,8 @@ user = User.create(username: "User#{i}",
   last_name: 'Hancock')
   group = Group.create(name: "User#{i} Personal")
   UserGroup.create(user_id: user.id, group_id: group.id)
-  bill = Bill.create(name: "bill#{i}", due_date: "2016/02/05", group_id: group.id, amount_total: 100.0)
-  UserBill.create(user_id: user.id, bill_id: bill.id, amount_owed: 100.0)
+  20.times do |j|
+    bill = Bill.create(name: "bill#{i}-#{j}", due_date: j.day.from_now, group_id: group.id, amount_total: j*10)
+    UserBill.create(user_id: user.id, bill_id: bill.id, amount_owed: 100.0)
+    end
 end
