@@ -10,11 +10,13 @@ class GroupsController < ApplicationController
   end
 
   def create
+    # binding.pry
     @group = Group.new(group_params)
     if @group.save
-      render :group
+      UserGroup.create({user_id: current_user.id, group_id: @group.id})
+      render json: @group
     else
-      render :new
+      redirect_to root_path
     end
   end
 
