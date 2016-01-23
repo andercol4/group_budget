@@ -2,14 +2,29 @@
 
 	border: 1px solid;
 	/*margin:20px;*/
-	display: flex;
+	/*display: flex;*/
 	min-height: 150px;
 	max-height: 150px;
 
 }
-.bs-name{
-	font-size:30px;
+.panel{
+	max-width:400px;
+	min-width:400px;
 }
+
 .not-paid{
-		background: red;
+		background: hsla(10,70%,50%, .4) !important;
+}
+.left{
+	border: 1px solid;
+	
+}
+.right{
+	border: 1px solid;
+
+	float: right;
+}
+
+.panel-title{
+	font-size: 30px;
 }

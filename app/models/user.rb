@@ -19,7 +19,9 @@ class User < ActiveRecord::Base
     self.bills.select("bills.*, ub.amount_owed")
         .joins("INNER JOIN user_bills ub ON ub.bill_id = bills.id")
         .where("ub.user_id = ?", current_user_id)
+        .order("due_date")
   end
 
 
 end
+ 

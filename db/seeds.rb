@@ -18,7 +18,7 @@ user = User.create(username: "User#{i}",
   UserGroup.create(user_id: user.id, group_id: group.id)
   20.times do |j|
     bill = Bill.create(name: "bill#{i}-#{j}", due_date: j.day.from_now, group_id: group.id, amount_total: j*10)
-    UserBill.create(user_id: user.id, bill_id: bill.id, amount_owed: 100.0)
+    UserBill.create(user_id: user.id, bill_id: bill.id, amount_owed: j*10)
     end
 end
 
@@ -34,7 +34,7 @@ james = User.create(username: "jimibue",
  
 5.times do |j|
     bill = Bill.create(name: "James bill #-#{j}", due_date: j.day.from_now, group_id: group.id, amount_total: j*10)
-    UserBill.create(user_id: james.id, bill_id: bill.id, amount_owed: 100.0)
+    UserBill.create(user_id: james.id, bill_id: bill.id, amount_owed: j*10)
   end  
 summer = User.create(username: "summer",
   email:"summer@gmail.com",
@@ -47,7 +47,7 @@ summer = User.create(username: "summer",
 
 5.times do |j|
     bill = Bill.create(name: "Summer bill #-#{j}", due_date: j.day.from_now, group_id: group.id, amount_total: j*10)
-    UserBill.create(user_id: summer.id, bill_id: bill.id, amount_owed: 100.0)
+    UserBill.create(user_id: summer.id, bill_id: bill.id, amount_owed: j*10)
   end   
  
  #create group between two users
@@ -56,17 +56,21 @@ summer = User.create(username: "summer",
  UserGroup.create(user_id: james.id, group_id: sj_group.id)
  UserGroup.create(user_id: summer.id, group_id: sj_group.id)
 
- sj_bill1 = Bill.create(name: 's-j-bill1', due_date: 1.week.from_now, group_id: sj_group.id, amount_total: 100)
+ sj_bill1 = Bill.create(name: 's-j-bill1', due_date: 1.week.from_now, group_id: sj_group.id, amount_total: 200)
  UserBill.create(user_id: summer.id, bill_id: sj_bill1.id, amount_owed: sj_bill1.amount_total/2 )
  UserBill.create(user_id: james.id, bill_id: sj_bill1.id, amount_owed:  sj_bill1.amount_total/2 )
 
- sj_bill2 = Bill.create(name: 's-j-bill2', due_date: 2.week.from_now, group_id: sj_group.id, amount_total: 200)
- UserBill.create(user_id: summer.id, bill_id: sj_bill2.id, amount_owed: sj_bill2.amount_total/2 )
+ sj_bill2 = Bill.create(name: 's-j-bill2', due_date: 1.week.from_now, group_id: sj_group.id, amount_total: 200)
+ UserBill.create(user_id: summer.id, bill_id: sj_bill2.id, amount_owed: 0, amount_paid: 100, is_paid: true )
  UserBill.create(user_id: james.id, bill_id: sj_bill2.id, amount_owed:  sj_bill2.amount_total/2 )
 
- sj_bill3 = Bill.create(name: 's-j-bill3', due_date: 3.week.from_now, group_id: sj_group.id, amount_total: 200)
+ sj_bill3 = Bill.create(name: 's-j-bill3', due_date: 1.week.from_now, group_id: sj_group.id, amount_total: 200)
  UserBill.create(user_id: summer.id, bill_id: sj_bill3.id, amount_owed: sj_bill3.amount_total/2 )
- UserBill.create(user_id: james.id, bill_id: sj_bill3.id, amount_owed:  sj_bill3.amount_total/2 )
+ UserBill.create(user_id: james.id, bill_id: sj_bill3.id, amount_owed: 0, amount_paid: 100, is_paid: true )
+
+sj_bill4 = Bill.create(name: 's-j-bill4', due_date: 1.week.from_now, group_id: sj_group.id, amount_total: 200)
+ UserBill.create(user_id: summer.id, bill_id: sj_bill4.id, amount_owed: 0, amount_paid: 100, is_paid: true )
+ UserBill.create(user_id: james.id, bill_id: sj_bill2.id, amount_owed: 0, amount_paid: 100, is_paid: true )
 
 
   #create group between two users
