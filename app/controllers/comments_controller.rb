@@ -1,16 +1,18 @@
 class CommentsController < ApplicationController
   before_action :find_comment, only: [:update, :destroy]
 
-  def index
-    @comments = #whatever
-  end
+  # def index
+  #   @comments = #whatever
+  # end
 
   def create
-    @comment = Comment.new(comment_params)
+    @group = Group.find(params[:group_id])
+    @comment = @group.comments.new(comment_params)
+    @comment.user_id = current_user.id
     if @comment.save
-      render :comment # need to build a jbuilder for this
+      render json: @comment
     else
-      render :new # do we have a new? no 
+      render json: @comment.errors.full_messages
     end
   end
 
