@@ -22,6 +22,7 @@ class GroupsController < ApplicationController
   end
 
   def update
+    binding.pry
     if @group.creator_id == current_user.id
       if @group.update(group_params)
         render json: @group
@@ -29,6 +30,7 @@ class GroupsController < ApplicationController
         render :edit
       end
     else
+      binding.pry
       render json: {error: 'Not the creator.'}
     end
   end
