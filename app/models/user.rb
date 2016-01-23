@@ -13,7 +13,12 @@ class User < ActiveRecord::Base
   has_many :groups, through: :user_groups
 
   def upcoming_bills(date = 1)
-    bills = self.bills.where("due_date <= ?",date.weeks.from_now)
+    self.bills.where("due_date <= ?",date.weeks.from_now)
+  end
+  def upcoming_bills1(current_user_id)
+    self.bills.select("bills.*, ub.amount_owed")
+        .joins("INNER JOIN user_bills ub ON ub.bill_id = bills.id")
+        .where("ub.user_id = ?", current_user_id)
   end
 
 

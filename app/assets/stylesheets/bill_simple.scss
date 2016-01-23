@@ -1,0 +1,15 @@
+.bs{
+
+	border: 1px solid;
+	/*margin:20px;*/
+	display: flex;
+	min-height: 150px;
+	max-height: 150px;
+
+}
+.bs-name{
+	font-size:30px;
+}
+.not-paid{
+		background: red;
+}

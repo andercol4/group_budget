@@ -94,6 +94,5 @@ summer = User.create(username: "summer",
  UserBill.create(user_id: james.id, bill_id: sj_bill3.id, amount_owed:  sj_bill3.amount_total/3 )
 
 
-binding.pry
 
 

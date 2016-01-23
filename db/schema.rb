@@ -18,14 +18,14 @@ ActiveRecord::Schema.define(version: 20160119233323) do
 
   create_table "bills", force: :cascade do |t|
     t.date     "due_date"
-    t.boolean  "is_paid"
-    t.boolean  "recurring"
+    t.boolean  "is_paid",      default: false
+    t.boolean  "recurring",    default: false
     t.string   "name"
     t.integer  "group_id"
     t.float    "amount_total"
-    t.float    "amount_paid"
-    t.datetime "created_at",   null: false
-    t.datetime "updated_at",   null: false
+    t.float    "amount_paid",  default: 0.0
+    t.datetime "created_at",                   null: false
+    t.datetime "updated_at",                   null: false
   end
 
   add_index "bills", ["group_id"], name: "index_bills_on_group_id", using: :btree
