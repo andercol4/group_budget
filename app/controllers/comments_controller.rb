@@ -18,9 +18,9 @@ class CommentsController < ApplicationController
 
   def update
     if @comment.update(comment_params)
-      render :comment # need to build a jbuilder for this
+      render json: @comment
     else
-      render :edit # also dont have an edit
+      render json: @comment.errors.full_messages 
     end
   end
 
