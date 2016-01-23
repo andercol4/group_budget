@@ -53,10 +53,10 @@ ActiveRecord::Schema.define(version: 20160119233323) do
     t.integer  "user_id"
     t.integer  "bill_id"
     t.float    "amount_owed"
-    t.float    "amount_paid"
-    t.boolean  "is_paid"
-    t.datetime "created_at",  null: false
-    t.datetime "updated_at",  null: false
+    t.float    "amount_paid", default: 0.0
+    t.boolean  "is_paid",     default: false
+    t.datetime "created_at",                  null: false
+    t.datetime "updated_at",                  null: false
   end
 
   add_index "user_bills", ["bill_id"], name: "index_user_bills_on_bill_id", using: :btree

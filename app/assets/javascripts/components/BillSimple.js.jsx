@@ -3,9 +3,12 @@ class BillSimple extends React.Component {
     super(props);
   }
   render(){
-      let paid = this.props.is_paid ? "paid":"not-paid";
+      let billPaid = this.props.is_paid ? "paid":"not-paid";
       let billStyle ="panel panel-default bs col-sm-8 col-md-offset-2 col-xs-12 col-xs-offset-0";
-      let panelHeading =paid+" panel-heading bs-name";
+      let panelHeading =billPaid+" panel-heading bs-name";
+      let debtPaid = this.props.debt_paid ? "paid" : 'not-paid';
+      let owedStyle = debtPaid + ' bs-amount-owed';
+    
     return(
     
       <div className='row'>
@@ -23,12 +26,15 @@ class BillSimple extends React.Component {
             </header>
      
             <div className="panel-body">
-              <span className='bs-amount-owed'>
-               You owe:{this.props.amount_owed}
+              <span className={owedStyle}>
+               You owe:{(this.props.amount_owed.toFixed(2))}
              </span>  
              <span className='bs-due_date'>
                Due: {this.props.due_date}
              </span> 
+              <span className='bs-due_date'>
+               Responsible: {this.props.first_name}
+             </span>
             </div>
      
         </div>
