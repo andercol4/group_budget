@@ -33,6 +33,18 @@ class GroupsController < ApplicationController
     end
   end
 
+  def invite
+    @user = User.find_by(email: params[:email])
+    # binding.pry
+    @connection = UserGroup.find_by({user_id: @user.id, group_id: @group.id})
+    if @user && @connection == nil
+      UserGroup.create({group_id: @group.id, user_id: @user.id})
+      head :ok
+    else
+      render json: {error: 'User not in database.'}
+    end
+  end
+
   def destroy
     if @group.creator_id == current_user.id
       if @group.destroy

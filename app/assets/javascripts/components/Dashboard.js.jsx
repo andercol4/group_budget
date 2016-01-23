@@ -18,17 +18,17 @@ class Dashboard extends React.Component {
       return(<Groups groups={this.state.groups} />)
     }else if(this.state.views == "Upcoming"){
       return(<Bills bills={this.state.bills} />)
-    }else{}  
+    }else{}
   }
   render(){
-    
+
     return(
       <div>
       <button onClick = {this.upcomingView}>upcoming bills</button>
       <button onClick = {this.groupView}>groups</button>
       {this.views()}
-        
-        
+
+
       </div>
     )
   }
