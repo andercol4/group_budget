@@ -1,6 +1,6 @@
 class BillsController < ApplicationController
   before_action :bill,  only: [:show, :update, :destroy]
-  
+
   def index
     @bills = current_user.bills
   end

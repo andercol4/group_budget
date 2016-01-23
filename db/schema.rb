@@ -22,6 +22,7 @@ ActiveRecord::Schema.define(version: 20160119233323) do
     t.boolean  "recurring",    default: false
     t.string   "name"
     t.integer  "group_id"
+    t.integer  "creator_id"
     t.float    "amount_total"
     t.float    "amount_paid",  default: 0.0
     t.datetime "created_at",                   null: false
@@ -43,6 +44,7 @@ ActiveRecord::Schema.define(version: 20160119233323) do
 
   create_table "groups", force: :cascade do |t|
     t.string   "name"
+    t.integer  "creator_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end

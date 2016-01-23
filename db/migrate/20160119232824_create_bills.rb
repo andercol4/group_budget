@@ -6,6 +6,7 @@ class CreateBills < ActiveRecord::Migration
       t.boolean :recurring, default: false
       t.string :name
       t.belongs_to :group, index: true, foreign_key: true
+      t.integer :creator_id
       t.float :amount_total
       t.float :amount_paid, default: 0
 

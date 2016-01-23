@@ -12,6 +12,7 @@ class GroupsController < ApplicationController
   def create
     # binding.pry
     @group = Group.new(group_params)
+    @group.creator_id = current_user.id
     if @group.save
       UserGroup.create({user_id: current_user.id, group_id: @group.id})
       render json: @group
@@ -21,18 +22,26 @@ class GroupsController < ApplicationController
   end
 
   def update
-    if @group.update(group_params)
-      render :group
+    if @group.creator_id == current_user.id
+      if @group.update(group_params)
+        render json: @group
+      else
+        render :edit
+      end
     else
-      render :edit
+      render json: {error: 'Not the creator.'}
     end
   end
 
   def destroy
-    if @group.destroy
-      head :ok
+    if @group.creator_id == current_user.id
+      if @group.destroy
+        head :ok
+      else
+        redirect_to groups_path
+      end
     else
-      redirect_to groups_path
+      render json: {error: 'Not the creator.'}
     end
   end
 
