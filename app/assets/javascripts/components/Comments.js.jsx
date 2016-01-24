@@ -38,7 +38,7 @@ class Comments extends React.Component {
       type: 'DELETE'
     }).success( data => {
       debugger
-      this.setState({body: data.body})
+      this.props.refreshComments();
     });
   }
   render(){

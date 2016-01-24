@@ -1,13 +1,35 @@
 class GroupDetailed extends React.Component {
   constructor(props){
     super(props);
-    this.toggleNameEdit = this.toggleNameEdit.bind(this)
-    this.nameForm = this.nameForm.bind(this)
-    this.submitName = this.submitName.bind(this)
-    this.inviteToggle = this.inviteToggle.bind(this)
-    this.inviteForm = this.inviteForm.bind(this)
-    this.submitInvite = this.submitInvite.bind(this)
-    this.state = {group: this.props.group, comments: this.props.comments, bills: this.props.bills, name: this.props.group.name}
+    this.refreshComments = this.refreshComments.bind(this);
+    this.refreshBills = this.refreshBills.bind(this);
+    this.toggleNameEdit = this.toggleNameEdit.bind(this);
+    this.nameForm = this.nameForm.bind(this);
+    this.submitName = this.submitName.bind(this);
+    this.inviteToggle = this.inviteToggle.bind(this);
+    this.inviteForm = this.inviteForm.bind(this);
+    this.submitInvite = this.submitInvite.bind(this);
+    this.toggleBillForm = this.toggleBillForm.bind(this);
+    this.billForm = this.billForm.bind(this);
+    this.submitBill = this.submitBill.bind(this);
+    this.state = {group: this.props.group, comments: this.props.comments, bills: this.props.bills, name: this.props.group.name, billForm: false}
+  }
+  refreshComments(){
+    $.ajax({
+      url: '/comments',
+      type: 'GET',
+      data: {group_id: this.props.group.id}
+    }).success( data => {
+      this.setState({comments: data})
+    })
+  }
+  refreshBills(){
+    $.ajax({
+      url: '/bills',
+      type: 'GET'
+    }).success( data => {
+      this.setState({bills})
+    })
   }
   toggleNameEdit(){
     this.setState({nameEdit: !this.state.nameEdit})
@@ -56,7 +78,43 @@ class GroupDetailed extends React.Component {
       type: 'POST',
       data: {email: this.refs.inviteEmail.value}
     }).success( data => {
-      alert('It worked')
+      this.setState({inviteToggle: false})
+      // TODO: let them know it was sent
+    })
+  }
+  toggleBillForm(){
+    this.setState({billForm: !this.state.billForm})
+  }
+  billForm(){
+    if(this.state.billForm){
+      return(
+        <div>
+          <form onSubmit={this.submitBill}>
+            <input type='text' ref='billName' placeholder='Name' />
+            <input type='number' step='any' ref='billAmount' placeholder='Amount' />
+            <input type='date' ref='billDueDate' placeholder='Due Date' />
+            <button type='submit'>Make Bill</button>
+          </form>
+        </div>)
+    }
+  }
+  submitBill(e){
+    e.preventDefault()
+    $.ajax({
+      url: '/bills',
+      type: 'POST',
+      data: {group_id: this.props.group.id,
+              bill: {
+                name: this.refs.billName.value,
+                amount_total: this.refs.billAmount.value,
+                due_date: this.refs.billDueDate.value
+              }
+            }
+    }).success( data => {
+      let bills = this.state.bills
+      bills = bills.push(data);
+      // bills.sort(function(a,b){return new Date(a.due_date).getTime() - new Date(b.due_date).getTime()})
+      this.setState({bills})
     })
   }
   render(){
@@ -72,10 +130,12 @@ class GroupDetailed extends React.Component {
           {this.inviteForm()}
         </div>
         <div className="col-xs-12 col-md-8">
-          <Bills bills={this.state.bills} />
+          <button onClick={this.toggleBillForm}>New Bill</button>
+          {this.billForm()}
+          <Bills bills={this.state.bills} refreshBills={this.refreshBills} />
         </div>
         <div className="col-xs-12 col-md-4">
-          <Comments comments={this.state.comments} groupId={this.props.group.id} />
+          <Comments comments={this.state.comments} groupId={this.props.group.id} refreshComments={() => this.refreshComments()} />
         </div>
       </div>);
   }

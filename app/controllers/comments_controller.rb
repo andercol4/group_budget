@@ -1,9 +1,11 @@
 class CommentsController < ApplicationController
   before_action :find_comment, only: [:update, :destroy]
 
-  # def index
-  #   @comments = #whatever
-  # end
+  def index
+    @group = Group.find(params[:group_id])
+    @comments = @group.comments
+    render json: @comments
+  end
 
   def create
     @group = Group.find(params[:group_id])
@@ -20,7 +22,7 @@ class CommentsController < ApplicationController
     if @comment.update(comment_params)
       render json: @comment
     else
-      render json: @comment.errors.full_messages 
+      render json: @comment.errors.full_messages
     end
   end
 

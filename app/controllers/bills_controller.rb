@@ -9,9 +9,18 @@ class BillsController < ApplicationController
   end
 
   def create
-    @bill = Bill.new(bill_params)
-    if @bill.save?
-      render json: :bill
+
+    @group = Group.find(params[:group_id])
+    @bill = @group.bills.new(bill_params)
+    @bill.creator_id = current_user.id
+    if @bill.save
+      @user_bills = @bill.divide_bill
+      @user = User.find(@bill.creator_id)
+      @user_bills.each do |ub|
+        next unless ub.user_id == current_user.id
+        @user_bill = ub
+      end
+      render :bill
     else
       'SEND USER ERROR MESSAGE'
     end
@@ -41,6 +50,6 @@ class BillsController < ApplicationController
 
   def bill_params
     params.require(:bill)
-    .permit(:due_date, :is_paid, recurring:, :name, :group_id,:amount_id,:amount_total)
+    .permit(:due_date, :is_paid, :recurring, :name, :group_id,:amount_id,:amount_total)
   end
 end
