@@ -7,8 +7,22 @@
     = javascript_include_tag 'application'
     = csrf_meta_tags
   %body
-    %p{class: 'text-right'}
-      = link_to 'Logout', destroy_user_session_path, class: 'text-right', method: :delete
+    %nav.navbar.navbar-default.navbar-fixed-top
+      .buffer-class
+      .container-fluid
+        / Brand and toggle get grouped for better mobile display
+        .navbar-header
+          %button.navbar-toggle.collapsed{"aria-expanded" => "false", "data-target" => "#bs-example-navbar-collapse-1", "data-toggle" => "collapse", :type => "button"}
+            %span.sr-only Toggle navigation
+          %a.navbar-brand{:href => root_url} Pass The Buck
+        / Collect the nav links, forms, and other content for toggling
+        #bs-example-navbar-collapse-1.collapse.navbar-collapse
+          %ul.nav.navbar-nav
+            %li.active
+          %ul.nav.navbar-nav.navbar-right
+            %li
+              %a{:href => "#"}
+                = link_to 'Logout', destroy_user_session_path, method: :delete
     %p.notice= notice
     %p.alert= alert
     = yield
