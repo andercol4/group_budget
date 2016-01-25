@@ -1,6 +1,8 @@
 class BillSimple extends React.Component {
   constructor(props) {
     super(props);
+    
+
   }
   render(){
       let billPaid = this.props.is_paid ? "paid":"not-paid";

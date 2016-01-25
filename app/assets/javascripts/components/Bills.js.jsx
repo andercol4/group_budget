@@ -7,6 +7,7 @@ class Bills extends React.Component {
     let bills = this.state.bills.map( bill => {
       return(<BillSimple key={`bill-${bill.id}`} {...bill} />)
     });
+
     return(
       <div>
         {bills}

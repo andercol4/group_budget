@@ -12,15 +12,19 @@ class GroupDetailed extends React.Component {
     this.toggleBillForm = this.toggleBillForm.bind(this);
     this.billForm = this.billForm.bind(this);
     this.submitBill = this.submitBill.bind(this);
+    this.getComments = this.getComments.bind(this)
     this.state = {group: this.props.group, comments: this.props.comments, bills: this.props.bills, name: this.props.group.name, billForm: false}
   }
   refreshComments(){
+    let self = this;
     $.ajax({
       url: '/comments',
       type: 'GET',
       data: {group_id: this.props.group.id}
     }).success( data => {
-      this.setState({comments: data})
+     
+      self.setState({comments: data});
+     
     })
   }
   refreshBills(){
@@ -111,13 +115,21 @@ class GroupDetailed extends React.Component {
               }
             }
     }).success( data => {
+
       let bills = this.state.bills
-      bills = bills.push(data);
+      bills = bills.push(data.bill);
       // bills.sort(function(a,b){return new Date(a.due_date).getTime() - new Date(b.due_date).getTime()})
       this.setState({bills})
     })
   }
+  getComments(){
+ 
+    return( <Comments comments={this.state.comments} 
+                      groupId={this.props.group.id} 
+                      refreshComments={ this.refreshComments} />) 
+  }
   render(){
+    
     return(
       <div className="row">
         <div className="text-center">
@@ -135,7 +147,7 @@ class GroupDetailed extends React.Component {
           <Bills bills={this.state.bills} refreshBills={this.refreshBills} />
         </div>
         <div className="col-xs-12 col-md-4">
-          <Comments comments={this.state.comments} groupId={this.props.group.id} refreshComments={() => this.refreshComments()} />
+          {this.getComments()}
         </div>
       </div>);
   }

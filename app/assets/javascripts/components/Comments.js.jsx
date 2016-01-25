@@ -6,6 +6,7 @@ class Comments extends React.Component {
     this.addComment = this.addComment.bind(this);
     this.deleteComment = this.deleteComment.bind(this);
     this.state = {comments: this.props.comments, showForm: false}
+
   }
   toggleAddComment(){
     this.setState({showForm: !this.state.showForm})
@@ -37,12 +38,12 @@ class Comments extends React.Component {
       url: `/comments/${id}`,
       type: 'DELETE'
     }).success( data => {
-      debugger
       this.props.refreshComments();
     });
   }
   render(){
-    let comments = this.state.comments.map( comment => {
+
+    let comments = this.props.comments.map( comment => {
       return(<Comment key={`comment-${comment.id}`} deleteComment={this.deleteComment} {...comment} />)
     });
     return(<div>
