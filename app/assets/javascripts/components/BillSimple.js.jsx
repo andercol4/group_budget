@@ -1,26 +1,29 @@
 class BillSimple extends React.Component {
   constructor(props) {
     super(props);
-
-
   }
+
   render(){
       let billPaid = this.props.is_paid ? "paid":"not-paid";
       let billStyle ="panel panel-default bs col-sm-8 col-md-offset-2 col-xs-12 col-xs-offset-0";
       let panelHeading =billPaid+" panel-heading bs-name";
       let debtPaid = this.props.debt_paid ? "paid" : 'not-paid';
       let owedStyle = debtPaid + ' bs-amount-owed';
-      let userBills = () => {
-        if(this.props.dashboard) {
+      let userBills = ''
+      if(this.props.dashboard) {
+        userBills = <span className={owedStyle}>
+                      You owe:{(this.props.amount_owed.toFixed(2))}
+                    </span>
+      } else {
+        let ubs = this.props.user_bills.map(ub => {
           return(
-            <span className={owedStyle}>
-             You owe:{(this.props.amount_owed.toFixed(2))}
-           </span>)
-        } else {
-          return(<UserBill key={`ub-${this.props.user_bills.ub_id}`} name={this.props.name} id={this.props.ub_id}  />)
-        }
+            <div key={`ubs-${ub.ub_id}`}>
+              <span>{ub.username} owes: ${ub.amount_owed.toFixed(2)}</span>
+            </div>
+          )
+        })
+        userBills = ubs
       }
-      // debugger
     return(
       <div className='row'>
         <div className={billStyle}>
