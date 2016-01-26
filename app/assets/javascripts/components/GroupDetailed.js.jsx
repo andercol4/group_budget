@@ -12,7 +12,7 @@ class GroupDetailed extends React.Component {
     this.toggleBillForm = this.toggleBillForm.bind(this);
     this.billForm = this.billForm.bind(this);
     this.submitBill = this.submitBill.bind(this);
-    this.getComments = this.getComments.bind(this)
+    this.getComments = this.getComments.bind(this);
     this.state = {group: this.props.group, comments: this.props.comments, bills: this.props.bills, name: this.props.group.name, billForm: false}
   }
   refreshComments(){
@@ -22,17 +22,18 @@ class GroupDetailed extends React.Component {
       type: 'GET',
       data: {group_id: this.props.group.id}
     }).success( data => {
-     
       self.setState({comments: data});
-     
     })
   }
   refreshBills(){
     $.ajax({
       url: '/bills',
-      type: 'GET'
+      type: 'GET',
+      data: {group_id: this.props.group.id}
     }).success( data => {
-      this.setState({bills})
+      debugger
+      this.setState({bills: data})
+      debugger
     })
   }
   toggleNameEdit(){
@@ -115,7 +116,6 @@ class GroupDetailed extends React.Component {
               }
             }
     }).success( data => {
-
       let bills = this.state.bills
       bills = bills.push(data.bill);
       // bills.sort(function(a,b){return new Date(a.due_date).getTime() - new Date(b.due_date).getTime()})
@@ -123,28 +123,22 @@ class GroupDetailed extends React.Component {
     })
   }
   getComments(){
- 
-    return( <Comments comments={this.state.comments} 
-                      groupId={this.props.group.id} 
-                      refreshComments={ this.refreshComments} />) 
+    return( <Comments comments={this.state.comments}
+                      groupId={this.props.group.id}
+                      refreshComments={ this.refreshComments} />)
   }
   deleteGroup(id){
-
     $.ajax({
       url: '/groups/'+id,
       type: 'DELETE',
-
     }).success( data=> {
       this.props.refreshGroups();
     });
-
   }
   render(){
-    
     return(
-
       <div>
-        <button onClick={()=>this.deleteGroup(this.props.group.id)}>Delete</button> 
+        <button onClick={()=>this.deleteGroup(this.props.group.id)}>Delete</button>
         <div className="row">
           <div className="text-center">
             <h1>{this.state.name}</h1>
@@ -158,7 +152,7 @@ class GroupDetailed extends React.Component {
           <div className="col-xs-12 col-md-8">
             <button onClick={this.toggleBillForm}>New Bill</button>
             {this.billForm()}
-            <Bills bills={this.state.bills} refreshBills={this.refreshBills} />
+            <Bills bills={this.state.bills} refreshBills={this.refreshBills} dashboard={this.props.dashboard}/>
           </div>
           <div className="col-xs-12 col-md-4">
             {this.getComments()}

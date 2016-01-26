@@ -2,14 +2,15 @@ class BillsController < ApplicationController
   before_action :bill,  only: [:show, :update, :destroy]
 
   def index
-    @bills = current_user.bills
+    @group = Group.find(params[:group_id])
+    @bills = @group.bills_breakdown
+    render json: @bills
   end
 
   def show
   end
 
   def create
-
     @group = Group.find(params[:group_id])
     @bill = @group.bills.new(bill_params)
     @bill.creator_id = current_user.id

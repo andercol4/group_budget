@@ -1,7 +1,7 @@
 class Bill < ActiveRecord::Base
   belongs_to :group
-  has_many :user_groups, dependent: :destroy
-  has_many :users, through: :user_groups
+  has_many :user_bills, dependent: :destroy
+  has_many :users, through: :user_bills
 
   def divide_bill
     #get group

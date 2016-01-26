@@ -26,9 +26,9 @@ class Dashboard extends React.Component {
 
   views(){
     if(this.state.views == "Groups"){
-      return(<Groups groups={this.state.groups} refreshGroups={this.refreshGroups}/>)
+      return(<Groups groups={this.state.groups} refreshGroups={this.refreshGroups} />)
     }else if(this.state.views == "Upcoming"){
-      return(<Bills bills={this.state.bills} />)
+      return(<Bills bills={this.state.bills} dashboard={this.props.dashboard} />)
     }else{}
   }
   render(){

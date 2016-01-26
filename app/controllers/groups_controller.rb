@@ -3,12 +3,12 @@ class GroupsController < ApplicationController
   def index
     @groups = current_user.groups
     render json: @groups
-    
+
   end
 
   def show
     @comments = @group.comments
-    @bills = current_user.upcoming_bills1
+    @bills = @group.bills_breakdown
   end
 
   def create
