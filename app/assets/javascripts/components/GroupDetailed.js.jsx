@@ -128,26 +128,41 @@ class GroupDetailed extends React.Component {
                       groupId={this.props.group.id} 
                       refreshComments={ this.refreshComments} />) 
   }
+  deleteGroup(id){
+
+    $.ajax({
+      url: '/groups/'+id,
+      type: 'DELETE',
+
+    }).success( data=> {
+      this.props.refreshGroups();
+    });
+
+  }
   render(){
     
     return(
-      <div className="row">
-        <div className="text-center">
-          <h1>{this.state.name}</h1>
-          <button onClick={this.toggleNameEdit}>Edit Group Name</button>
-          {this.nameForm()}
-        </div>
-        <div className="col-md-offset-9 col-md-3">
-          <button onClick={this.inviteToggle}>Invite to group</button>
-          {this.inviteForm()}
-        </div>
-        <div className="col-xs-12 col-md-8">
-          <button onClick={this.toggleBillForm}>New Bill</button>
-          {this.billForm()}
-          <Bills bills={this.state.bills} refreshBills={this.refreshBills} />
-        </div>
-        <div className="col-xs-12 col-md-4">
-          {this.getComments()}
+
+      <div>
+        <button onClick={()=>this.deleteGroup(this.props.group.id)}>Delete</button> 
+        <div className="row">
+          <div className="text-center">
+            <h1>{this.state.name}</h1>
+            <button onClick={this.toggleNameEdit}>Edit Group Name</button>
+            {this.nameForm()}
+          </div>
+          <div className="col-md-offset-9 col-md-3">
+            <button onClick={this.inviteToggle}>Invite to group</button>
+            {this.inviteForm()}
+          </div>
+          <div className="col-xs-12 col-md-8">
+            <button onClick={this.toggleBillForm}>New Bill</button>
+            {this.billForm()}
+            <Bills bills={this.state.bills} refreshBills={this.refreshBills} />
+          </div>
+          <div className="col-xs-12 col-md-4">
+            {this.getComments()}
+          </div>
         </div>
       </div>);
   }
