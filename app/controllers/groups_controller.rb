@@ -2,6 +2,8 @@ class GroupsController < ApplicationController
   before_action :group, except: [:index, :create]
   def index
     @groups = current_user.groups
+    render json: @groups
+    
   end
 
   def show
@@ -48,6 +50,8 @@ class GroupsController < ApplicationController
   def destroy
     if @group.creator_id == current_user.id
       if @group.destroy
+        #binding.pry
+        #redirect_to root_path
         head :ok
       else
         redirect_to groups_path

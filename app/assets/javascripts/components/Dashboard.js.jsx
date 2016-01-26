@@ -4,18 +4,29 @@ class Dashboard extends React.Component {
     this.views = this.views.bind(this);
     this.upcomingView = this.upcomingView.bind(this);
     this.groupView = this.groupView.bind(this);
+    this.refreshGroups = this.refreshGroups.bind(this)
     this.state = {groups: this.props.groups, bills: this.props.upcoming, views: "Groups"}
   }
   upcomingView(){
-    this.setState({views: "Upcoming"})
+    this.setState({views: "Upcoming"});
   }
   groupView(){
-    this.setState({views: "Groups"})
+    this.setState({views: "Groups"});
+  }
+  refreshGroups(){
+    $.ajax({
+      url: '/groups',
+      type: 'GET',
+
+    }).success( data => {
+      this.setState( {groups: data} );
+    })
+
   }
 
   views(){
     if(this.state.views == "Groups"){
-      return(<Groups groups={this.state.groups} />)
+      return(<Groups groups={this.state.groups} refreshGroups={this.refreshGroups}/>)
     }else if(this.state.views == "Upcoming"){
       return(<Bills bills={this.state.bills} />)
     }else{}

@@ -8,7 +8,9 @@ class GroupSimple extends React.Component{
         <div>
           <a href={`/groups/${this.props.id}`}>
             <h1>{this.props.name}</h1>
+
           </a>
+          <button onClick={()=>this.props.deleteGroup(this.props.id)}>Delete</button> 
         </div>
       </div>);
   }

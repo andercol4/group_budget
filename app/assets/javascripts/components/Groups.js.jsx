@@ -4,6 +4,7 @@ class Groups extends React.Component{
     this.toggleGroupForm = this.toggleGroupForm.bind(this);
     this.groupForm = this.groupForm.bind(this);
     this.submitNewGroup = this.submitNewGroup.bind(this);
+    this.deleteGroup = this.deleteGroup.bind(this);
     this.state = {groups: this.props.groups, groupForm: false}
   }
   toggleGroupForm(){
@@ -38,9 +39,21 @@ class Groups extends React.Component{
     }).error( data => {
     });
   }
+  deleteGroup(id){
+
+    $.ajax({
+      url: '/groups/'+id,
+      type: 'DELETE',
+
+    }).success( data=> {
+      this.props.refreshGroups();
+    });
+
+  }
   render(){
-    let groups = this.state.groups.map(group => {
-      return(<GroupSimple key = {`group-${group.id}`} {...group} />)
+    let groups = this.props.groups.map(group => {
+      return(<GroupSimple key = {`group-${group.id}`} {...group} 
+                          deleteGroup={this.deleteGroup} />)
     })
     return(
       <div>
