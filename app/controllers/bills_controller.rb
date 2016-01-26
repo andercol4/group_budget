@@ -3,7 +3,8 @@ class BillsController < ApplicationController
 
   def index
     @group = Group.find(params[:group_id])
-    @bills = @group.bills_breakdown
+    @bills= @group.bills_breakdown
+    # binding.pry
     render json: @bills
   end
 

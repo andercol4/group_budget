@@ -17,10 +17,10 @@ class BillSimple extends React.Component {
              You owe:{(this.props.amount_owed.toFixed(2))}
            </span>)
         } else {
-          return(<UserBill key={`ub-${this.props.ub_id}`} name={this.props.name} id={this.props.ub_id}  />)
+          return(<UserBill key={`ub-${this.props.user_bills.ub_id}`} name={this.props.name} id={this.props.ub_id}  />)
         }
       }
-      debugger
+      // debugger
     return(
       <div className='row'>
         <div className={billStyle}>

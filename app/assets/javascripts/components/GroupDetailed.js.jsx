@@ -26,14 +26,13 @@ class GroupDetailed extends React.Component {
     })
   }
   refreshBills(){
+    let self = this;
     $.ajax({
       url: '/bills',
       type: 'GET',
       data: {group_id: this.props.group.id}
     }).success( data => {
-      debugger
-      this.setState({bills: data})
-      debugger
+      self.setState({bills: data})
     })
   }
   toggleNameEdit(){
@@ -119,7 +118,7 @@ class GroupDetailed extends React.Component {
       let bills = this.state.bills
       bills = bills.push(data.bill);
       // bills.sort(function(a,b){return new Date(a.due_date).getTime() - new Date(b.due_date).getTime()})
-      this.setState({bills})
+      this.refreshBills();
     })
   }
   getComments(){
