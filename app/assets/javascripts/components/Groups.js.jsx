@@ -35,6 +35,7 @@ class Groups extends React.Component{
     }).success(data => {
       let groups = this.state.groups
       groups.push(data)
+      this.toggleGroupForm();
       this.setState({groups})
     }).error( data => {
     });
@@ -52,7 +53,7 @@ class Groups extends React.Component{
   }
   render(){
     let groups = this.props.groups.map(group => {
-      return(<GroupSimple key = {`group-${group.id}`} {...group} 
+      return(<GroupSimple key = {`group-${group.id}`} {...group}
                           deleteGroup={this.deleteGroup} />)
     })
     return(

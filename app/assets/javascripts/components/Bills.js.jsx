@@ -6,12 +6,14 @@ class Bills extends React.Component {
     this.state = {bills: this.props.bills}
   }
   deleteBill(id){
-    $.ajax({
-      url: '/bills/' + id,
-      type: 'DELETE'
-    }).success( data => {
-      this.props.refreshBills();
-    })
+    if( confirm("Are you sure you want to delete this bill?") ){
+      $.ajax({
+        url: '/bills/' + id,
+        type: 'DELETE'
+      }).success( data => {
+        this.props.refreshBills();
+      })
+    }
   }
   help(){
     debugger
@@ -19,7 +21,7 @@ class Bills extends React.Component {
   render(){
     // debugger
     let bills = this.props.bills.map( bill => {
-      return(<BillSimple key={`bill-${bill.id}`} {...bill} deleteBill={this.deleteBill} dashboard={this.props.dashboard} />)
+      return(<BillSimple key={`bill-${bill.id}`} {...bill} deleteBill={this.deleteBill} dashboard={this.props.dashboard} refreshBills={this.props.refreshBills}/>)
     });
     return(
       <div>

@@ -127,12 +127,15 @@ class GroupDetailed extends React.Component {
                       refreshComments={ this.refreshComments} />)
   }
   deleteGroup(id){
-    $.ajax({
-      url: '/groups/'+id,
-      type: 'DELETE',
-    }).success( data=> {
-      this.props.refreshGroups();
-    });
+    var self = this
+    if(confirm("Are you sure you want to delete this group? It will delete all the bills in this group!")){
+      $.ajax({
+        url: '/groups_redirect/'+id,
+        type: 'DELETE',
+      }).success( data => {
+        debugger
+      });
+    }
   }
   render(){
     return(
