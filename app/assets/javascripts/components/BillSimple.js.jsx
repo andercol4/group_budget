@@ -60,14 +60,17 @@ class BillSimple extends React.Component {
                 <span className='left'>
                   {this.props.name}
                 </span>
-                 <span className='right bs-total-amount'>
+                <span className='right bs-total-amount'>
                   ${this.props.amount_total}
                 </span>
-                </h3>
+              </h3>
             </header>
             <div className="panel-body">
-             <span className='bs-due_date'>
+             <span className={owedStyle}>
                Due: {this.props.due_date}
+               ubPaid: {this.props.debt_paid.toString()}
+
+               billPaid: {this.props.is_paid.toString()}
              </span>
               <span className='bs-due_date'>
                Responsible: {this.props.first_name}
