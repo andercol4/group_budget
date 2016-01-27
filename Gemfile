@@ -25,6 +25,7 @@ gem 'bootstrap-sass'
 gem 'devise', '~> 3.5'
 gem 'bourbon'
 gem 'react-rails', '~>1.5.0'
+gem 'omniauth-facebook'
 
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
