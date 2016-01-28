@@ -115,9 +115,10 @@ class GroupDetailed extends React.Component {
               }
             }
     }).success( data => {
-      let bills = this.state.bills
-      bills = bills.push(data.bill);
+      // let bills = this.state.bills
+      // bills = bills.push(data.bill);
       // bills.sort(function(a,b){return new Date(a.due_date).getTime() - new Date(b.due_date).getTime()})
+      this.toggleBillForm();
       this.refreshBills();
     })
   }

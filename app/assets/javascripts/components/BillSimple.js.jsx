@@ -28,10 +28,16 @@ class BillSimple extends React.Component {
     this.setState({showPay: !this.state.showPay})
   }
   payBillForm(){
+    let ubOwed = 0
+    for(i = 0; i < this.props.user_bills.length; i++){
+      if(this.props.user_bills[i].user_id == this.props.currentUser){
+        ubOwed = Math.abs(this.props.user_bills[i].amount_owed).toFixed(2)
+      }
+    }
     if(this.state.showPay)
       return(<div>
               <form onSubmit={this.payBill}>
-                <input type="number" step="any" ref="amountPaid" min="0" max={this.props.amount_owed.toFixed(2)} defaultValue={this.props.amount_owed.toFixed(2)} />
+                <input type="number" step="any" ref="amountPaid" min="0" max={ubOwed} defaultValue={ubOwed} />
                 <button type="submit">Submit</button>
               </form>
             </div>);
@@ -63,7 +69,7 @@ class BillSimple extends React.Component {
         let ubs = this.props.user_bills.map(ub => {
           return(
             <div key={`ubs-${ub.ub_id}`}>
-              <span>{ub.username} owes: ${ub.amount_owed.toFixed(2)}</span>
+              <span>{ub.username} owes: ${Math.abs(ub.amount_owed).toFixed(2)}</span>
             </div>
           )
         })
@@ -90,6 +96,7 @@ class BillSimple extends React.Component {
                Responsible: {this.props.first_name}
              </span>
             </div>
+            {userBills}
             {this.payBillAuth()}
             {this.payBillForm()}
             {this.deleteBillAuth()}
@@ -97,6 +104,3 @@ class BillSimple extends React.Component {
       </div>)
   }
 }
-
-
-// {userBills}
