@@ -1,4 +1,8 @@
+<<<<<<< HEAD
 = react_component('Dashboard', {groups: @groups, upcoming: @upcoming_bills, dashboard: true})
 %h1
   Email: #{current_user.email}
 • #{link_to 'Logout', destroy_user_session_path, method: 'delete'}
+=======
+= react_component('Dashboard', {groups: @groups, upcoming: @upcoming_bills, dashboard: true, currentUser: current_user.id})
+>>>>>>> bill_reform

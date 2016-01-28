@@ -5,7 +5,7 @@ class Group < ActiveRecord::Base
   has_many :users, through: :user_groups
 
   def bills_breakdown
-    bills = self.bills.select("bills.*, ub.amount_owed, ub.is_paid as debt_paid, u.first_name, ub.id AS ub_id")
+    bills = self.bills.select("bills.*, u.first_name")
         .joins("INNER JOIN user_bills ub ON ub.bill_id = bills.id")
         .joins("INNER JOIN users u ON u.id = bills.creator_id")
         .joins("INNER JOIN groups g ON g.id = bills.group_id")
@@ -15,11 +15,9 @@ class Group < ActiveRecord::Base
     @bills = []
     bills.map do |b|
       @bills.push({
-        amount_owed:  b.amount_owed,
         amount_paid:  b.amount_paid,
         amount_total:  b.amount_total,
         creator_id:  b.creator_id,
-        debt_paid:  b.is_paid,
         due_date:  b.due_date,
         first_name:  b.first_name,
         group_id: b.id,
@@ -30,6 +28,7 @@ class Group < ActiveRecord::Base
         user_bills: b.user_bills.map do |ub|
           {username: User.find(ub.user_id).first_name,
           amount_owed: ub.amount_owed,
+          user_id: ub.user_id,
           ub_id: ub.id,
           is_paid: ub.is_paid}
         end

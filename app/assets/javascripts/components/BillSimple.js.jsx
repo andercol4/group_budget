@@ -1,12 +1,29 @@
 class BillSimple extends React.Component {
   constructor(props) {
     super(props);
+    this.payBillAuth = this.payBillAuth.bind(this);
+    this.deleteBillAuth = this.deleteBillAuth.bind(this);
     this.togglePayBill = this.togglePayBill.bind(this);
     this.payBillForm = this.payBillForm.bind(this);
     this.payBill = this.payBill.bind(this);
     this.state = {showPay: false}
   }
-
+  payBillAuth(){
+    let ubBoolean = false
+    for(i = 0; i < this.props.user_bills.length; i++){
+      if(this.props.user_bills[i].user_id == this.props.currentUser){
+        ubBoolean = true
+      }
+    }
+    if(ubBoolean){
+      return(<div onClick={this.togglePayBill}>Pay Bill</div>);
+    }
+  }
+  deleteBillAuth(){
+    if(this.props.currentUser == this.props.creator_id){
+      return(<div onClick={() => this.props.deleteBill(this.props.id)}>Delete Bill</div>)
+    }
+  }
   togglePayBill(){
     this.setState({showPay: !this.state.showPay})
   }
@@ -55,30 +72,31 @@ class BillSimple extends React.Component {
     return(
       <div className='row'>
         <div className={billStyle}>
-            <header className={panelHeading}>
-              <h3 className="panel-title">
-                <span className='left'>
-                  {this.props.name}
-                </span>
-                 <span className='right bs-total-amount'>
-                  ${this.props.amount_total}
-                </span>
-                </h3>
-            </header>
+          <header className={panelHeading}>
+            <h3 className="panel-title">
+              <span className='left'>
+                {this.props.name}
+              </span>
+              <span className='right bs-total-amount'>
+                ${this.props.amount_total}
+              </span>
+            </h3>
+          </header>
             <div className="panel-body">
              <span className='bs-due_date'>
                Due: {this.props.due_date}
              </span>
-              <span className='bs-due_date'>
+            <span className='bs-due_date'>
                Responsible: {this.props.first_name}
              </span>
-                {userBills}
             </div>
-            <div onClick={this.togglePayBill}>Pay Bill</div>
+            {this.payBillAuth()}
             {this.payBillForm()}
-            <div onClick={() => this.props.deleteBill(this.props.id)}>Delete Bill</div>
+            {this.deleteBillAuth()}
         </div>
-      </div>
-    )
+      </div>)
   }
 }
+
+
+// {userBills}
