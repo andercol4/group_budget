@@ -11,7 +11,6 @@ class RegistrationsController < Devise::RegistrationsController
     if resource.persisted? # user is created successfuly
       group = Group.create(name: "#{resource.first_name} Personal", creator_id: resource.id )
       user_group = UserGroup.create(user_id: resource.id, group_id: group.id)
-      binding.pry
 
     end
   end

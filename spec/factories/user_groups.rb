@@ -1,7 +1,7 @@
 FactoryGirl.define do
   factory :user_group do
-    user nil
-group nil
+  user 
+  group
   end
 
 end

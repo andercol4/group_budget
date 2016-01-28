@@ -15,11 +15,11 @@ class Bill < ActiveRecord::Base
     user_bill
   end
 
-  def self.sqlcall(id)
-        select("bills.*, ub.amount_owed, ub.is_paid as debt_paid, u.first_name")
-        .joins("INNER JOIN user_bills ub ON ub.bill_id = bills.id")
-        .joins("INNER JOIN users u ON u.id = bills.creator_id")
-        .where("ub.id = ?", id)
-        .order("due_date")
-  end
+  # def self.sqlcall(id)
+  #       select("bills.*, ub.amount_owed, ub.is_paid as debt_paid, u.first_name")
+  #       .joins("INNER JOIN user_bills ub ON ub.bill_id = bills.id")
+  #       .joins("INNER JOIN users u ON u.id = bills.creator_id")
+  #       .where("ub.id = ?", id)
+  #       .order("due_date")
+  # end
 end
