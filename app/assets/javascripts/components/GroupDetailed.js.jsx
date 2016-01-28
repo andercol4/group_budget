@@ -154,7 +154,7 @@ class GroupDetailed extends React.Component {
           <div className="col-xs-12 col-md-8">
             <button onClick={this.toggleBillForm}>New Bill</button>
             {this.billForm()}
-            <Bills bills={this.state.bills} refreshBills={this.refreshBills} dashboard={this.props.dashboard}/>
+            <Bills bills={this.state.bills} refreshBills={this.refreshBills} dashboard={this.props.dashboard} currentUser={this.props.currentUser}/>
           </div>
           <div className="col-xs-12 col-md-4">
             {this.getComments()}
