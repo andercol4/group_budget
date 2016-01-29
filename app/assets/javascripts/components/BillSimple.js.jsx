@@ -51,7 +51,11 @@ class BillSimple extends React.Component {
                 <input type="number" step="any" ref="amountPaid" min="0" max={ubOwed} defaultValue={ubOwed} />
                 <button type="submit">Submit</button>
               </form>
-            </div>);
+            </div>
+
+
+     
+            );
   }
   payBill(e){
     let self = this
@@ -87,31 +91,31 @@ class BillSimple extends React.Component {
         userBills = ubs
       }
     return(
-      <div className='row'>
-        <div className={billStyle}>
-          <header className={panelHeading}>
-            <h3 className="panel-title">
-              <span className='left'>
-                {this.props.name}
-              </span>
-              <span className='right bs-total-amount'>
-                ${this.props.amount_total}
-              </span>
-            </h3>
-          </header>
-            <div className="panel-body">
-             <span className='bs-due_date'>
-               Due: {this.props.due_date}
-             </span>
-            <span className='bs-due_date'>
-               Responsible: {this.props.first_name}
-             </span>
+        <div className="bill-container">
+          <div className="bill-heading bs-name">
+            <div className='title'>
+              {this.props.name}
             </div>
+            <div className='amount-date'>
+              <div className='amount-due'>
+                ${this.props.amount_total}
+              </div>
+              <div className="due_date">
+                Due {this.props.due_date}
+                Responsible: {this.props.first_name}
+              </div>
+            </div>
+
+           </div>
+          <div className='bill-info'>
+            <div>Personal</div>
             {userBills}
             {this.payBillAuth()}
             {this.payBillForm()}
             {this.deleteBillAuth()}
-        </div>
-      </div>)
+          </div>
+
+        </div>      
+      )
   }
 }

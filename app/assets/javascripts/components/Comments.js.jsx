@@ -47,9 +47,11 @@ class Comments extends React.Component {
       return(<Comment key={`comment-${comment.id}`} deleteComment={this.deleteComment} {...comment} />)
     });
     return(<div>
+            
+            
+            {comments}
             <button onClick={this.toggleAddComment}>Add Comment</button>
             {this.showAddComment()}
-            {comments}
           </div>);
   }
 }

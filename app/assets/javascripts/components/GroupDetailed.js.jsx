@@ -141,26 +141,29 @@ class GroupDetailed extends React.Component {
   render(){
     return(
       <div>
-        <div onClick={()=>this.deleteGroup(this.props.group.id)}>Delete</div>
+     
         <div className="row">
-          <div className="text-center">
-            <h1>{this.state.name}</h1>
-            <button onClick={this.toggleNameEdit}>Edit Group Name</button>
+          <div className="text-center group-head">
+            <h1>{this.state.name}
+              <span onClick={this.toggleNameEdit} className='glyphicon glyphicon-pencil small'></span>
+            </h1>
             {this.nameForm()}
           </div>
-          <div className="col-md-offset-9 col-md-3">
-            <button onClick={this.inviteToggle}>Invite to group</button>
+          <div className="text-center">
+            <h3 onClick={this.inviteToggle}>+ user to group</h3>
             {this.inviteForm()}
           </div>
-          <div className="col-xs-12 col-md-8">
-            <button onClick={this.toggleBillForm}>New Bill</button>
+      
+            <div onClick={this.toggleBillForm}>+ Bill</div>
             {this.billForm()}
-            <Bills bills={this.state.bills} refreshBills={this.refreshBills} dashboard={this.props.dashboard} currentUser={this.props.currentUser}/>
-          </div>
+            <Bills bills={this.state.bills} refreshBills={this.refreshBills} 
+                  dashboard={this.props.dashboard} currentUser={this.props.currentUser}/>
+       
           <div className="col-xs-12 col-md-4">
             {this.getComments()}
           </div>
         </div>
+           <div onClick={()=>this.deleteGroup(this.props.group.id)}>Delete</div>
       </div>);
   }
 }

@@ -51,7 +51,7 @@ class Dashboard extends React.Component {
           <div className='dashboard-link' onClick = {this.upcomingView}>upcoming bills | </div>
           <div className='dashboard-link' onClick = {this.groupView}> &nbsp;groups</div>
         </nav>
-        <div className='col-md-6 col-xs-12 containers'>
+        <div>
           {this.views()}
         </div>  
       </div>

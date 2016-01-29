@@ -21,11 +21,15 @@ class Bills extends React.Component {
   render(){
     // debugger
     let bills = this.props.bills.map( bill => {
-      return(<BillSimple key={`bill-${bill.id}`} {...bill} deleteBill={this.deleteBill} dashboard={this.props.dashboard} refreshBills={this.props.refreshBills} currentUser={this.props.currentUser}/>)
+      return(<BillSimple key={`bill-${bill.id}`} 
+              {...bill} 
+              deleteBill={this.deleteBill} 
+              dashboard={this.props.dashboard} 
+              refreshBills={this.props.refreshBills} 
+              currentUser={this.props.currentUser}/>)
     });
     return(
-      <div>
-        <p onClick={this.help}>Help Me!</p>
+      <div className='col-md-6 col-xs-12'>
         {bills}
       </div>
     )

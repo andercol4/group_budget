@@ -31,9 +31,10 @@ class Comment extends React.Component {
   }
   render(){
     return(<div>
-            <p>{this.state.body}</p>
-            <button onClick={this.toggleEdit}>Edit</button>
-            <button onClick={this.props.deleteComment.bind(this, this.props.id)}>Delete</button>
+            <p className='comment-text'>user: {this.state.body}&nbsp; 
+              <span className='glyphicon glyphicon-pencil'onClick={this.toggleEdit}>&nbsp;</span>
+              <span className='glyphicon glyphicon-remove'onClick={this.props.deleteComment.bind(this, this.props.id)}></span>
+            </p>
             {this.showEditComment()}
           </div>);
   }

@@ -4,14 +4,15 @@ class GroupSimple extends React.Component{
   }
   render(){
     return(
-      <div className="group-container">
-        <div>
-          <a href={`/groups/${this.props.id}`}>
-            <h1>{this.props.name}</h1>
-
-          </a>
-          <button onClick={()=>this.props.deleteGroup(this.props.id)}>Delete</button> 
+      <a href={`/groups/${this.props.id}`}>
+        <div className="group-container">
+          <div>
+            <span className='fixed-up-right glyphicon glyphicon-remove-circle' 
+              onClick={()=>this.props.deleteGroup(this.props.id)}>
+            </span>
+            <h1 className='text-center'>{this.props.name}</h1>
+          </div>
         </div>
-      </div>);
+      </a>);
   }
 }
