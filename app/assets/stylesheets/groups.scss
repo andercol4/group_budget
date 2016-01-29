@@ -1,3 +1,9 @@
-// Place all the styles related to the groups controller here.
-// They will automatically be included in application.css.
-// You can use Sass (SCSS) here: http://sass-lang.com/
+.group-container{
+	min-height: 120px;
+	width:100%;
+	border: 4px solid #333;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+	margin:0 0 10px 0;
+}

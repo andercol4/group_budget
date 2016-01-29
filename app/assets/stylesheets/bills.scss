@@ -1,3 +1,97 @@
-// Place all the styles related to the bills controller here.
-// They will automatically be included in application.css.
-// You can use Sass (SCSS) here: http://sass-lang.com/
+body{
+	background: #ddd;
+	/*margin: 100px;*/
+		/*border: 5px solid green;*/
+
+}
+*{
+	/*border: 1px solid;*/
+}
+.container{
+	border: 1px solid red;
+}
+.container-fluid{
+	margin-bottom: 30px;
+}
+.row-no-padding {
+  [class*="col-"] {
+    padding-left: 0 !important;
+    padding-right: 0 !important;
+  }
+}
+.containers{
+		border: 1px dashed green;
+}
+.bill-container{	
+	/*box-sizing: border-box;*/
+	min-height: 120px;
+	width:100%;
+	border: 4px solid #333;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+	margin:0 0 10px 0;
+}
+
+.bill-container{
+	
+	/*max-width:100%;*/
+	/*min-width: 300px;*/
+	/*margin-bottom: 50px;*/
+	
+	/*padding:10px;*/
+	.bill-heading{
+		/*border: 1px solid red;*/
+		padding: 5px;
+		width:100%;
+		display: flex;
+
+		justify-content: space-between;
+		
+		
+		.title{
+			font-size: 24px;
+			font-size: calc(120% + 2.0vw)
+		}
+		
+		.amount-date{
+			display: flex;
+			flex-direction:column;
+			align-items: flex-end;
+			justify-content:space-between;
+			
+			.amount-due{
+				font-size: 24px;
+				font-size: calc(100% + 1.0vw)
+			}
+			
+			.due_date{
+				font-size: 18px;
+				font-size: calc(100% + .4vw)
+			}
+			
+		}
+	}
+
+	.bill-info{
+		/*border: 1px solid red;*/
+		display: flex;
+		justify-content:space-around;
+		align-self: flex-end;
+		width:100%;
+		font-size: 18px;
+		font-size: calc(100% + .4vw);
+/*		.e {
+			flex:1;
+		}*/
+	}
+
+}
+	
+canvas{
+		/*background: #000;*/
+		border: 5px solid black;
+		width:48%;
+		margin: 0 1% 0 1%;
+	}
+

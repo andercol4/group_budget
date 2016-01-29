@@ -1,5 +1,7 @@
 @import "bootstrap-sprockets";
 @import "bootstrap";
 @import "bourbon";
-@import 'bill_simple';
+@import 'bills';
+@import 'groups';
+@import 'dashboard';
 body { padding-top: 55px; }

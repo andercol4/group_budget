@@ -141,7 +141,7 @@ class GroupDetailed extends React.Component {
   render(){
     return(
       <div>
-        <button onClick={()=>this.deleteGroup(this.props.group.id)}>Delete</button>
+        <div onClick={()=>this.deleteGroup(this.props.group.id)}>Delete</div>
         <div className="row">
           <div className="text-center">
             <h1>{this.state.name}</h1>

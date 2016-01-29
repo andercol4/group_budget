@@ -57,8 +57,8 @@ class Groups extends React.Component{
                           deleteGroup={this.deleteGroup} />)
     })
     return(
-      <div>
-        <button onClick={this.toggleGroupForm}>New Group</button>
+      <div className=''>
+        <div className='new-group' onClick={this.toggleGroupForm}>+ Add Group</div>
         {this.groupForm()}
         {groups}
       </div>)

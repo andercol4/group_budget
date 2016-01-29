@@ -4,7 +4,7 @@ class GroupSimple extends React.Component{
   }
   render(){
     return(
-      <div>
+      <div className="group-container">
         <div>
           <a href={`/groups/${this.props.id}`}>
             <h1>{this.props.name}</h1>

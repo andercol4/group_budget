@@ -9,10 +9,15 @@ class BillSimple extends React.Component {
     this.state = {showPay: false}
   }
   payBillAuth(){
-    let ubBoolean = false
-    for(i = 0; i < this.props.user_bills.length; i++){
-      if(this.props.user_bills[i].user_id == this.props.currentUser){
-        ubBoolean = true
+    let ubBoolean = false;
+    if (this.props.dashboard){
+      ubBoolean = false;
+      //pay bill is not working on dashboard so don't show the button
+    } else {
+      for(i = 0; i < this.props.user_bills.length; i++){
+        if(this.props.user_bills[i].user_id === this.props.currentUser){
+          ubBoolean = true
+        }
       }
     }
     if(ubBoolean){
@@ -20,19 +25,25 @@ class BillSimple extends React.Component {
     }
   }
   deleteBillAuth(){
-    if(this.props.currentUser == this.props.creator_id){
+    if(this.props.currentUser === this.props.creator_id && !this.props.dashboard){
       return(<div onClick={() => this.props.deleteBill(this.props.id)}>Delete Bill</div>)
+    } else if(this.props.dashboard) {
+      return(<a href={`/groups/${this.props.group_id}`}>Goto group</a>)
     }
   }
   togglePayBill(){
     this.setState({showPay: !this.state.showPay})
   }
   payBillForm(){
-    let ubOwed = 0
-    for(i = 0; i < this.props.user_bills.length; i++){
-      if(this.props.user_bills[i].user_id == this.props.currentUser){
-        ubOwed = Math.abs(this.props.user_bills[i].amount_owed).toFixed(2)
-      }
+      let ubOwed = 0;
+    if(this.props.dashboard){
+      ubOwed = Math.abs(this.props.amount_owed).toFixed(2)
+    }else {
+      for(i = 0; i < this.props.user_bills.length; i++){
+        if(this.props.user_bills[i].user_id === this.props.currentUser){
+          ubOwed = Math.abs(this.props.user_bills[i].amount_owed).toFixed(2)
+        }
+      }  
     }
     if(this.state.showPay)
       return(<div>
