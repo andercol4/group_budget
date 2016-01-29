@@ -1,8 +1,13 @@
+
 @import "bootstrap-sprockets";
-@import "bootstrap";
+@import 'shared';
 @import "bourbon";
+@import 'variables';
 @import 'bills';
 @import 'groups';
 @import 'dashboard';
 @import 'comments';
+@import 'overides';
+@import "bootstrap";
+
 body { padding-top: 55px; }

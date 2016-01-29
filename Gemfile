@@ -24,6 +24,7 @@ gem 'haml-rails', '~> 0.9'
 gem 'bootstrap-sass'
 gem 'devise', '~> 3.5'
 gem 'bourbon'
+gem 'chart-js-rails'
 gem 'react-rails', '~>1.5.0'
 gem 'omniauth-facebook'
 

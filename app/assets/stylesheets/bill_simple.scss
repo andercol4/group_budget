@@ -1,6 +1,6 @@
 .bs{
 
-	border: 1px solid;
+	border: 1px solid red;
 	/*margin:20px;*/
 	/*display: flex;*/
 	min-height: 150px;
@@ -10,12 +10,15 @@
 .panel{
 	max-width:400px;
 	min-width:400px;
+	background: $my-color;
+	background: red;
 }
 
 .not-paid{
 		background: hsla(10,70%,50%, .4) !important;
 }
 .paid{
+		/*background: hsla(120,70%,50%, .4) !important;*/
 		background: hsla(120,70%,50%, .4) !important;
 }
 .left{

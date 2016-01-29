@@ -9,6 +9,10 @@
 .dashboard-link{
 	font-size: 20px;
 	text-align: center;
+	color: $text-color;
+	&:hover{
+		color: $text-hover-color;
+	}
 	
 	/*border: 2px solid;*/
 }

@@ -7,9 +7,7 @@ body{
 *{
 	/*border: 1px solid;*/
 }
-.container{
-	border: 1px solid red;
-}
+
 .container-fluid{
 	margin-bottom: 30px;
 }
@@ -20,7 +18,7 @@ body{
   }
 }
 .containers{
-		border: 1px dashed green;
+		border: 1px dashed $my-color;
 }
 .bill-container{	
 	/*box-sizing: border-box;*/
@@ -31,40 +29,34 @@ body{
 	flex-direction: column;
 	justify-content: space-between;
 	margin:0 0 10px 0;
+	color: $panel-text-color;
+	background: $panel-bg-color;
+	&:hover{
+		color:$panel-text-hover-color;
+		background: $panel-bg-hover-color;
+	}
 }
 
 .bill-container{
-	
-	/*max-width:100%;*/
-	/*min-width: 300px;*/
-	/*margin-bottom: 50px;*/
-	
-	/*padding:10px;*/
 	.bill-heading{
 		/*border: 1px solid red;*/
 		padding: 5px;
 		width:100%;
 		display: flex;
-
 		justify-content: space-between;
-		
-		
 		.title{
 			font-size: 24px;
 			font-size: calc(120% + 2.0vw)
 		}
-		
 		.amount-date{
 			display: flex;
 			flex-direction:column;
 			align-items: flex-end;
 			justify-content:space-between;
-			
 			.amount-due{
 				font-size: 24px;
 				font-size: calc(100% + 1.0vw)
 			}
-			
 			.due_date{
 				font-size: 18px;
 				font-size: calc(100% + .4vw)
