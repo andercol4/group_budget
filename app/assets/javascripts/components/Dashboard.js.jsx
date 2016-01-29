@@ -15,12 +15,14 @@ class Dashboard extends React.Component {
     this.setState({views: "Groups"});
   }
   refreshGroups(){
+    let self = this;
     $.ajax({
       url: '/groups',
       type: 'GET',
 
     }).success( data => {
-      this.setState( {groups: data} );
+      debugger
+      self.setState( {groups: data} );
     })
 
   }
@@ -37,7 +39,8 @@ class Dashboard extends React.Component {
 
   views(){
     if(this.state.views == "Groups"){
-      return(<Groups groups={this.state.groups} refreshGroups={this.refreshGroups} />)
+      return(<Groups groups={this.state.groups} refreshGroups={this.refreshGroups} />
+              <canvas id="groupChart" width="400" height="400"></canvas>)
     }else if(this.state.views == "Upcoming"){
       return(<Bills bills={this.state.upcoming} dashboard={this.props.dashboard} 
                           currentUser={this.props.currentUser} refreshBills={this.refreshBills} />)

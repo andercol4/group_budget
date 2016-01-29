@@ -31,18 +31,19 @@ class Groups extends React.Component{
   }
   submitNewGroup(e){
     // debugger
+    let self = this;
     e.preventDefault()
     $.ajax({
       url: '/groups',
       type: 'POST',
       data: {group: {name: this.refs.groupName.value}}
     }).success(data => {
-      let groups = this.state.groups
+      let groups = self.state.groups
       groups.unshift(data)
-      this.toggleGroupForm();
-      this.state.formHint = '+ Add Group';
+      self.toggleGroupForm();
+      self.state.formHint = '+ Add Group';
     
-      this.setState({groups})
+      self.setState({groups})
     }).error( data => {
    
     });

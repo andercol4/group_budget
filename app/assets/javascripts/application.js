@@ -12,6 +12,7 @@
 //
 //= require jquery
 //= require bootstrap-sprockets
+//= require Chart
 //= require jquery_ujs
 //= require react
 //= require react_ujs
