@@ -1,4 +1,5 @@
 class GroupsController < ApplicationController
+  before_action :authenticate_user!
   before_action :group, except: [:index, :create]
   def index
     @groups = current_user.groups

@@ -1,5 +1,9 @@
 Rails.application.routes.draw do
-  root 'dashboard#index'
+  root 'dashboard#landing'
+  get "dashboard", to: "dashboard#index", as: "dashboard"
+  get "about_us", to: "dashboard#about", as: "about"
+  get "faq", to: "dashboard#faq", as: "faq"
+  get "landing", to: "dashboard#landing", as: "landing"
   resources :bills
   resources :user_bills
   put '/bills_paid/:id', to: 'user_bills#pay_bill', as: 'pay_bill'

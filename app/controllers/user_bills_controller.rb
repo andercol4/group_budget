@@ -1,4 +1,5 @@
 class UserBillsController < ApplicationController
+  before_action :authenticate_user!
   def pay_bill
     @user_bill = UserBill.find_by(bill_id: params[:id], user_id: current_user.id)
     if @user_bill
