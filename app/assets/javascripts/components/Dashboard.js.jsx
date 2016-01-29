@@ -40,12 +40,21 @@ class Dashboard extends React.Component {
   views(){
     if(this.state.views == "Groups"){
       return(<Groups groups={this.state.groups} refreshGroups={this.refreshGroups} />
-              <canvas id="groupChart" width="400" height="400"></canvas>)
+              
+              )
     }else if(this.state.views == "Upcoming"){
       return(<Bills bills={this.state.upcoming} dashboard={this.props.dashboard} 
                           currentUser={this.props.currentUser} refreshBills={this.refreshBills} />)
     }else{}
   }
+  canvas(){
+     if(this.state.views == "Groups"){
+      return(<canvas id="groupChart" width="400" height="400"></canvas>)
+    }else if(this.state.views == "Upcoming"){
+      return(<canvas id="upcomingChart" width="400" height="400"></canvas>)
+    }else{}
+  }   
+  
   render(){
 
     return(
@@ -56,7 +65,11 @@ class Dashboard extends React.Component {
         </nav>
         <div>
           {this.views()}
-        </div>  
+      
+          <div className='col-md-6 col-xs-12 containers'>
+              {this.canvas()}
+          </div> 
+        </div> 
       </div>
 
     )
