@@ -20,7 +20,7 @@ class Group < ActiveRecord::Base
         creator_id:  b.creator_id,
         due_date:  b.due_date,
         first_name:  b.first_name,
-        group_id: b.id,
+        group_id: b.group_id,
         id:  b.id,
         is_paid: b.is_paid,
         name: b.name,
