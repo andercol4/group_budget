@@ -1,7 +1,7 @@
 {
   "RSpec": {
     "coverage": {
-      "/Users/kaitlinanderson/Desktop/devpoint/capstone/group_budget/spec/controllers/bills_controller_spec.rb": [
+      "/Users/ColinAnderson/Desktop/Devpoint/group_budget/spec/controllers/bills_controller_spec.rb": [
         1,
         null,
         1,
@@ -43,7 +43,7 @@
         null,
         null
       ],
-      "/Users/kaitlinanderson/Desktop/devpoint/capstone/group_budget/spec/rails_helper.rb": [
+      "/Users/ColinAnderson/Desktop/Devpoint/group_budget/spec/rails_helper.rb": [
         null,
         1,
         1,
@@ -113,14 +113,14 @@
         null,
         null
       ],
-      "/Users/kaitlinanderson/Desktop/devpoint/capstone/group_budget/config/environment.rb": [
+      "/Users/ColinAnderson/Desktop/Devpoint/group_budget/config/environment.rb": [
         null,
         1,
         null,
         null,
         1
       ],
-      "/Users/kaitlinanderson/Desktop/devpoint/capstone/group_budget/config/application.rb": [
+      "/Users/ColinAnderson/Desktop/Devpoint/group_budget/config/application.rb": [
         1,
         null,
         1,
@@ -157,12 +157,12 @@
         null,
         null
       ],
-      "/Users/kaitlinanderson/Desktop/devpoint/capstone/group_budget/config/boot.rb": [
+      "/Users/ColinAnderson/Desktop/Devpoint/group_budget/config/boot.rb": [
         1,
         null,
         1
       ],
-      "/Users/kaitlinanderson/Desktop/devpoint/capstone/group_budget/config/environments/test.rb": [
+      "/Users/ColinAnderson/Desktop/Devpoint/group_budget/config/environments/test.rb": [
         1,
         null,
         null,
@@ -206,10 +206,10 @@
         null,
         null
       ],
-      "/Users/kaitlinanderson/Desktop/devpoint/capstone/group_budget/config/initializers/app_auth.rb": [
+      "/Users/ColinAnderson/Desktop/Devpoint/group_budget/config/initializers/app_auth.rb": [
 
       ],
-      "/Users/kaitlinanderson/Desktop/devpoint/capstone/group_budget/config/initializers/assets.rb": [
+      "/Users/ColinAnderson/Desktop/Devpoint/group_budget/config/initializers/assets.rb": [
         null,
         null,
         null,
@@ -222,7 +222,7 @@
         null,
         null
       ],
-      "/Users/kaitlinanderson/Desktop/devpoint/capstone/group_budget/config/initializers/backtrace_silencers.rb": [
+      "/Users/ColinAnderson/Desktop/Devpoint/group_budget/config/initializers/backtrace_silencers.rb": [
         null,
         null,
         null,
@@ -231,12 +231,12 @@
         null,
         null
       ],
-      "/Users/kaitlinanderson/Desktop/devpoint/capstone/group_budget/config/initializers/cookies_serializer.rb": [
+      "/Users/ColinAnderson/Desktop/Devpoint/group_budget/config/initializers/cookies_serializer.rb": [
         null,
         null,
         1
       ],
-      "/Users/kaitlinanderson/Desktop/devpoint/capstone/group_budget/config/initializers/devise.rb": [
+      "/Users/ColinAnderson/Desktop/Devpoint/group_budget/config/initializers/devise.rb": [
         null,
         null,
         1,
@@ -505,13 +505,13 @@
         null,
         null
       ],
-      "/Users/kaitlinanderson/Desktop/devpoint/capstone/group_budget/config/initializers/filter_parameter_logging.rb": [
+      "/Users/ColinAnderson/Desktop/Devpoint/group_budget/config/initializers/filter_parameter_logging.rb": [
         null,
         null,
         null,
         1
       ],
-      "/Users/kaitlinanderson/Desktop/devpoint/capstone/group_budget/config/initializers/inflections.rb": [
+      "/Users/ColinAnderson/Desktop/Devpoint/group_budget/config/initializers/inflections.rb": [
         null,
         null,
         null,
@@ -529,18 +529,18 @@
         null,
         null
       ],
-      "/Users/kaitlinanderson/Desktop/devpoint/capstone/group_budget/config/initializers/mime_types.rb": [
+      "/Users/ColinAnderson/Desktop/Devpoint/group_budget/config/initializers/mime_types.rb": [
         null,
         null,
         null,
         null
       ],
-      "/Users/kaitlinanderson/Desktop/devpoint/capstone/group_budget/config/initializers/session_store.rb": [
+      "/Users/ColinAnderson/Desktop/Devpoint/group_budget/config/initializers/session_store.rb": [
         null,
         null,
         1
       ],
-      "/Users/kaitlinanderson/Desktop/devpoint/capstone/group_budget/config/initializers/wrap_parameters.rb": [
+      "/Users/ColinAnderson/Desktop/Devpoint/group_budget/config/initializers/wrap_parameters.rb": [
         null,
         null,
         null,
@@ -556,7 +556,7 @@
         null,
         null
       ],
-      "/Users/kaitlinanderson/Desktop/devpoint/capstone/group_budget/spec/factories/bills.rb": [
+      "/Users/ColinAnderson/Desktop/Devpoint/group_budget/spec/factories/bills.rb": [
         1,
         1,
         1,
@@ -571,7 +571,7 @@
         null,
         null
       ],
-      "/Users/kaitlinanderson/Desktop/devpoint/capstone/group_budget/spec/factories/comments.rb": [
+      "/Users/ColinAnderson/Desktop/Devpoint/group_budget/spec/factories/comments.rb": [
         1,
         1,
         1,
@@ -581,7 +581,7 @@
         null,
         null
       ],
-      "/Users/kaitlinanderson/Desktop/devpoint/capstone/group_budget/spec/factories/groups.rb": [
+      "/Users/ColinAnderson/Desktop/Devpoint/group_budget/spec/factories/groups.rb": [
         1,
         1,
         1,
@@ -589,28 +589,9 @@
         null,
         null
       ],
-      "/Users/kaitlinanderson/Desktop/devpoint/capstone/group_budget/spec/factories/user_bills.rb": [
+      "/Users/ColinAnderson/Desktop/Devpoint/group_budget/spec/factories/user_bills.rb": [
         1,
         1,
-        1,
-        1,
-        1,
-        1,
-        1,
-        null,
-        null,
-        null
-      ],
-      "/Users/kaitlinanderson/Desktop/devpoint/capstone/group_budget/spec/factories/user_groups.rb": [
-        1,
-        1,
-        1,
-        1,
-        null,
-        null,
-        null
-      ],
-      "/Users/kaitlinanderson/Desktop/devpoint/capstone/group_budget/spec/factories/users.rb": [
         1,
         1,
         1,
@@ -620,7 +601,30 @@
         null,
         null
       ],
-      "/Users/kaitlinanderson/Desktop/devpoint/capstone/group_budget/config/routes.rb": [
+      "/Users/ColinAnderson/Desktop/Devpoint/group_budget/spec/factories/user_groups.rb": [
+        1,
+        1,
+        1,
+        1,
+        null,
+        null,
+        null
+      ],
+      "/Users/ColinAnderson/Desktop/Devpoint/group_budget/spec/factories/users.rb": [
+        1,
+        1,
+        1,
+        1,
+        1,
+        null,
+        null,
+        null
+      ],
+      "/Users/ColinAnderson/Desktop/Devpoint/group_budget/config/routes.rb": [
+        1,
+        1,
+        1,
+        1,
         1,
         1,
         1,
@@ -634,7 +638,7 @@
         1,
         null
       ],
-      "/Users/kaitlinanderson/Desktop/devpoint/capstone/group_budget/app/models/user.rb": [
+      "/Users/ColinAnderson/Desktop/Devpoint/group_budget/app/models/user.rb": [
         1,
         null,
         null,
@@ -678,31 +682,32 @@
         null,
         null
       ],
-      "/Users/kaitlinanderson/Desktop/devpoint/capstone/group_budget/app/helpers/application_helper.rb": [
+      "/Users/ColinAnderson/Desktop/Devpoint/group_budget/app/helpers/application_helper.rb": [
         1,
         null
       ],
-      "/Users/kaitlinanderson/Desktop/devpoint/capstone/group_budget/app/helpers/bills_helper.rb": [
+      "/Users/ColinAnderson/Desktop/Devpoint/group_budget/app/helpers/bills_helper.rb": [
         1,
         null
       ],
-      "/Users/kaitlinanderson/Desktop/devpoint/capstone/group_budget/app/helpers/comments_helper.rb": [
+      "/Users/ColinAnderson/Desktop/Devpoint/group_budget/app/helpers/comments_helper.rb": [
         1,
         null
       ],
-      "/Users/kaitlinanderson/Desktop/devpoint/capstone/group_budget/app/helpers/dashboard_helper.rb": [
+      "/Users/ColinAnderson/Desktop/Devpoint/group_budget/app/helpers/dashboard_helper.rb": [
         1,
         null
       ],
-      "/Users/kaitlinanderson/Desktop/devpoint/capstone/group_budget/app/helpers/groups_helper.rb": [
+      "/Users/ColinAnderson/Desktop/Devpoint/group_budget/app/helpers/groups_helper.rb": [
         1,
         null
       ],
-      "/Users/kaitlinanderson/Desktop/devpoint/capstone/group_budget/app/helpers/user_bills_helper.rb": [
+      "/Users/ColinAnderson/Desktop/Devpoint/group_budget/app/helpers/user_bills_helper.rb": [
         1,
         null
       ],
-      "/Users/kaitlinanderson/Desktop/devpoint/capstone/group_budget/app/controllers/bills_controller.rb": [
+      "/Users/ColinAnderson/Desktop/Devpoint/group_budget/app/controllers/bills_controller.rb": [
+        1,
         1,
         1,
         null,
@@ -761,138 +766,26 @@
         null,
         null
       ],
-      "/Users/kaitlinanderson/Desktop/devpoint/capstone/group_budget/app/controllers/application_controller.rb": [
+      "/Users/ColinAnderson/Desktop/Devpoint/group_budget/app/controllers/application_controller.rb": [
         1,
         null,
         null,
         1,
-        1,
         null,
         null,
         null,
         null,
         null,
         null,
-        null,
-        null,
-        null
-      ],
-      "/Users/kaitlinanderson/Desktop/devpoint/capstone/group_budget/spec/controllers/comments_controller_spec.rb": [
-        1,
-        null,
-        1,
-        null,
-        1,
-        1,
-        1,
-        0,
-        null,
-        null,
-        null,
-        1,
-        1,
-        1,
-        0,
-        null,
-        null,
-        null,
-        1,
-        1,
-        1,
-        0,
-        null,
-        null,
-        null,
-        1,
-        1,
-        1,
-        0,
         null,
         null,
         null,
         null
       ],
-      "/Users/kaitlinanderson/Desktop/devpoint/capstone/group_budget/app/controllers/comments_controller.rb": [
-        1,
-        1,
-        null,
-        1,
-        0,
-        0,
-        0,
-        null,
-        null,
-        1,
-        0,
-        0,
-        0,
-        0,
-        0,
-        null,
-        0,
-        null,
-        null,
-        null,
-        1,
-        0,
-        0,
-        null,
-        0,
-        null,
-        null,
-        null,
-        1,
-        0,
-        0,
-        null,
-        null,
-        1,
-        1,
-        0,
-        null,
-        null,
-        1,
-        0,
-        null,
-        null
-      ],
-      "/Users/kaitlinanderson/Desktop/devpoint/capstone/group_budget/spec/controllers/dashboard_controller_spec.rb": [
+      "/Users/ColinAnderson/Desktop/Devpoint/group_budget/spec/controllers/comments_controller_spec.rb": [
         1,
         null,
         1,
-        null,
-        1,
-        1,
-        1,
-        0,
-        null,
-        null,
-        null,
-        null
-      ],
-      "/Users/kaitlinanderson/Desktop/devpoint/capstone/group_budget/app/controllers/dashboard_controller.rb": [
-        1,
-        null,
-        null,
-        1,
-        0,
-        0,
-        null,
-        null,
-        null,
-        null
-      ],
-      "/Users/kaitlinanderson/Desktop/devpoint/capstone/group_budget/spec/controllers/groups_controller_spec.rb": [
-        1,
-        null,
-        1,
-        null,
-        1,
-        1,
-        1,
-        0,
-        null,
-        null,
         null,
         1,
         1,
@@ -924,7 +817,178 @@
         null,
         null
       ],
-      "/Users/kaitlinanderson/Desktop/devpoint/capstone/group_budget/app/controllers/groups_controller.rb": [
+      "/Users/ColinAnderson/Desktop/Devpoint/group_budget/app/controllers/comments_controller.rb": [
+        1,
+        1,
+        1,
+        null,
+        1,
+        0,
+        0,
+        0,
+        null,
+        null,
+        1,
+        0,
+        0,
+        0,
+        0,
+        0,
+        null,
+        0,
+        null,
+        null,
+        null,
+        1,
+        0,
+        0,
+        null,
+        0,
+        null,
+        null,
+        null,
+        1,
+        0,
+        0,
+        null,
+        null,
+        1,
+        1,
+        0,
+        null,
+        null,
+        1,
+        0,
+        null,
+        null
+      ],
+      "/Users/ColinAnderson/Desktop/Devpoint/group_budget/spec/controllers/dashboard_controller_spec.rb": [
+        1,
+        null,
+        1,
+        null,
+        1,
+        1,
+        1,
+        0,
+        null,
+        null,
+        null,
+        null
+      ],
+      "/Users/ColinAnderson/Desktop/Devpoint/group_budget/app/controllers/dashboard_controller.rb": [
+        1,
+        1,
+        1,
+        0,
+        0,
+        0,
+        0,
+        0,
+        null,
+        0,
+        0,
+        0,
+        0,
+        null,
+        0,
+        0,
+        0,
+        0,
+        null,
+        0,
+        null,
+        null,
+        null,
+        null,
+        null,
+        1,
+        0,
+        0,
+        null,
+        null,
+        null,
+        1,
+        null,
+        null,
+        1,
+        null,
+        null,
+        1,
+        null,
+        1,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        null,
+        null,
+        null,
+        null,
+        0,
+        null,
+        null,
+        1,
+        0,
+        0,
+        0,
+        0,
+        null,
+        0,
+        0,
+        null,
+        null,
+        0,
+        null,
+        null,
+        null
+      ],
+      "/Users/ColinAnderson/Desktop/Devpoint/group_budget/spec/controllers/groups_controller_spec.rb": [
+        1,
+        null,
+        1,
+        null,
+        1,
+        1,
+        1,
+        0,
+        null,
+        null,
+        null,
+        1,
+        1,
+        1,
+        0,
+        null,
+        null,
+        null,
+        1,
+        1,
+        1,
+        0,
+        null,
+        null,
+        null,
+        1,
+        1,
+        1,
+        0,
+        null,
+        null,
+        null,
+        1,
+        1,
+        1,
+        0,
+        null,
+        null,
+        null,
+        null
+      ],
+      "/Users/ColinAnderson/Desktop/Devpoint/group_budget/app/controllers/groups_controller.rb": [
+        1,
         1,
         1,
         1,
@@ -999,14 +1063,15 @@
         null,
         null
       ],
-      "/Users/kaitlinanderson/Desktop/devpoint/capstone/group_budget/spec/controllers/user_bills_controller_spec.rb": [
+      "/Users/ColinAnderson/Desktop/Devpoint/group_budget/spec/controllers/user_bills_controller_spec.rb": [
         1,
         null,
         1,
         null,
         null
       ],
-      "/Users/kaitlinanderson/Desktop/devpoint/capstone/group_budget/app/controllers/user_bills_controller.rb": [
+      "/Users/ColinAnderson/Desktop/Devpoint/group_budget/app/controllers/user_bills_controller.rb": [
+        1,
         1,
         1,
         0,
@@ -1029,24 +1094,7 @@
         null,
         null
       ],
-      "/Users/kaitlinanderson/Desktop/devpoint/capstone/group_budget/spec/helpers/bills_helper_spec.rb": [
-        1,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        1,
-        1,
-        null
-      ],
-      "/Users/kaitlinanderson/Desktop/devpoint/capstone/group_budget/spec/helpers/comments_helper_spec.rb": [
+      "/Users/ColinAnderson/Desktop/Devpoint/group_budget/spec/helpers/bills_helper_spec.rb": [
         1,
         null,
         null,
@@ -1063,7 +1111,7 @@
         1,
         null
       ],
-      "/Users/kaitlinanderson/Desktop/devpoint/capstone/group_budget/spec/helpers/dashboard_helper_spec.rb": [
+      "/Users/ColinAnderson/Desktop/Devpoint/group_budget/spec/helpers/comments_helper_spec.rb": [
         1,
         null,
         null,
@@ -1080,7 +1128,7 @@
         1,
         null
       ],
-      "/Users/kaitlinanderson/Desktop/devpoint/capstone/group_budget/spec/helpers/groups_helper_spec.rb": [
+      "/Users/ColinAnderson/Desktop/Devpoint/group_budget/spec/helpers/dashboard_helper_spec.rb": [
         1,
         null,
         null,
@@ -1097,7 +1145,7 @@
         1,
         null
       ],
-      "/Users/kaitlinanderson/Desktop/devpoint/capstone/group_budget/spec/helpers/user_bills_helper_spec.rb": [
+      "/Users/ColinAnderson/Desktop/Devpoint/group_budget/spec/helpers/groups_helper_spec.rb": [
         1,
         null,
         null,
@@ -1114,7 +1162,24 @@
         1,
         null
       ],
-      "/Users/kaitlinanderson/Desktop/devpoint/capstone/group_budget/spec/models/bill_spec.rb": [
+      "/Users/ColinAnderson/Desktop/Devpoint/group_budget/spec/helpers/user_bills_helper_spec.rb": [
+        1,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        1,
+        1,
+        null
+      ],
+      "/Users/ColinAnderson/Desktop/Devpoint/group_budget/spec/models/bill_spec.rb": [
         1,
         null,
         1,
@@ -1138,7 +1203,7 @@
         null,
         null
       ],
-      "/Users/kaitlinanderson/Desktop/devpoint/capstone/group_budget/app/models/bill.rb": [
+      "/Users/ColinAnderson/Desktop/Devpoint/group_budget/app/models/bill.rb": [
         1,
         1,
         1,
@@ -1165,20 +1230,120 @@
         null,
         null
       ],
-      "/Users/kaitlinanderson/Desktop/devpoint/capstone/group_budget/spec/models/comment_spec.rb": [
+      "/Users/ColinAnderson/Desktop/Devpoint/group_budget/spec/models/comment_spec.rb": [
         1,
         null,
         1,
         1,
         null
       ],
-      "/Users/kaitlinanderson/Desktop/devpoint/capstone/group_budget/app/models/comment.rb": [
+      "/Users/ColinAnderson/Desktop/Devpoint/group_budget/app/models/comment.rb": [
         1,
         1,
         1,
         null
       ],
-      "/Users/kaitlinanderson/Desktop/devpoint/capstone/group_budget/spec/models/group_spec.rb": [
+      "/Users/ColinAnderson/Desktop/Devpoint/group_budget/spec/models/group_spec.rb": [
+        1,
+        null,
+        1,
+        1,
+        2,
+        null,
+        null,
+        null,
+        null,
+        null,
+        2,
+        2,
+        2,
+        2,
+        2,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        null,
+        1,
+        null,
+        1,
+        1,
+        1,
+        null,
+        null,
+        null
+      ],
+      "/Users/ColinAnderson/Desktop/Devpoint/group_budget/app/models/group.rb": [
+        1,
+        1,
+        1,
+        1,
+        1,
+        null,
+        1,
+        1,
+        null,
+        null,
+        null,
+        null,
+        null,
+        1,
+        1,
+        1,
+        2,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        2,
+        null,
+        null,
+        null,
+        1,
+        null,
+        null
+      ],
+      "/Users/ColinAnderson/Desktop/Devpoint/group_budget/spec/models/user_bill_spec.rb": [
+        1,
+        null,
+        1,
+        1,
+        null
+      ],
+      "/Users/ColinAnderson/Desktop/Devpoint/group_budget/app/models/user_bill.rb": [
+        1,
+        1,
+        1,
+        null
+      ],
+      "/Users/ColinAnderson/Desktop/Devpoint/group_budget/spec/models/user_group_spec.rb": [
+        1,
+        null,
+        1,
+        1,
+        null
+      ],
+      "/Users/ColinAnderson/Desktop/Devpoint/group_budget/app/models/user_group.rb": [
+        1,
+        1,
+        1,
+        null
+      ],
+      "/Users/ColinAnderson/Desktop/Devpoint/group_budget/spec/models/user_spec.rb": [
         1,
         null,
         1,
@@ -1202,107 +1367,6 @@
         1,
         1,
         1,
-        null,
-        1,
-        null,
-        0,
-        null,
-        null,
-        null,
-        null,
-        null
-      ],
-      "/Users/kaitlinanderson/Desktop/devpoint/capstone/group_budget/app/models/group.rb": [
-        1,
-        1,
-        1,
-        1,
-        1,
-        null,
-        1,
-        0,
-        null,
-        null,
-        null,
-        null,
-        null,
-        0,
-        0,
-        0,
-        0,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        0,
-        null,
-        null,
-        null,
-        0,
-        null,
-        null
-      ],
-      "/Users/kaitlinanderson/Desktop/devpoint/capstone/group_budget/spec/models/user_bill_spec.rb": [
-        1,
-        null,
-        1,
-        1,
-        null
-      ],
-      "/Users/kaitlinanderson/Desktop/devpoint/capstone/group_budget/app/models/user_bill.rb": [
-        1,
-        1,
-        1,
-        null
-      ],
-      "/Users/kaitlinanderson/Desktop/devpoint/capstone/group_budget/spec/models/user_group_spec.rb": [
-        1,
-        null,
-        1,
-        1,
-        null
-      ],
-      "/Users/kaitlinanderson/Desktop/devpoint/capstone/group_budget/app/models/user_group.rb": [
-        1,
-        1,
-        1,
-        null
-      ],
-      "/Users/kaitlinanderson/Desktop/devpoint/capstone/group_budget/spec/models/user_spec.rb": [
-        1,
-        null,
-        1,
-        1,
-        2,
-        null,
-        null,
-        null,
-        null,
-        null,
-        2,
-        2,
-        2,
-        2,
-        2,
-        null,
-        1,
-        1,
-        1,
-        1,
-        1,
-        1,
-        1,
         1,
         1,
         1,
@@ -1327,112 +1391,112 @@
         null,
         null
       ],
-      "/Users/kaitlinanderson/Desktop/devpoint/capstone/group_budget/spec/views/bills/create.html.haml_spec.rb": [
+      "/Users/ColinAnderson/Desktop/Devpoint/group_budget/spec/views/bills/create.html.haml_spec.rb": [
         1,
         null,
         1,
         1,
         null
       ],
-      "/Users/kaitlinanderson/Desktop/devpoint/capstone/group_budget/spec/views/bills/destroy.html.haml_spec.rb": [
+      "/Users/ColinAnderson/Desktop/Devpoint/group_budget/spec/views/bills/destroy.html.haml_spec.rb": [
         1,
         null,
         1,
         1,
         null
       ],
-      "/Users/kaitlinanderson/Desktop/devpoint/capstone/group_budget/spec/views/bills/index.html.haml_spec.rb": [
+      "/Users/ColinAnderson/Desktop/Devpoint/group_budget/spec/views/bills/index.html.haml_spec.rb": [
         1,
         null,
         1,
         1,
         null
       ],
-      "/Users/kaitlinanderson/Desktop/devpoint/capstone/group_budget/spec/views/bills/show.html.haml_spec.rb": [
+      "/Users/ColinAnderson/Desktop/Devpoint/group_budget/spec/views/bills/show.html.haml_spec.rb": [
         1,
         null,
         1,
         1,
         null
       ],
-      "/Users/kaitlinanderson/Desktop/devpoint/capstone/group_budget/spec/views/bills/update.html.haml_spec.rb": [
+      "/Users/ColinAnderson/Desktop/Devpoint/group_budget/spec/views/bills/update.html.haml_spec.rb": [
         1,
         null,
         1,
         1,
         null
       ],
-      "/Users/kaitlinanderson/Desktop/devpoint/capstone/group_budget/spec/views/comments/create.html.haml_spec.rb": [
+      "/Users/ColinAnderson/Desktop/Devpoint/group_budget/spec/views/comments/create.html.haml_spec.rb": [
         1,
         null,
         1,
         1,
         null
       ],
-      "/Users/kaitlinanderson/Desktop/devpoint/capstone/group_budget/spec/views/comments/destroy.html.haml_spec.rb": [
+      "/Users/ColinAnderson/Desktop/Devpoint/group_budget/spec/views/comments/destroy.html.haml_spec.rb": [
         1,
         null,
         1,
         1,
         null
       ],
-      "/Users/kaitlinanderson/Desktop/devpoint/capstone/group_budget/spec/views/comments/index.html.haml_spec.rb": [
+      "/Users/ColinAnderson/Desktop/Devpoint/group_budget/spec/views/comments/index.html.haml_spec.rb": [
         1,
         null,
         1,
         1,
         null
       ],
-      "/Users/kaitlinanderson/Desktop/devpoint/capstone/group_budget/spec/views/comments/update.html.haml_spec.rb": [
+      "/Users/ColinAnderson/Desktop/Devpoint/group_budget/spec/views/comments/update.html.haml_spec.rb": [
         1,
         null,
         1,
         1,
         null
       ],
-      "/Users/kaitlinanderson/Desktop/devpoint/capstone/group_budget/spec/views/dashboard/index.html.haml_spec.rb": [
+      "/Users/ColinAnderson/Desktop/Devpoint/group_budget/spec/views/dashboard/index.html.haml_spec.rb": [
         1,
         null,
         1,
         1,
         null
       ],
-      "/Users/kaitlinanderson/Desktop/devpoint/capstone/group_budget/spec/views/groups/create.html.haml_spec.rb": [
+      "/Users/ColinAnderson/Desktop/Devpoint/group_budget/spec/views/groups/create.html.haml_spec.rb": [
         1,
         null,
         1,
         1,
         null
       ],
-      "/Users/kaitlinanderson/Desktop/devpoint/capstone/group_budget/spec/views/groups/destroy.html.haml_spec.rb": [
+      "/Users/ColinAnderson/Desktop/Devpoint/group_budget/spec/views/groups/destroy.html.haml_spec.rb": [
         1,
         null,
         1,
         1,
         null
       ],
-      "/Users/kaitlinanderson/Desktop/devpoint/capstone/group_budget/spec/views/groups/index.html.haml_spec.rb": [
+      "/Users/ColinAnderson/Desktop/Devpoint/group_budget/spec/views/groups/index.html.haml_spec.rb": [
         1,
         null,
         1,
         1,
         null
       ],
-      "/Users/kaitlinanderson/Desktop/devpoint/capstone/group_budget/spec/views/groups/show.html.haml_spec.rb": [
+      "/Users/ColinAnderson/Desktop/Devpoint/group_budget/spec/views/groups/show.html.haml_spec.rb": [
         1,
         null,
         1,
         1,
         null
       ],
-      "/Users/kaitlinanderson/Desktop/devpoint/capstone/group_budget/spec/views/groups/update.html.haml_spec.rb": [
+      "/Users/ColinAnderson/Desktop/Devpoint/group_budget/spec/views/groups/update.html.haml_spec.rb": [
         1,
         null,
         1,
         1,
         null
       ],
-      "/Users/kaitlinanderson/Desktop/devpoint/capstone/group_budget/spec/views/test/index.html.haml_spec.rb": [
+      "/Users/ColinAnderson/Desktop/Devpoint/group_budget/spec/views/test/index.html.haml_spec.rb": [
         1,
         null,
         1,
@@ -1440,6 +1504,6 @@
         null
       ]
     },
-    "timestamp": 1454119220
+    "timestamp": 1454125638
   }
 }

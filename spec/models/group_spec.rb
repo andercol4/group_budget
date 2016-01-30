@@ -13,7 +13,6 @@ RSpec.describe Group, type: :model do
     let(:bill2) {Bill.create(name: "bill2", due_date: 2.days.from_now, group_id: group.id, amount_total: 20, creator_id: user.id)}
     let(:ub) {UserBill.create(user_id: user.id, bill_id: bill.id, amount_owed: 10)}
     let(:ub2) {UserBill.create(user_id: user.id, bill_id: bill2.id, amount_owed: 20)}
-    # TODO: finish testing group.rb
     it 'runs the method and returns b in order, u first_name' do
       user
       group
@@ -22,11 +21,11 @@ RSpec.describe Group, type: :model do
       ub
       ub2
       # bills_breakdown is undefined method... why?!?!
-      method = user.bills_breakdown
+      method = group.bills_breakdown
       # the method returns an array of hashes? so we may have to grab the values this way.
       expect(method.first[:amount_total]).to eq(10)
-      # expect(method.last.amount_total).to eq(20)
-      # expect(method.first.first_name).to eq('User')
+      expect(method.last[:amount_total]).to eq(20)
+      expect(method.first[:first_name]).to eq('User')
     end
   end
 end

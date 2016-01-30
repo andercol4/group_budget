@@ -52,11 +52,10 @@ class DashboardController < ApplicationController
   end
 
   def get_group(group)
-    user_bills = []
     total_amount = 0
     group.bills.each do |bill|
       if bill.due_date < 1.month.from_now
-        user_bills << bill.user_bills.each do |bill|
+        bill.user_bills.each do |bill|
           total_amount += bill.amount_owed if current_user.id == bill.user_id
         end
       end
