@@ -30,7 +30,8 @@ class Comments extends React.Component {
       comments = this.state.comments
       comments.push(data)
       this.refs.addComment.value = ""
-      this.setState({comments, showForm: false})
+      this.props.refreshComments()
+      this.setState({showForm: false})
     });
   }
   // deleteComment(id){

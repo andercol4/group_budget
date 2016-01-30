@@ -32,7 +32,7 @@ class Comment extends React.Component {
   render(){
     return(<div>
             <p className='comment-text'>
-              user: {this.state.body}&nbsp;
+              {this.props.username}: {this.state.body}&nbsp;
             </p>
           </div>);
   }

@@ -7,8 +7,10 @@ class GroupsController < ApplicationController
   end
 
   def show
-    @comments = @group.comments
     @bills = @group.bills_breakdown
+    @comments = @group.comments.map do |comment|
+      {id: comment.id, body: comment.body, username: User.find(comment.user_id).username}
+    end
   end
 
   def create
