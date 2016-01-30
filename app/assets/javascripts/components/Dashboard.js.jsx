@@ -51,7 +51,7 @@ class Dashboard extends React.Component {
      if(this.state.views == "Groups"){
       return(<GroupChart group_chart_data={this.props.group_chart_data}/>)
     }else if(this.state.views == "Upcoming"){
-      return(<canvas id="upcomingChart" width="400" height="400"></canvas>)
+      return(<BillChart bill_chart_data={this.props.bill_chart_data}/>)
     }else{}
   }   
   

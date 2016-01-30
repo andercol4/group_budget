@@ -28,7 +28,11 @@ class GroupChart extends React.Component{
 	let myBarChart = new Chart(ctx).Bar(data, {responsive: true});
 	}
 
-
+	componentWillUnmount(){
+		if($("groupChart").length){
+			this.chart.destroy();
+		}
+	}
 	render(){
 
 		return(<div>
