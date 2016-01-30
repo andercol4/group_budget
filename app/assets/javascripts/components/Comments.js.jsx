@@ -4,7 +4,7 @@ class Comments extends React.Component {
     this.toggleAddComment = this.toggleAddComment.bind(this);
     this.showAddComment = this.showAddComment.bind(this);
     this.addComment = this.addComment.bind(this);
-    this.deleteComment = this.deleteComment.bind(this);
+    // this.deleteComment = this.deleteComment.bind(this);
     this.state = {comments: this.props.comments, showForm: false}
 
   }
@@ -33,22 +33,22 @@ class Comments extends React.Component {
       this.setState({comments, showForm: false})
     });
   }
-  deleteComment(id){
-    $.ajax({
-      url: `/comments/${id}`,
-      type: 'DELETE'
-    }).success( data => {
-      this.props.refreshComments();
-    });
-  }
+  // deleteComment(id){
+  //   $.ajax({
+  //     url: `/comments/${id}`,
+  //     type: 'DELETE'
+  //   }).success( data => {
+  //     this.props.refreshComments();
+  //   });
+  // }
   render(){
 
     let comments = this.props.comments.map( comment => {
-      return(<Comment key={`comment-${comment.id}`} deleteComment={this.deleteComment} {...comment} />)
+      return(<Comment key={`comment-${comment.id}`} {...comment} />)
     });
     return(<div>
-            
-            
+
+
             {comments}
             <button onClick={this.toggleAddComment}>Add Comment</button>
             {this.showAddComment()}
