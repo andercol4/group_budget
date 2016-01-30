@@ -29,7 +29,7 @@ class Bills extends React.Component {
               currentUser={this.props.currentUser}/>)
     });
     return(
-      <div className='col-md-6 col-xs-12'>
+      <div >
         {bills}
       </div>
     )

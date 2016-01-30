@@ -92,12 +92,31 @@ class GroupDetailed extends React.Component {
   billForm(){
     if(this.state.billForm){
       return(
-        <div>
-          <form onSubmit={this.submitBill}>
-            <input type='text' ref='billName' placeholder='Name' />
-            <input type='number' step='any' ref='billAmount' placeholder='Amount' />
-            <input type='date' ref='billDueDate' placeholder='Due Date' />
-            <button type='submit'>Make Bill</button>
+        <div className='bill-container'>
+          <form onSubmit={this.submitBill} className='form'>
+            <label>Name</label>
+            <div className = 'form-group'>
+              <input type='text' ref='billName' placeholder='Name' 
+                className="form-control input-lg" maxLength='16' required/>
+            </div>
+            <label>Amount</label>
+            <div className = 'form-group'>
+              <input type='number' step='any' ref='billAmount' placeholder='Amount'
+                 className="form-control input-lg" min={1} max={999999} required/>
+            </div>
+            <div>
+               <label>Due date</label>
+              <input type='date' ref='billDueDate' placeholder='Due Date' 
+                  className="form-control input-lg" required/>
+            </div>
+            
+            <div className = 'form-group'> 
+            <label>Recurring</label>
+             <input type="checkbox" ref="billRecurring" className='form-control' value='Recuring' ></input>
+              
+             
+            </div>
+            <button type='submit' className='btn btn-default'>Add</button>
           </form>
         </div>)
     }
@@ -111,7 +130,8 @@ class GroupDetailed extends React.Component {
               bill: {
                 name: this.refs.billName.value,
                 amount_total: this.refs.billAmount.value,
-                due_date: this.refs.billDueDate.value
+                due_date: this.refs.billDueDate.value,
+                recurring: this.refs.billRecurring.value
               }
             }
     }).success( data => {
@@ -153,12 +173,12 @@ class GroupDetailed extends React.Component {
             <h3 onClick={this.inviteToggle}>+ user to group</h3>
             {this.inviteForm()}
           </div>
-      
+          <div className ='col-md-6 col-xs-12 containers'>      
             <div onClick={this.toggleBillForm}>+ Bill</div>
             {this.billForm()}
             <Bills bills={this.state.bills} refreshBills={this.refreshBills} 
                   dashboard={this.props.dashboard} currentUser={this.props.currentUser}/>
-       
+          </div>
           <div className="col-xs-12 col-md-4">
             {this.getComments()}
           </div>
