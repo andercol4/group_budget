@@ -3,6 +3,10 @@ class Bill < ActiveRecord::Base
   has_many :user_bills, dependent: :destroy
   has_many :users, through: :user_bills
 
+  def unsplit_bill
+    self.user_bills.destroy_all
+  end
+
   def divide_bill
     #get group
     group = Group.find(self.group_id)

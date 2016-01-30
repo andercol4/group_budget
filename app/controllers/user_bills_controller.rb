@@ -5,10 +5,28 @@ class UserBillsController < ApplicationController
     if @user_bill
       @user_bill.amount_paid += params[:user_bill][:amount_paid].to_f
       @user_bill.amount_owed -= params[:user_bill][:amount_paid].to_f
-      if @user_bill.amount_owed == 0
+      @bill = Bill.find(params[:id])
+      @bill.amount_paid += params[:user_bill][:amount_paid].to_f
+      @bill.amount_total -= params[:user_bill][:amount_paid].to_f
+      if @user_bill.amount_owed <= 0.01
         @user_bill.is_paid = true
       end
+      if @bill.amount_total <= 0.02
+        @bill.is_paid = true
+        if @bill.recurring == true
+          @group = Group.find(@bill.group_id)
+          @new_bill = @group.bills.new
+          @new_bill.name = @bill.name
+          # binding.pry
+          @new_bill.recurring = @bill.recurring
+          @new_bill.amount_total = @bill.amount_paid
+          @new_bill.creator_id = @bill.creator_id
+          @new_bill.save
+          binding.pry
+        end
+      end
       @user_bill.save
+      @bill.save
 
       render json: @user_bill
     else

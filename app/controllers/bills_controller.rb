@@ -31,7 +31,8 @@ class BillsController < ApplicationController
 
   def update
     if @bill.update(bill_params)
-      render json: :bill
+      @bill.unsplit_bill
+      @bill.divide_bill
     else
       'SEND USER ERROR MESSAGE'
     end
