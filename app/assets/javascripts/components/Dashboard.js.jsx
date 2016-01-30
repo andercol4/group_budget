@@ -12,7 +12,8 @@ class Dashboard extends React.Component {
     this.setState({views: "Upcoming"});
   }
   groupView(){
-    this.setState({views: "Groups"});
+    if(this.state.views !== "Groups")
+      this.setState({views: "Groups"});
   }
   refreshGroups(){
     let self = this;
@@ -43,8 +44,11 @@ class Dashboard extends React.Component {
               
               )
     }else if(this.state.views == "Upcoming"){
-      return(<Bills bills={this.state.upcoming} dashboard={this.props.dashboard} 
-                          currentUser={this.props.currentUser} refreshBills={this.refreshBills} />)
+      return(
+      <div className='col-md-6 col-xs-12'>
+        <Bills bills={this.state.upcoming} dashboard={this.props.dashboard} 
+                          currentUser={this.props.currentUser} refreshBills={this.refreshBills} />
+      </div>)
     }else{}
   }
   canvas(){

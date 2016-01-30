@@ -18,8 +18,7 @@ class Groups extends React.Component{
         <div>
           <form  onSubmit={this.submitNewGroup}>
             <div className="form-group group-container">
-        
-              <input type='text' ref='groupName' placeholder='Group Name'></input>
+              <input type='text' ref='groupName' placeholder='Group Name' autoFocus='true'></input>
               <button type='submit'>Submit</button>
             </div>
             
