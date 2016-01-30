@@ -13,6 +13,7 @@ class GroupDetailed extends React.Component {
     this.billForm = this.billForm.bind(this);
     this.submitBill = this.submitBill.bind(this);
     this.getComments = this.getComments.bind(this);
+    this.editName = this.editName.bind(this);
     this.state = {group: this.props.group, comments: this.props.comments, bills: this.props.bills, name: this.props.group.name, billForm: false}
   }
   refreshComments(){
@@ -112,7 +113,7 @@ class GroupDetailed extends React.Component {
             
             <div className = 'form-group'> 
             <label>Recurring</label>
-             <input type="checkbox" ref="billRecurring" className='form-control' value='Recuring' ></input>
+             <input type="checkbox" ref="billRecurring" className='form-control'></input>
               
              
             </div>
@@ -122,6 +123,9 @@ class GroupDetailed extends React.Component {
     }
   }
   submitBill(e){
+   
+    let recurring = this.refs.billRecurring.value === 'on' ? true : false; 
+     debugger
     e.preventDefault()
     $.ajax({
       url: '/bills',
@@ -131,7 +135,7 @@ class GroupDetailed extends React.Component {
                 name: this.refs.billName.value,
                 amount_total: this.refs.billAmount.value,
                 due_date: this.refs.billDueDate.value,
-                recurring: this.refs.billRecurring.value
+                recurring: recurring 
               }
             }
     }).success( data => {
@@ -158,6 +162,11 @@ class GroupDetailed extends React.Component {
       });
     }
   }
+  editName(){
+
+    if( this.props.group.creator_id === this.props.currentUser)
+      return (<span onClick={this.toggleNameEdit} className='glyphicon glyphicon-pencil small'></span>)
+  }
   render(){
     return(
       <div>
@@ -165,7 +174,7 @@ class GroupDetailed extends React.Component {
         <div className="row">
           <div className="text-center group-head">
             <h1>{this.state.name}
-              <span onClick={this.toggleNameEdit} className='glyphicon glyphicon-pencil small'></span>
+            {this.editName()}
             </h1>
             {this.nameForm()}
           </div>
