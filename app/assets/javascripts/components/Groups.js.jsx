@@ -21,7 +21,7 @@ class Groups extends React.Component{
               <input type='text' ref='groupName' placeholder='Group Name' autoFocus='true'></input>
               <button type='submit'>Submit</button>
             </div>
-            
+
           </form>
         </div>);
     } else {
@@ -41,29 +41,27 @@ class Groups extends React.Component{
       groups.unshift(data)
       self.toggleGroupForm();
       self.state.formHint = '+ Add Group';
-    
-      self.setState({groups})
+      self.props.refreshGroups();
     }).error( data => {
-   
+
     });
   }
   deleteGroup(id){
-
-    $.ajax({
-      url: '/groups/'+id,
-      type: 'DELETE',
-
-    }).success( data=> {
-      this.state.formHint = '+ Add Group';
-      this.props.refreshGroups();
-    });
-
+    if(confirm("Are you sure you want to delete this group? It will delete all the bills in this group!")){
+      $.ajax({
+        url: '/groups/'+id,
+        type: 'DELETE',
+      }).success( data=> {
+        this.state.formHint = '+ Add Group';
+        this.props.refreshGroups();
+      });
+    }
   }
   render(){
-   
+
     let groups = this.props.groups.map(group => {
       return(<GroupSimple key = {`group-${group.id}`} {...group}
-                          deleteGroup={this.deleteGroup} />)
+                          deleteGroup={this.deleteGroup} currentUser={this.props.currentUser} />)
     })
     return(
       <div className='col-md-6 col-xs-12 containers'>

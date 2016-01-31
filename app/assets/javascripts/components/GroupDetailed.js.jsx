@@ -158,7 +158,7 @@ class GroupDetailed extends React.Component {
         url: '/groups_redirect/'+id,
         type: 'DELETE',
       }).success( data => {
-        debugger
+        // nothing here
       });
     }
   }

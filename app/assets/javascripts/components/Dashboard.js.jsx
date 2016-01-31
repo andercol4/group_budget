@@ -20,9 +20,7 @@ class Dashboard extends React.Component {
     $.ajax({
       url: '/groups',
       type: 'GET',
-
     }).success( data => {
-      debugger
       self.setState( {groups: data} );
     })
 
@@ -36,17 +34,17 @@ class Dashboard extends React.Component {
     }).success( data => {
       self.setState({bills: data})
     })
-  }  
+  }
 
   views(){
     if(this.state.views == "Groups"){
-      return(<Groups groups={this.state.groups} refreshGroups={this.refreshGroups} />
-              
+      return(<Groups groups={this.state.groups} refreshGroups={this.refreshGroups} currentUser={this.props.currentUser} />
+
               )
     }else if(this.state.views == "Upcoming"){
       return(
       <div className='col-md-6 col-xs-12'>
-        <Bills bills={this.state.upcoming} dashboard={this.props.dashboard} 
+        <Bills bills={this.state.upcoming} dashboard={this.props.dashboard}
                           currentUser={this.props.currentUser} refreshBills={this.refreshBills} />
       </div>)
     }else{}
@@ -57,8 +55,8 @@ class Dashboard extends React.Component {
     }else if(this.state.views == "Upcoming"){
       return(<BillChart bill_chart_data={this.props.bill_chart_data}/>)
     }else{}
-  }   
-  
+  }
+
   render(){
 
     return(
@@ -69,11 +67,11 @@ class Dashboard extends React.Component {
         </nav>
         <div>
           {this.views()}
-      
+
           <div className='col-md-6 col-xs-12 containers'>
               {this.canvas()}
-          </div> 
-        </div> 
+          </div>
+        </div>
       </div>
 
     )
