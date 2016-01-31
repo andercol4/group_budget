@@ -20,9 +20,8 @@ RSpec.describe Group, type: :model do
       bill2
       ub
       ub2
-      # bills_breakdown is undefined method... why?!?!
       method = group.bills_breakdown
-      # the method returns an array of hashes? so we may have to grab the values this way.
+      # the method returns an array of hashes so we may have to grab the values this way.
       expect(method.first[:amount_total]).to eq(10)
       expect(method.last[:amount_total]).to eq(20)
       expect(method.first[:first_name]).to eq('User')

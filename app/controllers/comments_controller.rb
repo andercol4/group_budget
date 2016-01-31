@@ -21,25 +21,28 @@ class CommentsController < ApplicationController
     end
   end
 
-  def update
-    if @comment.update(comment_params)
-      render json: @comment
-    else
-      render json: @comment.errors.full_messages
-    end
-  end
+# not doing an edit comment
+  # def update
+  #   if @comment.update(comment_params)
+  #     render json: @comment
+  #   else
+  #     render json: @comment.errors.full_messages
+  #   end
+  # end
 
-  def destroy
-    @comment.destroy
-    head :ok
-  end
+# not doing a delete comment
+  # def destroy
+  #   @comment.destroy
+  #   head :ok
+  # end
 
   private
     def comment_params
       params.require(:comment).permit(:body)
     end
-
-    def find_comment
-      @comment = Comment.find(params[:id])
-    end
+    
+# only needed for the update and destroy methods
+    # def find_comment
+    #   @comment = Comment.find(params[:id])
+    # end
 end
