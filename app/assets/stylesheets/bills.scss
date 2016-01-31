@@ -46,7 +46,11 @@ body{
 		justify-content: space-between;
 		.title{
 			font-size: 24px;
-			font-size: calc(120% + 2.0vw)
+			font-size: calc(120% + 2.0vw);
+			.creator{
+				font-size: 18px;
+				font-size: calc(100% + 1.2vw);		
+			}
 		}
 		.amount-date{
 			display: flex;
@@ -77,6 +81,12 @@ body{
 			flex:1;
 		}*/
 	}
+
+}
+.user-bills{
+			display: flex;
+		justify-content:space-around;
+		align-self: flex-end;
 
 }
 	

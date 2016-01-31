@@ -6,6 +6,10 @@ class BillSimple extends React.Component {
     this.togglePayBill = this.togglePayBill.bind(this);
     this.payBillForm = this.payBillForm.bind(this);
     this.payBill = this.payBill.bind(this);
+    this.groupName = this.groupName.bind(this);
+    this.userOwes = this.userOwes.bind(this);
+    this.detailedInfo = this.detailedInfo.bind(this);
+    this.toggleDetailedView = this.toggleDetailedView.bind(this);
     this.state = {showPay: false}
   }
   payBillAuth(){
@@ -69,6 +73,60 @@ class BillSimple extends React.Component {
       this.props.refreshBills();
     })
   }
+  // show group name if dashboard else it doesn't show
+  groupName(){
+    if(this.props.dashboard){
+      return( <div>Personal</div>)
+    }
+  } 
+  //get the amount logged in users owes
+  userOwes(){
+    let amount_owed = 0;
+    if(this.props.dashboard) {
+        amount_owed = this.props.amount_owed.toFixed(2)
+    } else {              
+      this.props.user_bills.forEach(ub => {
+          if(ub.user_id === this.props.currentUser){
+            amount_owed = Math.abs(ub.amount_owed).toFixed(2) 
+          }
+        });
+    }
+    return amount_owed
+  }
+  //show detailed info if groupDetailed page and showDetailedView is true
+  detailedInfo(){
+    if(!this.props.dashboard && this.state.showDetailedView){
+      let ubs = []
+        this.props.user_bills.forEach(ub => {
+          if(ub.user_id !== this.props.currentUser){
+            ubs.push(
+              <div key={`ubs-${ub.ub_id}`}>
+                <span>{ub.username}<br/> ${Math.abs(ub.amount_owed).toFixed(2)}</span>
+              </div>
+            )
+          }
+        })
+        userBills = ubs
+    return(
+      <div className ='user-bills'>
+         Created by: {this.props.first_name}
+         {userBills}
+      </div>)
+    }
+       
+
+  }
+  toggleDetailedView(){
+    this.setState({showDetailedView: !this.state.showDetailedView});
+  }
+  //Only show toggle button if in group detailed view
+  showDetailToggler(){
+    if(!this.props.dashboard){
+      return(<span className='glyphicon glyphicon-sort' onClick={this.toggleDetailedView}>
+      </span> )
+    }
+  }
+
   render(){
       let billPaid = this.props.is_paid ? "paid":"not-paid";
       let billStyle ="panel panel-default bs col-sm-8 col-md-offset-2 col-xs-12 col-xs-offset-0";
@@ -76,20 +134,8 @@ class BillSimple extends React.Component {
       let debtPaid = this.props.debt_paid ? "paid" : 'not-paid';
       let owedStyle = debtPaid + ' bs-amount-owed';
       let userBills = ''
-      if(this.props.dashboard) {
-        userBills = <span className={owedStyle}>
-                      You owe:{(this.props.amount_owed.toFixed(2) )}
-                    </span>
-      } else {
-        let ubs = this.props.user_bills.map(ub => {
-          return(
-            <div key={`ubs-${ub.ub_id}`}>
-              <span>{ub.username} owes: ${Math.abs(ub.amount_owed).toFixed(2)}</span>
-            </div>
-          )
-        })
-        userBills = ubs
-      }
+
+
     return(
         <div className="bill-container">
           <div className="bill-heading bs-name">
@@ -98,21 +144,28 @@ class BillSimple extends React.Component {
             </div>
             <div className='amount-date'>
               <div className='amount-due'>
-                ${this.props.amount_total}
+                you owe: ${this.userOwes()}
               </div>
               <div className="due_date">
                 Due {this.props.due_date}
-                Responsible: {this.props.first_name}
+             
+                
+                total: ${this.props.amount_total}
               </div>
             </div>
 
            </div>
           <div className='bill-info'>
-            <div>Personal</div>
-            {userBills}
+           
+            {this.groupName()}
             {this.payBillAuth()}
             {this.payBillForm()}
             {this.deleteBillAuth()}
+            {this.showDetailToggler()}
+          
+          </div>
+          <div className =''>
+             {this.detailedInfo()}
           </div>
 
         </div>      
