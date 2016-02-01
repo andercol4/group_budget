@@ -14,26 +14,28 @@
         .navbar-header
           %button.navbar-toggle.collapsed{"aria-expanded" => "false", "data-target" => "#bs-example-navbar-collapse-1", "data-toggle" => "collapse", :type => "button"}
             %span.sr-only Toggle navigation
-          %a.navbar-brand{:href => root_url} Pass The Buck
+          %a.navbar-brand{:href => '#'} 
+            = link_to image_tag("oval-ptb-logo.png"), root_path, class: "ptb-logo navbar-brand"
         / Collect the nav links, forms, and other content for toggling
         #bs-example-navbar-collapse-1.collapse.navbar-collapse
           %ul.nav.navbar-nav
             %li.active
           %ul.nav.navbar-nav.navbar-right
+            %li
+              = link_to 'About us', about_path
+            %li
+              = link_to 'FAQ', faq_path
             - if user_signed_in?
               -# %li
               -#   %a{:href => "#"}
               -#     = link_to 'Edit account info', edit_user_registration_path
               %li
-                %a{:href => "#"}
-                  = link_to 'Logout', destroy_user_session_path, method: :delete
+                = link_to 'Logout', destroy_user_session_path, method: :delete
             - else
               %li
-                %a{:href => "#"}
-                  = link_to 'Login', new_user_session_path
+                = link_to 'Login', new_user_session_path
               %li
-                %a{:href => "#"}
-                  = link_to 'Sign_up', new_user_registration_path
+                = link_to 'Sign up', new_user_registration_path
     %p.notice= notice
     %p.alert= alert
 
