@@ -11,6 +11,6 @@ Rails.application.routes.draw do
   resources :groups
   post '/groups/:id/invite', to: 'groups#invite', as: 'invite'
   resources :user_groups
-  
-  devise_for :users, :controllers => { :omniauth_callbacks => "users/omniauth_callbacks" }
+
+  devise_for :users, :controllers => { :omniauth_callbacks => "users/omniauth_callbacks", registrations: 'registrations' }
 end
