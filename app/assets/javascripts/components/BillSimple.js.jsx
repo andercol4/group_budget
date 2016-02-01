@@ -25,14 +25,14 @@ class BillSimple extends React.Component {
       }
     }
     if(ubBoolean){
-      return(<div onClick={this.togglePayBill}>Pay Bill</div>);
+      return(<div className='billButton'onClick={this.togglePayBill}>$ Pay</div>);
     }
   }
   deleteBillAuth(){
     if(this.props.currentUser === this.props.creator_id && !this.props.dashboard){
-      return(<div onClick={() => this.props.deleteBill(this.props.id)}>Delete Bill</div>)
+      return(<div className='billButton' onClick={() => this.props.deleteBill(this.props.id)}>Delete</div>)
     } else if(this.props.dashboard) {
-      return(<a href={`/groups/${this.props.group_id}`}>Goto group</a>)
+      return(<a className='billButton' href={`/groups/${this.props.group_id}`}>{this.props.groupName}</a>)
     }
   }
   togglePayBill(){
@@ -53,7 +53,7 @@ class BillSimple extends React.Component {
       return(<div>
               <form onSubmit={this.payBill}>
                 <input type="number" step="any" ref="amountPaid" min="0" max={ubOwed} defaultValue={ubOwed} />
-                <button type="submit">Submit</button>
+                <button className='btn btn-default'type="submit">Submit</button>
               </form>
             </div>
 
@@ -75,9 +75,9 @@ class BillSimple extends React.Component {
   }
   // show group name if dashboard else it doesn't show
   groupName(){
-    if(this.props.dashboard){
-      return( <div>Personal</div>)
-    }
+    // if(this.props.dashboard){
+    //   return( <div>Personal</div>)
+    // }
   } 
   //get the amount logged in users owes
   userOwes(){
@@ -122,12 +122,16 @@ class BillSimple extends React.Component {
   //Only show toggle button if in group detailed view
   showDetailToggler(){
     if(!this.props.dashboard){
-      return(<span className='glyphicon glyphicon-sort' onClick={this.toggleDetailedView}>
+      return(<span className='glyphicon glyphicon-sort billButton' onClick={this.toggleDetailedView}>
       </span> )
     }
   }
+  formatDate(date){
+     return new Date(date).toDateString().split(' ').slice(1,3).join(' ');
+  }
 
   render(){
+
       let billPaid = this.props.is_paid ? "paid":"not-paid";
       let billStyle ="panel panel-default bs col-sm-8 col-md-offset-2 col-xs-12 col-xs-offset-0";
       let panelHeading =billPaid+" panel-heading bs-name";
@@ -142,21 +146,19 @@ class BillSimple extends React.Component {
             <div className='title'>
               {this.props.name}
             </div>
-            <div className='amount-date'>
-              <div className='amount-due'>
-                you owe: ${this.userOwes()}
-              </div>
-              <div className="due_date">
-                Due {this.props.due_date}
-             
-                
-                total: ${this.props.amount_total}
-              </div>
+            <div className='amount-due'>
+              <span className='small-text'>you:</span> ${this.userOwes()}
+            </div>            
+          </div> 
+          <div className='amount-date'>
+            <div className="due-date">
+              <span className='small-text'></span>  {this.formatDate(this.props.due_date)}
             </div>
-
-           </div>
+            <div className="total-amount"> 
+              <span className='small-text'>total:</span>  ${this.props.amount_total}
+            </div>
+          </div>
           <div className='bill-info'>
-           
             {this.groupName()}
             {this.payBillAuth()}
             {this.payBillForm()}
