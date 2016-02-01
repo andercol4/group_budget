@@ -45,7 +45,8 @@ class Dashboard extends React.Component {
       return(
       <div className='col-md-6 col-xs-12'>
         <Bills bills={this.state.upcoming} dashboard={this.props.dashboard}
-                          currentUser={this.props.currentUser} refreshBills={this.refreshBills} />
+                          currentUser={this.props.currentUser} refreshBills={this.refreshBills} 
+                          groups={this.props.groups}/>
       </div>)
     }else{}
   }

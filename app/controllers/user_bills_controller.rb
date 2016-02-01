@@ -22,7 +22,7 @@ class UserBillsController < ApplicationController
             @new_bill.creator_id = @bill.creator_id
             @new_bill.save
             @new_bill.divide_bill
-            binding.pry
+            
           end
         end
         @bill.save

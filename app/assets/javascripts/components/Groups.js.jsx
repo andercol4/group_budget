@@ -11,15 +11,17 @@ class Groups extends React.Component{
     this.setState({groupForm: !this.state.groupForm})
   }
   groupForm(){
-    console.log('df')
     if(this.state.groupForm){
       this.state.formHint = '+ Add Group';
       return(
         <div>
           <form  onSubmit={this.submitNewGroup}>
             <div className="form-group group-container">
-              <input type='text' ref='groupName' placeholder='Group Name' autoFocus='true'></input>
-              <button type='submit'>Submit</button>
+              <label>group name</label>
+              <input type='text' maxLength='20' ref='groupName' placeholder='Group Name' 
+                    autoFocus='true' required></input>
+              <button className='btn btn-default'type='submit'>Add Group</button>
+              <div className='btn btn-default'onClick={this.toggleGroupForm}>cancel</div>
             </div>
 
           </form>

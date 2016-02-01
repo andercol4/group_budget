@@ -124,7 +124,7 @@ class GroupDetailed extends React.Component {
   }
   submitBill(e){
 
-    let recurring = this.refs.billRecurring.value === 'on' ? true : false;
+    let recurring = this.refs.billRecurring.checked;
      debugger
     e.preventDefault()
     $.ajax({
