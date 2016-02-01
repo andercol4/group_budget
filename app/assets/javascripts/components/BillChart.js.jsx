@@ -1,12 +1,12 @@
 class BillChart extends React.Component{
 	constructor(props){
 		super(props)
-		this.state = {bill_chart_data: this.props.bill_chart_data}
+		this.state = {billChartData: this.props.billChartData}
 	}
 	componentDidMount(){
 		let labels =[];
 		let data = [];
-		this.state.bill_chart_data.forEach( bill => {
+		this.state.billChartData.forEach( bill => {
 			labels.push(bill.date);
 			data.push(bill.amount_owed);
 		});

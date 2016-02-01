@@ -66,8 +66,8 @@ class Groups extends React.Component{
                           deleteGroup={this.deleteGroup} currentUser={this.props.currentUser} />)
     })
     return(
-      <div className='col-md-6 col-xs-12 containers'>
-        <div className='new-group' onClick={this.toggleGroupForm}>{this.state.formHint}</div>
+      <div>
+        <div className='new-group' onClick={this.toggleGroupForm}>Add Group</div>
         {this.groupForm()}
         {groups}
       </div>)

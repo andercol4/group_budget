@@ -3,15 +3,8 @@ class DashboardController < ApplicationController
   def index
     @groups = current_user.groups
     @upcoming_bills = current_user.upcoming_bills1
-    @group_chart_data =[]
-    current_user.groups.each do |group|
-      @group_chart_data << { name: group.name, amount_owed: get_group(group) }
-    end
-    @group_chart_data
-    @bills_arrays = []
-    15.times do |i|
-      @bills_arrays << current_user.bills.where(due_date: i.days.from_now)
-    end
+    @group_chart_data = group_chart
+    @bills_arrays = bill_chart
     @date_array = []
     @bills_arrays.each_with_index do |arr, i|
       if arr.any?
@@ -21,6 +14,12 @@ class DashboardController < ApplicationController
       end
     end
 
+  end
+
+  def charts
+    group_chart_data = group_chart
+    bill_chart_data = bill_chart
+    render json: {groupChartData: group_chart_data, billChartData: bill_chart_data }
   end
 
   def landing
@@ -36,6 +35,21 @@ class DashboardController < ApplicationController
   end
 
   private
+
+  def group_chart
+    group_chart_data =[]
+    current_user.groups.each do |group|
+      group_chart_data << { name: group.name, amount_owed: get_group(group) }
+    end
+    group_chart_data
+  end
+  def bill_chart
+    bills_arrays = []
+    15.times do |i|
+      bills_arrays << current_user.bills.where(due_date: i.days.from_now)
+    end    
+    bills_arrays
+  end
 
   def get_bill(arr)
     day_total = 0

@@ -1,12 +1,13 @@
 class GroupChart extends React.Component{
 	constructor(props){
 		super(props)
-		this.state = {group_chart_data: this.props.group_chart_data}
+		this.refreshChart = this.refreshChart.bind(this);
+		this.state = {groupChartData: this.props.groupChartData}
 	}
-	componentDidMount(){
+	refreshChart(){
 		let labels = []
 		let data = []
-		let loop = this.state.group_chart_data.forEach(group => {
+		let loop = this.state.groupChartData.forEach(group => {
 			labels.push(group.name)
 			data.push(group.amount_owed)
 		})
@@ -25,7 +26,10 @@ class GroupChart extends React.Component{
     };
 
   let ctx = document.getElementById("groupChart").getContext("2d");
-	let myBarChart = new Chart(ctx).Bar(data, {responsive: true});
+	let myBarChart = new Chart(ctx).Bar(data, {responsive: true});		
+	}
+	componentDidMount(){
+		this.refreshChart();
 	}
 
 	componentWillUnmount(){
@@ -38,6 +42,7 @@ class GroupChart extends React.Component{
 		return(<div>
 						<canvas id='groupChart' />
 					 </div>
+
 					
 		)
 
