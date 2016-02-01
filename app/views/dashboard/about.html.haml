@@ -1,58 +1,56 @@
-%h1.text-center About Us
+%h1.text-center 
 
 
 %link{:href => "https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css", :rel => "stylesheet"}
   %section.team
     .container
       .row
-        .col-md-10.col-md-offset-1
-          .col-lg-12
-            %h2.description OUR TEAM
-            .row.pt-md
-              .col-lg-3.col-md-3.col-sm-4.col-xs-12.profile
-                .img-box
-                  %img.img-responsive{:src => "http://placemi.com/petnp/600x700"}
-                    %ul.text-center
-                %h2 Kait Anderson
-                %h4 Jr. Web Dev
-                %p Currently starring in my own reality show titled, A Modern Cinderella; One Girl’s Search for Love and Shoe.
-              .col-lg-3.col-md-3.col-sm-4.col-xs-12.profile
-                .img-box
-                  %img.img-responsive{:src => "http://placemi.com/xruzn/600x700"}
-                    %ul.text-center
-                %h2 James Yeates
-                %h4 Jr. Web Dev
-                %p Born at a very young age. I have not lost my mind – it’s backed up on HD somewhere.
-              .col-lg-3.col-md-3.col-sm-4.col-xs-12.profile
-                .img-box
-                  %img.img-responsive{:src => "http://placemi.com/wctme/600x700"}
-                    %ul.text-center
-                %h2 Seth Ellis
-                %h4 Jr. Web Dev
-                %p A Caffeine dependent life-form of mystery and power, whose power is exceeded only by his mystery.
-              .col-lg-3.col-md-3.col-sm-4.col-xs-12.profile
-                .img-box
-                  %img.img-responsive{:src => "http://placemi.com/qwspg/600x700"}
-                    %ul.text-center
-                %h2 Colin Anderson
-                %h4 Jr. Web Dev
-                %p Analogue at birth, digital by design. Buoyant, waggish, efficacious, indefatigable, demiurgic, convivial, self-made thousandaire.
-              .col-lg-3.col-md-3.col-sm-4.col-xs-12.profile
-                .img-box
-                  %img.img-responsive{:src => "http://placemi.com/qplvn/600x700"}
-                    %ul.text-center
-                %h2 Barrie Brewer
-                %h4 Scrum Coach
-                %p Reformed has-been, current wanna-be; a gifted narcoleptic older than dirt.
+        / .col-md-10.col-md-offset-1
+        /   .col-lg-12
+        %h2.description OUR TEAM
+        .pt-md
+          .col-lg-3.col-md-3.col-sm-4.col-xs-12.profile
+            .img-box
+              %img.img-responsive{:src => image_path('kaitlin_600.jpg')}
+            %h2 Kait Anderson
+            %h4 Jr. Web Dev
+            %p Currently starring in my own reality show titled, A Modern Cinderella; One Girl’s Search for Love and Shoe.
+          .col-lg-3.col-md-3.col-sm-4.col-xs-12.profile
+            .img-box
+              %img.img-responsive{:src => image_path('james_600.jpg')}
+            %h2 James Yeates
+            %h4 Jr. Web Dev
+            %p Born at a very young age. I have not lost my mind – it’s backed up on HD somewhere.
+          .col-lg-3.col-md-3.col-sm-4.col-xs-12.profile
+            .img-box
+              %img.img-responsive{:src => image_path('seth_600.jpg')}
+                
+            %h2 Seth Ellis
+            %h4 Jr. Web Dev
+            %p A Caffeine dependent life-form of mystery and power, whose power is exceeded only by his mystery.
+          .col-lg-3.col-md-3.col-sm-4.col-xs-12.profile
+            .img-box
+              %img.img-responsive{:src => image_path('colin_600.jpg')}
+            %h2 Colin Anderson
+            %h4 Jr. Web Dev
+            %p Analogue at birth, digital by design. Buoyant, waggish, efficacious, indefatigable, demiurgic, convivial, self-made thousandaire.
+          .col-lg-3.col-md-3.col-sm-4.col-xs-12.profile
+            .img-box
+              %img.img-responsive{:src => image_path('beardog.jpg')}
+            %h2 Barrie Brewer
+            %h4 Scrum Coach
+            %p Reformed has-been, current wanna-be; a gifted narcoleptic; older than dirt.
 
-  %footer
-    .container
-      .col-md-10.col-md-offset-1.text-center
-        %h4
-          Coded with 
-          %i.fa.fa-heart.red
-          by The PTB TEam ....Special Thanks to 
-          %img{:src => asset_path("devpointlogo.jpg")}/
-          / %img.img-responsive{:src => "assets/images/devpointlogo.jpg"}
-          / %a{:href => "http://www.nabeel.co.in", :target => "_blank"} 
+        %footer
+          .container
+            .col-md-10.col-md-offset-1.text-center
+              %h4
+                %a{href: "mailto: passthebuck10@gmail.com?Subject=Contact%20Us"} Contact: passthebuck10@gmail.com
+              %h4
+                Coded with 
+                %i.fa.fa-heart.red
+                by The PTB Team ....Special Thanks to 
+                = link_to image_tag("devpointlogo.jpg"), "http://www.devpointlabs.com/", target: '_blank'
+
+               
 
