@@ -87,10 +87,17 @@ body{
 
 }
 .user-bills{
-			display: flex;
-		justify-content:space-around;
-		align-self: flex-end;
+	display: flex;
+	flex-direction:column;
+	justify-content:space-around;
+	align-self: flex-end;
+	.user-amount{
+		display: flex;
+		/*flex-direction:column;*/
 
+		/*background: #000;*/
+
+	}
 }
 .small-text{
 	font-size: 12px !important;

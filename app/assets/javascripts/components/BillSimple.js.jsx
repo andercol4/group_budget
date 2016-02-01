@@ -100,16 +100,27 @@ class BillSimple extends React.Component {
         this.props.user_bills.forEach(ub => {
           if(ub.user_id !== this.props.currentUser){
             ubs.push(
-              <div key={`ubs-${ub.ub_id}`}>
-                <span>{ub.username}<br/> ${Math.abs(ub.amount_owed).toFixed(2)}</span>
+              <div key={`ubs-${ub.ub_id}`} className='user-amount'>
+                <div>{ub.username}</div> 
+                <div>${Math.abs(ub.amount_owed).toFixed(2)}</div>
               </div>
             )
+          }else{
+             ubs.push(
+              <div key={`ubs-${ub.ub_id}`} className='user-amount'>
+               <div>You owe</div> 
+               <div>${Math.abs(ub.amount_owed).toFixed(2)}</div>
+              </div>
+            )
+
           }
         })
         userBills = ubs
     return(
       <div className ='user-bills'>
+        <div className='user-amount'>
          Created by: {this.props.first_name}
+        </div> 
          {userBills}
       </div>)
     }
@@ -152,11 +163,14 @@ class BillSimple extends React.Component {
           </div> 
           <div className='amount-date'>
             <div className="due-date">
-              <span className='small-text'></span>  {this.formatDate(this.props.due_date)}
+              <span className='small-text'>due:</span>  {this.formatDate(this.props.due_date)}
             </div>
             <div className="total-amount"> 
               <span className='small-text'>total:</span>  ${this.props.amount_total}
             </div>
+          </div>
+          <div className ='detailedInfo'>
+             {this.detailedInfo()}
           </div>
           <div className='bill-info'>
             {this.groupName()}
@@ -166,9 +180,7 @@ class BillSimple extends React.Component {
             {this.showDetailToggler()}
           
           </div>
-          <div className =''>
-             {this.detailedInfo()}
-          </div>
+       
 
         </div>      
       )
