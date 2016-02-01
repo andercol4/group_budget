@@ -16,7 +16,7 @@ class Comments extends React.Component {
       return(<div>
               <form onSubmit={this.addComment}>
                 <input type="textarea" ref="addComment" placeholder="Comment here"/>
-                <button type="submit">Submit</button>
+                <button className='link' type="submit">Submit</button>
               </form>
             </div>);
   }

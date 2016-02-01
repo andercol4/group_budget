@@ -179,10 +179,7 @@ class BillSimple extends React.Component {
             {this.payBillForm()}
             {this.deleteBillAuth()}
             {this.showDetailToggler()}
-          
           </div>
-       
-
         </div>      
       )
   }
