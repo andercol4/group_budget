@@ -1,0 +1,117 @@
+
+*, *:before, *:after{
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+body{
+  background: #222;
+  font-family: Arial, 'DejaVu Sans', 'Liberation Sans', Freesans, sans-serif;
+  color:rgba(0,0,0,0.5);
+  background-repeat: no-repeat;
+  background-size:cover;
+  background-attachment:fixed;
+  
+}
+
+.container{
+  width:1024px;
+  height: 550px;
+  background: rgba(255,255,255,0.8);
+  margin:75px auto;
+  padding: 35px;
+}
+.last-h5{
+   border-bottom:1px solid #555;
+}
+/* Frequently Asked Questions*/
+.header-h5 {
+    width: 100%;
+    margin: 0;
+    padding: 15px;
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    cursor:pointer;
+    border-top:1px solid #555;
+    border-left:1px solid #555;
+    border-right:1px solid #555;
+    background: rgba(255,255,255,0.7);
+    -webkit-transition:background .5s;
+    -moz-transition: background .5s;
+    -ms-transition: background .5s;
+    -o-transition: background .5s;
+    transition: background .5s;
+}
+
+.img {
+    display: inline-block;
+    margin-right: 10px;
+    vertical-align: middle;
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+.question-Q {
+    display: inline-block;
+    vertical-align: middle;
+    font-size: 15px;
+    font-weight: bold;
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    margin-right: 7px;
+}
+
+.answer-A {
+    display: inline-block;
+    vertical-align: middle;
+    font-family: Arial, 'DejaVu Sans', 'Liberation Sans', Freesans, sans-serif;
+    font-size: 15px;
+    font-weight: bold;
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    margin-right: 7px;
+}
+
+.question {
+    vertical-align: middle;
+    font-family: Arial, 'DejaVu Sans', 'Liberation Sans', Freesans, sans-serif;
+    font-size: 15px;
+    font-weight: normal;
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    display: inline-table;
+    width: 810px;
+    line-height:22px;
+}
+
+.faq-p 
+{
+    margin:0 auto;
+    display: block;
+    width: 100%;
+    padding: 15px;
+    border-top: 1px solid #555;
+    border-left: 1px solid #555;
+    border-right: 1px solid #555;
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    background: rgba(0,0,0,0.5);
+    font-size: 15px;
+    font-weight: normal;
+    color: #FFF;
+}
+.last-faq-p {
+  border-top: none;
+  border-bottom:1px solid #555;
+}
+.active{
+  background: rgba(0,0,0,0.5);
+  color:#fff;
+}
