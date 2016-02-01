@@ -17,12 +17,13 @@ class UserBillsController < ApplicationController
             @new_bill = @group.bills.new
             @new_bill.name = @bill.name
             # binding.pry
+            @new_bill.due_date = @bill.due_date + 1.month
             @new_bill.recurring = @bill.recurring
             @new_bill.amount_total = @bill.amount_paid
             @new_bill.creator_id = @bill.creator_id
             @new_bill.save
             @new_bill.divide_bill
-            
+
           end
         end
         @bill.save
