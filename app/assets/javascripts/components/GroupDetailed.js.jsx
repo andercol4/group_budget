@@ -182,7 +182,7 @@ class GroupDetailed extends React.Component {
           </div>
           <div className ='col-md-6 col-xs-12 containers'>
           <div className='header'>Groups Bills</div>
-            <div onClick={this.toggleBillForm}>+ Bill</div>
+            <div className='submit-btn' onClick={this.toggleBillForm}>+ Bill</div>
             {this.billForm()}
             <Bills bills={this.state.bills} refreshBills={this.refreshBills}
                   dashboard={this.props.dashboard} currentUser={this.props.currentUser}/>

@@ -7,7 +7,7 @@
 	padding: 10px 25px 25px 10px;
 }
 .comments-container{
-	border: 1px solid;
+	
 	height: 70vh;
 	overflow: scroll;
 	
@@ -23,4 +23,8 @@
 }
 textarea { 
 	font-size: 18px; 
+}
+.inner-comment-container{
+	/*border: 5px solid $midnight-blue;*/
+	border-radius: 5px;
 }

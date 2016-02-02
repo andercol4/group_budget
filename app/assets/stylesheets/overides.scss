@@ -1,4 +1,9 @@
 a:hover, 
 .a:hover {
    text-decoration: none !important;
+   color: white !important;
+}
+a{
+	padding: 10px;
+	color:$text-color !important;
 }

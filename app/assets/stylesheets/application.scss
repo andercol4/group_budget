@@ -1,8 +1,8 @@
 
 @import "bootstrap-sprockets";
+@import 'variables';
 @import 'shared';
 @import "bourbon";
-@import 'variables';
 @import 'bills';
 @import 'groups';
 @import 'dashboard';

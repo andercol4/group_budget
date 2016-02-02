@@ -57,9 +57,6 @@ class BillSimple extends React.Component {
                 <div className='btn btn-default'onClick={this.togglePayBill}>cancel</div>
               </form>
             </div>
-
-
-     
             );
   }
   payBill(e){

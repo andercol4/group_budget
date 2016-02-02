@@ -67,7 +67,7 @@ class Groups extends React.Component{
     })
     return(
       <div>
-        <div className='new-group' onClick={this.toggleGroupForm}>Add Group</div>
+        <div className='submit-btn' onClick={this.toggleGroupForm}>+ Group</div>
         {this.groupForm()}
         {groups}
       </div>)

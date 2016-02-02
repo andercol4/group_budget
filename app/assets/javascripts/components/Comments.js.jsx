@@ -49,9 +49,9 @@ class Comments extends React.Component {
     let comments = this.props.comments.map( comment => {
       return(<Comment key={`comment-${comment.id}`} {...comment} />)
     });
-    return(<div>
+    return(<div className='inner-comment-container'>
 
-            <button className='btn btn-default'onClick={this.toggleAddComment}>Add Comment</button>
+            <div className='submit-btn'onClick={this.toggleAddComment}>+ words yo</div>
             {this.showAddComment()}
             {comments}
 
