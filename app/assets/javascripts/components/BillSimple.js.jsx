@@ -139,11 +139,12 @@ class BillSimple extends React.Component {
     }
   }
   formatDate(date){
-     return new Date(date).toDateString().split(' ').slice(1,3).join(' ');
+     let d = new Date(date);
+     d = new Date(d.getTime() + d.getTimezoneOffset()*60000);
+     return d.toDateString().split(' ').slice(1,3).join(' ');
   }
 
   render(){
-
       let billPaid = this.props.is_paid ? "paid":"not-paid";
       let billStyle ="panel panel-default bs col-sm-8 col-md-offset-2 col-xs-12 col-xs-offset-0";
       let panelHeading =billPaid+" panel-heading bs-name";
@@ -167,7 +168,7 @@ class BillSimple extends React.Component {
               <span className='small-text'>due:</span>  {this.formatDate(this.props.due_date)}
             </div>
             <div className="total-amount"> 
-              <span className='small-text'>total:</span>  ${this.props.amount_total}
+              <span className='small-text'>total:</span>  ${this.props.amount_total.toFixed(2)}
             </div>
           </div>
           <div className ='detailedInfo'>

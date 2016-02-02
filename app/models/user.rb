@@ -18,11 +18,11 @@ class User < ActiveRecord::Base
   #   self.bills.where("due_date <= ?",date.weeks.from_now)
   # end
 
-  def upcoming_bills1
+  def upcoming_bills1(show_paid = false)
     bills = self.bills.select("bills.*, ub.amount_owed, ub.is_paid as debt_paid, u.first_name")
         .joins("INNER JOIN user_bills ub ON ub.bill_id = bills.id")
         .joins("INNER JOIN users u ON u.id = bills.creator_id")
-        .where("ub.user_id = ? AND due_date <= ?", self.id, 2.weeks.from_now)
+        .where("ub.user_id = ? AND due_date <= ? AND bills.is_paid = ?", self.id, 2.weeks.from_now,show_paid)
         .order("due_date")
     bills
   end
