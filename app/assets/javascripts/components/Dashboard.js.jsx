@@ -122,7 +122,7 @@ class Dashboard extends React.Component {
         <div>
           
 
-          <div className='col-md-6 col-xs-12 containers'>
+          <div className='col-md-6 col-xs-12 containers hidden-xs'>
               <header className ='chart-header dashboard-nolink'>{this.state.chartTitle}</header>
               {this.canvas()}
           </div>

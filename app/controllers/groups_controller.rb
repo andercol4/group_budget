@@ -9,7 +9,7 @@ class GroupsController < ApplicationController
   def show
     @bills = @group.bills_breakdown
     @comments = @group.comments.map do |comment|
-      {id: comment.id, body: comment.body, username: User.find(comment.user_id).username}
+      {id: comment.id, body: comment.body, first_name: User.find(comment.user_id).first_name}
     end
   end
 
