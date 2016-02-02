@@ -8,14 +8,14 @@ class BillChart extends React.Component{
 		let data = [];
 		this.state.billChartData.forEach( bill => {
 			labels.push(bill.date);
-			data.push(bill.amount_owed);
+			data.push(bill.amount_owed.toFixed(2));
 		});
 		data = {
     labels: labels,
     datasets: [
         {
           label: "My First dataset",
-          fillColor: "rgba(220,220,220,0.5)",
+          fillColor: "rgba(220,20,20,0.5)",
           strokeColor: "rgba(220,220,220,0.8)",
           highlightFill: "rgba(220,220,220,0.75)",
           highlightStroke: "rgba(220,220,220,1)",

@@ -9,7 +9,7 @@ class GroupChart extends React.Component{
 		let data = []
 		let loop = this.state.groupChartData.forEach(group => {
 			labels.push(group.name)
-			data.push(group.amount_owed)
+			data.push(group.amount_owed.toFixed(2))
 		})
 		data = {
     labels: labels,
@@ -17,8 +17,8 @@ class GroupChart extends React.Component{
         {
           label: "My First dataset",
           fillColor: "rgba(220,220,220,0.5)",
-          strokeColor: "rgba(220,220,220,0.8)",
-          highlightFill: "rgba(220,220,220,0.75)",
+          fillColor: "rgba(220,20,20,0.5)",
+          highlightFill: "rgba(220,20,20,0.75)",
           highlightStroke: "rgba(220,220,220,1)",
           data: data
         }
