@@ -5,7 +5,7 @@ class CommentsController < ApplicationController
   def index
     @group = Group.find(params[:group_id])
     @comments = @group.comments.map do |comment|
-      {id: comment.id, body: comment.body, username: User.find(comment.user_id).username}
+      {id: comment.id, body: comment.body, first_name: User.find(comment.user_id).first_name}
     end
     render json: @comments
   end
