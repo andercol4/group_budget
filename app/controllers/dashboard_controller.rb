@@ -47,7 +47,7 @@ class DashboardController < ApplicationController
     bills_arrays = []
     15.times do |i|
       bills_arrays << current_user.bills.where(due_date: i.days.from_now)
-    end    
+    end
     bills_arrays
   end
 
@@ -68,6 +68,7 @@ class DashboardController < ApplicationController
   def get_group(group)
     total_amount = 0
     group.bills.each do |bill|
+      next if bill.due_date.nil?
       if bill.due_date < 1.month.from_now
         bill.user_bills.each do |bill|
           total_amount += bill.amount_owed if current_user.id == bill.user_id

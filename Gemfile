@@ -28,6 +28,7 @@ gem 'bourbon'
 gem 'chart-js-rails'
 gem 'react-rails', '~>1.5.0'
 gem 'omniauth-facebook'
+gem 'owlcarousel-rails'
 
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'

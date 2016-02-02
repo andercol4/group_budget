@@ -17,4 +17,11 @@
 //= require react
 //= require react_ujs
 //= require components
+//= require owl.carousel
 //= require_tree .
+
+$(document).on('ready page:load', function(){
+  $(".owl-carousel").owlCarousel({
+    singleItem: true
+  });
+});

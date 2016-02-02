@@ -5,7 +5,7 @@
 	height: 50px;
 }
 .dashboard-link{
-  
+
 	font-size: 40px;
 	text-align: center;
 	color: $text-color;
@@ -45,15 +45,14 @@ box-shadow: inset 0px -6px 5px rgba(50, 50, 50, 0.75);
 #trans1 {
   background: url('ptbcloseup.jpg') no-repeat fixed;
   background-position: center top;
-  -webkit-background-size: 100%;
-  -moz-background-size: 100%;
-  -o-background-size: 100%;
-  background-size: 100%;
-  padding: 100px;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
 }
 
 #trans2 {
-  background: url('splitting-bill-friends.jpg') no-repeat center center fixed;
+  background: url('splitting-bill-friends.jpg') no-repeat center fixed;
   -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;
@@ -134,4 +133,3 @@ box-shadow: inset 0px -6px 5px rgba(50, 50, 50, 0.75);
 .ptb-logo {
   height:50px;
 }
-  

@@ -1,4 +1,4 @@
-%h1.text-center 
+%h1.text-center
 
 
 %link{:href => "https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css", :rel => "stylesheet"}
@@ -9,37 +9,67 @@
         /   .col-lg-12
         %h2.description OUR TEAM
         .pt-md
-          .col-lg-3.col-md-3.col-sm-4.col-xs-12.profile
-            .img-box
-              %img.img-responsive{:src => image_path('kaitlin_600.jpg')}
-            %h2 Kait Anderson
-            %h4 Jr. Web Dev
-            %p Currently starring in my own reality show titled, A Modern Cinderella; One Girl’s Search for Love and Shoe.
-          .col-lg-3.col-md-3.col-sm-4.col-xs-12.profile
-            .img-box
-              %img.img-responsive{:src => image_path('james_600.jpg')}
-            %h2 James Yeates
-            %h4 Jr. Web Dev
-            %p Born at a very young age. I have not lost my mind – it’s backed up on HD somewhere.
-          .col-lg-3.col-md-3.col-sm-4.col-xs-12.profile
-            .img-box
-              %img.img-responsive{:src => image_path('seth_600.jpg')}
-                
-            %h2 Seth Ellis
-            %h4 Jr. Web Dev
-            %p A Caffeine dependent life-form of mystery and power, whose power is exceeded only by his mystery.
-          .col-lg-3.col-md-3.col-sm-4.col-xs-12.profile
-            .img-box
-              %img.img-responsive{:src => image_path('colin_600.jpg')}
-            %h2 Colin Anderson
-            %h4 Jr. Web Dev
-            %p Analogue at birth, digital by design. Buoyant, waggish, efficacious, indefatigable, demiurgic, convivial, self-made thousandaire.
-          .col-lg-3.col-md-3.col-sm-4.col-xs-12.profile
-            .img-box
-              %img.img-responsive{:src => image_path('beardog.jpg')}
-            %h2 Barrie Brewer
-            %h4 Scrum Coach
-            %p Reformed has-been, current wanna-be; a gifted narcoleptic; older than dirt.
+          .owl-carousel
+            .profile
+              .row
+                .col-lg-offset-3.col-lg-6
+                  .img-box
+                    %img.img-responsive{:src => image_path('kaitlin_600.jpg')}
+                  %h2.text-center Kait Anderson
+                  %h4.text-center Jr. Web Dev
+                  %p.text-center Currently starring in my own reality show titled, A Modern Cinderella; One Girl’s Search for Love and Shoe.
+                  %p.text-center
+                    %a{href: "http://www.github.com/kande08", target: "_blank"} Github
+                    |
+                    %a{href: "http://www.linkedin.com/in/kande08", target: "_blank"} LinkedIn
+            .profile
+              .row
+                .col-lg-offset-3.col-lg-6
+                  .img-box
+                    %img.img-responsive{:src => image_path('james_600.jpg')}
+                  %h2.text-center James Yeates
+                  %h4.text-center Jr. Web Dev
+                  %p.text-center Born at a very young age. I have not lost my mind – it’s backed up on HD somewhere.
+                  %p.text-center
+                    %a{href: "http://www.github.com/jimibue", target: "_blank"} Github
+                    |
+                    %a{href: "http://www.linkedin.com/in/jimibue", target: "_blank"} LinkedIn
+            .profile
+              .row
+                .col-lg-offset-3.col-lg-6
+                  .img-box
+                    %img.img-responsive{:src => image_path('seth_600.jpg')}
+                  %h2.text-center Seth Ellis
+                  %h4.text-center Jr. Web Dev
+                  %p.text-center A Caffeine dependent life-form of mystery and power, whose power is exceeded only by his mystery.
+                  %p.text-center
+                    %a{href: "http://www.github.com/mountains4breakfast", target: "_blank"} Github
+                    |
+                    %a{href: "http://www.linkedin.com/in/sethellis", target: "_blank"} LinkedIn
+            .profile
+              .row
+                .col-lg-offset-3.col-lg-6
+                  .img-box
+                    %img.img-responsive{:src => image_path('colin_600.jpg')}
+                  %h2.text-center Colin Anderson
+                  %h4.text-center Jr. Web Dev
+                  %p.text-center Analogue at birth, digital by design. Buoyant, waggish, efficacious, indefatigable, demiurgic, convivial, self-made thousandaire.
+                  %p.text-center
+                    %a{href: "http://www.github.com/andercol4", target: "_blank"} Github
+                    |
+                    %a{href: "http://www.linkedin.com/in/andercol4", target: "_blank"} LinkedIn
+            .profile
+              .row
+                .col-lg-offset-3.col-lg-6
+                  .img-box
+                    %img.img-responsive{:src => image_path('beardog.jpg')}
+                  %h2.text-center Barrie Brewer
+                  %h4.text-center Scrum Coach
+                  %p.text-center Reformed has-been, current wanna-be; a gifted narcoleptic; older than dirt.
+                  %p.text-center
+                    %a{href: "http://www.github.com/beardog1", target: "_blank"} Github
+                    |
+                    %a{href: "http://www.linkedin.com/in/beardog", target: "_blank"} LinkedIn
 
         %footer
           .container
@@ -47,10 +77,7 @@
               %h4
                 %a{href: "mailto: passthebuck10@gmail.com?Subject=Contact%20Us"} Contact: passthebuck10@gmail.com
               %h4
-                Coded with 
+                Coded with
                 %i.fa.fa-heart.red
-                by The PTB Team ....Special Thanks to 
+                by The PTB Team ....Special Thanks to
                 = link_to image_tag("devpointlogo.jpg"), "http://www.devpointlabs.com/", target: '_blank'
-
-               
-

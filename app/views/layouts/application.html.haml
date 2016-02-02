@@ -6,6 +6,9 @@
     = stylesheet_link_tag    'application', media: 'all'
     = javascript_include_tag 'application'
     = csrf_meta_tags
+    -# %link{:href => "owl-carousel/owl.carousel.css", :rel => "stylesheet"}
+    -# %link{:href => "owl-carousel/owl.theme.css", :rel => "stylesheet"}
+    -# %script{:src => "owl-carousel/owl.carousel.js"}
   %body
     %nav.navbar.navbar-default.navbar-fixed-top.navbar-inverse
       .buffer-class
@@ -14,7 +17,7 @@
         .navbar-header
           %button.navbar-toggle.collapsed{"aria-expanded" => "false", "data-target" => "#bs-example-navbar-collapse-1", "data-toggle" => "collapse", :type => "button"}
             %span.sr-only Toggle navigation
-          %a.navbar-brand{:href => '#'} 
+          %a.navbar-brand{:href => '#'}
             = link_to image_tag("oval-ptb-logo.png"), root_path, class: "ptb-logo navbar-brand"
         / Collect the nav links, forms, and other content for toggling
         #bs-example-navbar-collapse-1.collapse.navbar-collapse
