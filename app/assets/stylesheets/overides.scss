@@ -7,3 +7,12 @@ a{
 	padding: 10px;
 	color:$text-color !important;
 }
+.btn-default{
+	margin-right: 3px;
+	background: red !important;
+	font-size: 20px !important;
+	background: white !important;
+	color:$midnight-blue !important;
+	border: 5px solid $green !important;
+	border-radius: 20px;
+}

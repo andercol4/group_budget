@@ -18,6 +18,7 @@ class Comments extends React.Component {
 
                 <textarea className='comments-textarea'type="textarea" ref="addComment" placeholder="Add comment"/>
                 <button className='link btn btn-default' type="submit">Submit</button>
+                <button className='link btn btn-default' onClick='this.toggleAddComment'>Cancel</button>
 
               </form>
             </div>);

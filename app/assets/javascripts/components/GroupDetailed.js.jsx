@@ -101,13 +101,14 @@ class GroupDetailed extends React.Component {
     if(this.state.billForm){
       return(
         <div className='bill-container'>
-          <form onSubmit={this.submitBill} className='form'>
+          <form onSubmit={this.submitBill} className='form billForm'>
             <label>Name</label>
             <div className = 'form-group'>
               <input type='text' ref='billName' placeholder='Name'
                 className="form-control input-lg" maxLength='16' required/>
             </div>
             <label>Amount</label>
+
             <div className = 'form-group'>
               <input type='number' step='any' ref='billAmount' placeholder='Amount'
                  className="form-control input-lg" min={1} max={999999} required/>
@@ -182,7 +183,7 @@ class GroupDetailed extends React.Component {
             {this.nameForm()}
           </div>
           <div className="text-center">
-            <h3 className='link submit-btn-center' onClick={this.inviteToggle}>Add user to group</h3>
+            <h3 className='link' onClick={this.inviteToggle}>Add user to group</h3>
             {this.inviteForm()}
           </div>
           <div className ='col-md-6 col-xs-12 containers'>

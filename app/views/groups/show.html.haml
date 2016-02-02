@@ -1,2 +1,3 @@
 .container-fluid
+	=link_to 'Back to groups/bills', dashboard_path, class:'text-center link'
 	= react_component('GroupDetailed', {group: @group, comments: @comments, bills: @bills, dashboard: false, currentUser: current_user.id})
