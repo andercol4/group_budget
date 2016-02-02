@@ -12,7 +12,7 @@ class UserBillsController < ApplicationController
         @bill.amount_paid += params[:user_bill][:amount_paid].to_f
         if  @bill.amount_paid >= @bill.amount_total - 0.02
           @bill.is_paid = true
-          if @bill.recurring == true
+          if @bill.recurring == true && params[:user_bill][:amount_paid].to_f > 0.01
             @group = Group.find(@bill.group_id)
             @new_bill = @group.bills.new
             @new_bill.name = @bill.name

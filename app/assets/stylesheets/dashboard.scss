@@ -1,8 +1,6 @@
 .dashboard-nav{
-
 	display: flex;
 	justify-content: center;
-	
 	align-items: center;
 	height: 50px;
 }
@@ -13,8 +11,6 @@
 	&:hover{
 		color: $text-hover-color;
 	}
-	
-	/*border: 2px solid;*/
 }
 .new-group{
 	font-size: 24px;

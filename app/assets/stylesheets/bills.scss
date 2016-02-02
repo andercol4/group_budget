@@ -18,7 +18,7 @@ body{
   }
 }
 .containers{
-		border: 1px dashed $my-color;
+		/*border: 1px dashed $my-color;*/
 }
 .bill-container{	
 	/*box-sizing: border-box;*/
@@ -121,7 +121,6 @@ canvas{
 .billButton{
 	/*margin: 10px;*/
 	padding: 12px;
-	border: 2px solid #555;
 	color:$panel-text-hover-color;
 	background: $panel-bg-hover-color;
 	/*border-radius: 20px;*/
