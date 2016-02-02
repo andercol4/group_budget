@@ -105,13 +105,15 @@ class Dashboard extends React.Component {
   }
 
   render(){
+      let groupActive = this.state.views === 'Groups' ? 'actives':'';
+      let billActive = this.state.views !== 'Groups' ? 'actives':'';
 
     return(
       <div>
         <div className='col-md-6 col-xs-12 containers'>
           <nav className='dashboard-nav '>
-            <div className='dashboard-link' onClick = {this.upcomingView}>upcoming bills | </div>
-            <div className='dashboard-link' onClick = {this.groupView}> &nbsp;groups</div>
+            <div className={`dashboard-link link ${billActive}`} onClick = {this.upcomingView}>upcoming bills  </div>
+            <div className={`dashboard-link link ${groupActive}`} onClick = {this.groupView}> &nbsp;groups</div>
           </nav>
           {this.views()}
           </div>

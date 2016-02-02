@@ -11,6 +11,8 @@ class Groups extends React.Component{
     this.setState({groupForm: !this.state.groupForm})
   }
   groupForm(){
+    // TODO this if statement is probably not needed since
+    // we are not toggle Add group and Cancel
     if(this.state.groupForm){
       this.state.formHint = '+ Add Group';
       return(
@@ -42,7 +44,7 @@ class Groups extends React.Component{
       let groups = self.state.groups
       groups.unshift(data)
       self.toggleGroupForm();
-      self.state.formHint = '+ Add Group';
+      // self.state.formHint = '+ Add Group';
       self.props.refreshGroups();
     }).error( data => {
 
@@ -54,7 +56,7 @@ class Groups extends React.Component{
         url: '/groups/'+id,
         type: 'DELETE',
       }).success( data=> {
-        this.state.formHint = '+ Add Group';
+        // this.state.formHint = '+ Add Group';
         this.props.refreshGroups();
       });
     }
@@ -67,7 +69,7 @@ class Groups extends React.Component{
     })
     return(
       <div>
-        <div className='submit-btn' onClick={this.toggleGroupForm}>+ Group</div>
+        <div className='submit-btn' onClick={this.toggleGroupForm}>Add Group</div>
         {this.groupForm()}
         {groups}
       </div>)

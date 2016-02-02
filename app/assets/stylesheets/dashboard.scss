@@ -1,8 +1,14 @@
+.actives{
+ background: $midnight-blue;
+ color: white !important;
+ border-radius: 5px;
+}
 .dashboard-nav{
 	display: flex;
 	justify-content: center;
 	align-items: center;
 	height: 50px;
+  margin-bottom: 20px;
 }
 .dashboard-link{
 

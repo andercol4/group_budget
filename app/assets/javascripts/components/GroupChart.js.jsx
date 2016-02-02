@@ -16,9 +16,9 @@ class GroupChart extends React.Component{
     datasets: [
         {
           label: "My First dataset",
-          fillColor: "rgba(220,220,220,0.5)",
-          fillColor: "rgba(220,20,20,0.5)",
-          highlightFill: "rgba(220,20,20,0.75)",
+          
+          fillColor: "rgba(20,20,120,0.5)",
+          highlightFill: "rgba(20,20,120,0.75)",
           highlightStroke: "rgba(220,220,220,1)",
           data: data
         }

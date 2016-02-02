@@ -31,11 +31,8 @@ class Bills extends React.Component {
     }
   }
   render(){
-  
     let self = this;
     let bills = this.props.bills.map( bill => {
-
-
       return(<BillSimple key={`bill-${bill.id}`} 
               {...bill} 
               deleteBill={this.deleteBill} 
