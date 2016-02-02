@@ -70,8 +70,10 @@ class GroupDetailed extends React.Component {
       return(
         <div>
           <form onSubmit={this.submitInvite}>
-            <input type="email" ref="inviteEmail" placeholder='example@email.com' />
-            <button type='submit'>Send Invite</button>
+            <input className='input-lg' type="email" ref="inviteEmail" placeholder='example@email.com' />
+            <br/>
+            <button type='submit' className='btn btn-default'>Send Invite</button>
+            <button type='submit' className='btn btn-default'>Cancel</button>
           </form>
         </div>)
     }
@@ -83,7 +85,12 @@ class GroupDetailed extends React.Component {
       type: 'POST',
       data: {email: this.refs.inviteEmail.value}
     }).success( data => {
-      this.setState({inviteToggle: false})
+      if(data.error !== null){
+        alert(data.error)
+      } else {
+        this.setState({inviteToggle: false});
+      }
+      
       // TODO: let them know it was sent
     })
   }
@@ -114,8 +121,6 @@ class GroupDetailed extends React.Component {
             <div className = 'form-group'>
             <label>Recurring</label>
              <input type="checkbox" ref="billRecurring" className='form-control'></input>
-
-
             </div>
             <button type='submit' className='btn btn-default'>Add</button>
           </form>

@@ -39,13 +39,13 @@ class GroupsController < ApplicationController
 
   def invite
     @user = User.find_by(email: params[:email])
-    # binding.pry
-    @connection = UserGroup.find_by({user_id: @user.id, group_id: @group.id})
+    
+    @connection = UserGroup.find_by({user_id: @user.id, group_id: @group.id}) if @user
     if @user && @connection == nil
       UserGroup.create({group_id: @group.id, user_id: @user.id})
       head :ok
     else
-      render json: {error: 'User not in database.'}
+      render json: {error: 'Could not find user. Please make sure user has registered before inviting to group'}
     end
   end
 
