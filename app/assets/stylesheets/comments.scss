@@ -3,4 +3,24 @@
 // You can use Sass (SCSS) here: http://sass-lang.com/
 .comment-text{
 	font-size: 18px;
+	color: #303030;
+	padding: 10px 25px 25px 10px;
+}
+.comments-container{
+	border: 1px solid;
+	height: 70vh;
+	overflow: scroll;
+	
+}
+.comments-username{
+	font-weight: bold;
+	font-size: 22px;
+	color: black;
+}
+.comments-textarea{
+	width:90%;
+
+}
+textarea { 
+	font-size: 18px; 
 }

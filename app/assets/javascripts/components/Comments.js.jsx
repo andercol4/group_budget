@@ -15,8 +15,10 @@ class Comments extends React.Component {
     if(this.state.showForm)
       return(<div>
               <form onSubmit={this.addComment}>
-                <input type="textarea" ref="addComment" placeholder="Comment here"/>
-                <button className='link' type="submit">Submit</button>
+
+                <textarea className='comments-textarea'type="textarea" ref="addComment" placeholder="Add comment"/>
+                <button className='link btn btn-default' type="submit">Submit</button>
+
               </form>
             </div>);
   }
@@ -49,10 +51,10 @@ class Comments extends React.Component {
     });
     return(<div>
 
-
-            {comments}
-            <button onClick={this.toggleAddComment}>Add Comment</button>
+            <button className='btn btn-default'onClick={this.toggleAddComment}>Add Comment</button>
             {this.showAddComment()}
+            {comments}
+
           </div>);
   }
 }
