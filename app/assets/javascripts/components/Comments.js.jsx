@@ -50,7 +50,7 @@ class Comments extends React.Component {
       return(<Comment key={`comment-${comment.id}`} {...comment} />)
     });
     return(<div>
-        <div className='submit-btn'onClick={this.toggleAddComment}>Add message</div>
+        <div className='submit-btn link'onClick={this.toggleAddComment}>Add message</div>
             {this.showAddComment()}
         <div className='inner-comment-container'>    
             {comments}

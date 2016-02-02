@@ -113,6 +113,8 @@ class Dashboard extends React.Component {
         <div className='col-md-6 col-xs-12 containers'>
           <nav className='dashboard-nav '>
             <div className={`dashboard-link link ${billActive}`} onClick = {this.upcomingView}>upcoming bills  </div>
+            <div className='dashboard-nolink'> &nbsp; | &nbsp;</div>
+
             <div className={`dashboard-link link ${groupActive}`} onClick = {this.groupView}> &nbsp;groups</div>
           </nav>
           {this.views()}
@@ -121,7 +123,7 @@ class Dashboard extends React.Component {
           
 
           <div className='col-md-6 col-xs-12 containers'>
-              <header className ='chart-header dashboard-link'>{this.state.chartTitle}</header>
+              <header className ='chart-header dashboard-nolink'>{this.state.chartTitle}</header>
               {this.canvas()}
           </div>
         </div>

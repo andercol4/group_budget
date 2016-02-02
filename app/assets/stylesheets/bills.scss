@@ -120,7 +120,7 @@ canvas{
 .billButton{
 	/*margin: 10px;*/
 	padding: 12px;
-	color:white;
+	color: white 	!important;
 	background: $midnight-blue;
 	/*border-radius: 20px;*/
 	&:hover{

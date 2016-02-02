@@ -1,6 +1,7 @@
 .actives{
- background: $midnight-blue;
- color: white !important;
+  box-sizing:border-box;
+ border-bottom: 3px solid $midnight-blue;
+
  border-radius: 5px;
 }
 .dashboard-nav{
@@ -8,16 +9,25 @@
 	justify-content: center;
 	align-items: center;
 	height: 50px;
-  margin-bottom: 20px;
+  margin-bottom: 30px;
 }
 .dashboard-link{
 
-	font-size: 40px;
+	font-size: 36px;
+
+
 	text-align: center;
 	color: $text-color;
 	&:hover{
-		color: $text-hover-color;
+		color: $green;
 	}
+}
+.dashboard-nolink{
+  
+  font-size: 36px;
+  text-align: center;
+  color: $text-color;
+
 }
 .new-group{
 	font-size: 24px;

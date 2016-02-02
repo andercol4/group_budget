@@ -19,7 +19,20 @@ body{
 		color: white
 	} 
 }
+.submit-btn-center{
+	text-decoration: underline;
+	text-align: center;
+
+	&:hover{
+	
+		color: $green
+	} 
+
+}
 alert-box{
 	width:200px;
 	height:200px;
+}
+.link{
+	cursor:pointer;
 }

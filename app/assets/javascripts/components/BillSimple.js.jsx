@@ -25,14 +25,14 @@ class BillSimple extends React.Component {
       }
     }
     if(ubBoolean){
-      return(<div className='billButton'onClick={this.togglePayBill}>Pay</div>);
+      return(<div className='billButton link'onClick={this.togglePayBill}>Pay</div>);
     }
   }
   deleteBillAuth(){
     if(this.props.currentUser === this.props.creator_id && !this.props.dashboard){
-      return(<div className='billButton' onClick={() => this.props.deleteBill(this.props.id)}>Delete</div>)
+      return(<div className='billButton link' onClick={() => this.props.deleteBill(this.props.id)}>Delete</div>)
     } else if(this.props.dashboard) {
-      return(<a className='billButton' href={`/groups/${this.props.group_id}`}>{this.props.groupName}</a>)
+      return(<a className='billButton link' href={`/groups/${this.props.group_id}`}>{this.props.groupName}</a>)
     }
   }
   togglePayBill(){
@@ -131,7 +131,7 @@ class BillSimple extends React.Component {
   //Only show toggle button if in group detailed view
   showDetailToggler(){
     if(!this.props.dashboard){
-      return(<span className='glyphicon glyphicon-info-sign billButton' onClick={this.toggleDetailedView}>
+      return(<span className='glyphicon glyphicon-info-sign billButton link' onClick={this.toggleDetailedView}>
       </span> )
     }
   }
