@@ -20,7 +20,7 @@ body{
 .containers{
 		/*border: 1px dashed $my-color;*/
 }
-.bill-container{	
+.bill-container{
 	/*box-sizing: border-box;*/
 	min-height: 120px;
 	width:100%;
@@ -43,7 +43,7 @@ body{
 .bill-container{
 	.bill-heading{
 		/*border: 3px solid red;*/
-		padding: 0 5px 0 5px;
+		padding: 10px 20px 0 20px;
 		width:100%;
 		display: flex;
 		justify-content: space-between;
@@ -61,7 +61,7 @@ body{
 		/*border: 3px solid white;*/
 		display: flex;
 		align-items: flex-end;
-		padding: 0 5px 15px 5px;
+		padding: 0 20px 15px 20px;
 		justify-content:space-between;
 		.total-amount{
 			font-size: 24px;
@@ -71,8 +71,8 @@ body{
 			font-size: 18px;
 			font-size: calc(100% + .4vw)
 		}
-		
-	}	
+
+	}
 
 	.bill-info{
 		display: flex;
@@ -100,6 +100,8 @@ body{
 	align-self: flex-end;
 	.user-amount{
 		display: flex;
+    padding-bottom: 5px;
+    align-items: baseline;
 		/*flex-direction:column;*/
 
 		/*background: #000;*/
@@ -110,7 +112,7 @@ body{
 	font-size: 12px !important;
 
 }
-	
+
 canvas{
 		/*background: #000;*/
 		/*border: 5px solid black;*/
@@ -136,4 +138,14 @@ canvas{
 	margin: auto;
 	/*background: #000;*/
 }
-
+.detailedInfo{
+  padding: 5px 0 10px 20px;
+  font-size: 18px;
+}
+.user-owes{
+  padding-left: 10px;
+  font-size: 22px;
+}
+.user{
+  line-height: 22px;
+}

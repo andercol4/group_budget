@@ -100,15 +100,15 @@ class BillSimple extends React.Component {
           if(ub.user_id !== this.props.currentUser){
             ubs.push(
               <div key={`ubs-${ub.ub_id}`} className='user-amount'>
-                <div>{ub.username}</div>
-                <div>${Math.abs(ub.amount_owed).toFixed(2)}</div>
+                <div className="user">{ub.username}:</div>
+                <div className="user-owes">${Math.abs(ub.amount_owed).toFixed(2)}</div>
               </div>
             )
           }else{
              ubs.push(
               <div key={`ubs-${ub.ub_id}`} className='user-amount'>
-               <div>You owe</div>
-               <div>${Math.abs(ub.amount_owed).toFixed(2)}</div>
+               <div className="user">You owe:</div>
+               <div className="user-owes">${Math.abs(ub.amount_owed).toFixed(2)}</div>
               </div>
             )
 
@@ -118,7 +118,8 @@ class BillSimple extends React.Component {
     return(
       <div className ='user-bills'>
         <div className='user-amount'>
-         Created by: {this.props.first_name}
+         Created by:
+         <span className="user-owes">{this.props.first_name}</span>
         </div>
          {userBills}
       </div>)
