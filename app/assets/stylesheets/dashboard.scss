@@ -21,6 +21,9 @@
 	&:hover{
 		color: $green;
 	}
+  @media(max-width:767px){
+    font-size: 20px;
+  }
 }
 .dashboard-nolink{
 
