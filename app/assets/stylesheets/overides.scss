@@ -27,3 +27,16 @@ a{
     	color:$green !important;
     }
 }
+.white1{
+		padding-top: 15px;
+
+    color: $clouds !important;
+
+}
+.link1{
+	font-size: 24px;
+	color:$text-color;
+	&:hover{
+		color:$green !important;
+	}
+}

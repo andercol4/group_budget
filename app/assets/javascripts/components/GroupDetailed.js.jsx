@@ -173,7 +173,7 @@ class GroupDetailed extends React.Component {
   editName(){
 
     if( this.props.group.creator_id === this.props.currentUser)
-      return (<span onClick={this.toggleNameEdit} className='glyphicon glyphicon-pencil small'></span>)
+      return (<span onClick={this.toggleNameEdit} className='glyphicon glyphicon-pencil small link1'></span>)
   }
   render(){
     return(
@@ -182,7 +182,7 @@ class GroupDetailed extends React.Component {
         <div className="row">
           <div className="text-center group-head">
             <h1>{this.state.name}
-            {this.editName()}
+            &nbsp;{this.editName()}
             </h1>
             {this.nameForm()}
           </div>
