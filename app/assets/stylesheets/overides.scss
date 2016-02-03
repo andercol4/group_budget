@@ -26,6 +26,7 @@ a{
      color: white !important;
 }
 
+
 .white {
    /* background-color: #FFFF00;*/
     color: $clouds !important;
@@ -50,3 +51,16 @@ a{
     font-size: 16px;
   }
 }
+
+/*nav bar button*/
+.navbar-toggle .collapsed{
+	background: white !important;
+}
+button{
+
+	padding-top-top: 30px;
+	background: white !important;
+	width:40px;
+	height:40px;
+}
+button	:before { content:'\2630'; }
