@@ -12,7 +12,7 @@ body{
   background-repeat: no-repeat;
   background-size:cover;
   background-attachment:fixed;
-  
+
 }
 
 .container{
@@ -30,6 +30,8 @@ body{
     width: 100%;
     margin: 0;
     padding: 15px;
+    background-color: $midnight-blue !important;
+    color: $clouds;
     -moz-box-sizing: border-box;
     -webkit-box-sizing: border-box;
     box-sizing: border-box;
@@ -43,6 +45,10 @@ body{
     -ms-transition: background .5s;
     -o-transition: background .5s;
     transition: background .5s;
+    &:hover{
+      color: $midnight-blue;
+      background-color: $clouds !important;
+    }
 }
 
 .img {
@@ -90,7 +96,7 @@ body{
     line-height:22px;
 }
 
-.faq-p 
+.faq-p
 {
     margin:0 auto;
     display: block;
