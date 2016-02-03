@@ -73,7 +73,7 @@ class GroupDetailed extends React.Component {
             <input className='input-lg' type="email" ref="inviteEmail" placeholder='example@email.com' />
             <br/>
             <button type='submit' className='btn btn-default'>Send Invite</button>
-            <button type='submit' className='btn btn-default'>Cancel</button>
+            <button onClick={this.inviteToggle} className='btn btn-default'>Cancel</button>
           </form>
         </div>)
     }
@@ -85,6 +85,7 @@ class GroupDetailed extends React.Component {
       type: 'POST',
       data: {email: this.refs.inviteEmail.value}
     }).success( data => {
+  
       if(data.error !== null){
         alert(data.error)
       } else {
@@ -124,6 +125,7 @@ class GroupDetailed extends React.Component {
              <input type="checkbox" ref="billRecurring" className='form-control'></input>
             </div>
             <button type='submit' className='btn btn-default'>Add</button>
+            <button onClick={this.toggleBillForm} className='btn btn-default'>Cancel</button>
           </form>
         </div>)
     }

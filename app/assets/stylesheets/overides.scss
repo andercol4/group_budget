@@ -1,7 +1,7 @@
 a:hover, 
 .a:hover {
    text-decoration: none !important;
-   color: white !important;
+   color: $clouds !important;
 }
 a{
 	padding: 10px;
@@ -15,4 +15,15 @@ a{
 	color:$midnight-blue !important;
 	border: 5px solid $green !important;
 	border-radius: 20px;
+}
+.navbar-inverse .navbar-brand {
+     color: white !important;
+}
+
+.white {
+   /* background-color: #FFFF00;*/
+    color: $clouds !important;
+    &:hover{
+    	color:$green !important;
+    }
 }

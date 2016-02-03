@@ -10,13 +10,14 @@ body{
 	margin: 10px 0 10px 0;
 	padding:5px 10px 5px 10px;
 	font-size:28px;
-	background:white;
-	color:$midnight-blue;
+	background:$clouds;
+	color:$clouds;
 	border: 5px solid $green; 
 	border-radius: 5px;
+	background: $green;
 	&:hover{
-		background: $green;
-		color: white
+		background: $clouds;
+		color:$green
 	} 
 }
 .submit-btn-center{
