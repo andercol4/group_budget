@@ -13,4 +13,4 @@ config/omni_auth_key.yml
 /log/*
 !/log/.keep
 /tmp
-/coverage
+/coverage/*

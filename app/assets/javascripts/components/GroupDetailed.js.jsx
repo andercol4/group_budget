@@ -87,13 +87,13 @@ class GroupDetailed extends React.Component {
       type: 'POST',
       data: {email: this.refs.inviteEmail.value}
     }).success( data => {
-     
+
       if(data.error === undefined){
         this.setState({inviteToggle: false});
       } else {
         alert(data.error)
       }
-      
+
       // TODO: let them know it was sent
     }).error( data =>{
 
@@ -197,7 +197,7 @@ class GroupDetailed extends React.Component {
             {this.inviteForm()}
           </div>
           <div className ='col-md-6 col-xs-12 containers'>
-          <div className='header'>Groups Bills</div>
+          <div className='header'>Bills</div>
             <div className='submit-btn link' onClick={this.toggleBillForm}>Add Bill</div>
             {this.billForm()}
             <Bills bills={this.state.bills} refreshBills={this.refreshBills}
@@ -208,7 +208,7 @@ class GroupDetailed extends React.Component {
             {this.getComments()}
           </div>
         </div>
-          
+
       </div>);
   }
 }

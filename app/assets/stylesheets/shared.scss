@@ -46,14 +46,20 @@ label{
 	font-size: 24px;
 	@media(max-width:767px){
 		font-size: 18px;
-  }	
+  }
 }
 .icon-link{
   height: 50px;
   width: 50px;
 }
+.icon-git{
+  height: 38px;
+  width: 38px;
+}
 .img-box{
   img{
+    margin: auto !important;
+    width: 50% !important;
     border-radius: 50%;
   }
 }

@@ -13,43 +13,48 @@
     -# %link{:href => "owl-carousel/owl.theme.css", :rel => "stylesheet"}
     -# %script{:src => "owl-carousel/owl.carousel.js"}
   %body
-    %nav.navbar.navbar-default.navbar-fixed-top.navbar-inverse
-      .buffer-class
-      .container-fluid
-        / Brand and toggle get grouped for better mobile display
-        .navbar-header
-          %button.navbar-toggle.collapsed{"aria-expanded" => "false", "data-target" => "#bs-example-navbar-collapse-1", "data-toggle" => "collapse", :type => "button"}
-            #leave
-            %span.sr-only Toggle navigation
-          %a.navbar-brand{:href => '#'}
-            = link_to image_tag("oval-ptb-logo.png"), root_path, class: "ptb-logo navbar-brand grow"
-        / Collect the nav links, forms, and other content for toggling
-        #bs-example-navbar-collapse-1.collapse.navbar-collapse
-          %ul.nav.navbar-nav
-            %li.active
-            - if user_signed_in?
+    #wrapper
+      %nav.navbar.navbar-default.navbar-fixed-top.navbar-inverse
+        .buffer-class
+        .container-fluid
+          / Brand and toggle get grouped for better mobile display
+          .navbar-header
+            %button.navbar-toggle.collapsed{"aria-expanded" => "false", "data-target" => "#bs-example-navbar-collapse-1", "data-toggle" => "collapse", :type => "button"}
+              #leave
+              %span.sr-only Toggle navigation
+            %a.navbar-brand{:href => '#'}
+              = link_to image_tag("oval-ptb-logo.png"), root_path, class: "ptb-logo navbar-brand grow"
+          / Collect the nav links, forms, and other content for toggling
+          #bs-example-navbar-collapse-1.collapse.navbar-collapse
+            %ul.nav.navbar-nav
+              %li.active
+              - if user_signed_in?
+                %li
+                  .white1.navig-link
+                    Welcome #{current_user.first_name}
+            %ul.nav.navbar-nav.navbar-right
               %li
-                %p.white1
-                  Welcome #{current_user.first_name}
-          %ul.nav.navbar-nav.navbar-right
-            %li
-              = link_to 'About us', about_path, class:'white'
-            %li
-              = link_to 'FAQ', faq_path, class:'white'
-            - if user_signed_in?
-              -# %li
-              -#   %a{:href => "#"}
-              -#     = link_to 'Edit account info', edit_user_registration_path
+                = link_to 'About us', about_path, class:'white navig-link'
               %li
-                = link_to 'Logout', destroy_user_session_path,class:'white', method: :delete
+                = link_to 'FAQ', faq_path, class:'white navig-link'
+              - if user_signed_in?
+                -# %li
+                -#   %a{:href => "#"}
+                -#     = link_to 'Edit account info', edit_user_registration_path
+                %li
+                  = link_to 'Logout', destroy_user_session_path,class:'white navig-link', method: :delete
 
-            - else
-              %li
-                = link_to 'Login', new_user_session_path, class:'white'
-              %li
-                = link_to 'Sign up', new_user_registration_path, class:'white'
-    %p.notice= notice
-    %p.alert= alert
+              - else
+                %li
+                  = link_to 'Login', new_user_session_path, class:'white navig-link'
+                %li
+                  = link_to 'Sign up', new_user_registration_path, class:'white navig-link'
+      %p.notice= notice
+      %p.alert= alert
 
 
-    = yield
+      = yield
+    #footer
+      %span Thank you to DevPoint Labs .....Copyright 2016 PTB, LLC
+      %span
+        %a.white{href: "mailto: passthebuck10@gmail.com?Subject=Contact%20Us"} Contact: passthebuck10@gmail.com

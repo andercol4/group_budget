@@ -18,4 +18,22 @@
 @import 'navbar';
 @import "fontawesome";
 @import "bootstrap";
-body { padding-top: 55px; }
+body {
+   padding-top: 55px;
+
+  }
+html, body {
+  height: 100%;
+}
+#wrapper {
+  min-height: 100%;
+  margin-bottom: 0px;
+}
+#footer{
+  // margin-top: 50px;
+  height: 50px;
+  display: fixed !important;
+  bottom: 0;
+  background-color: $midnight-blue !important;
+  color: $clouds;
+}

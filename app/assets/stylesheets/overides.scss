@@ -1,4 +1,4 @@
-a:hover, 
+a:hover,
 .a:hover {
    text-decoration: none !important;
    color: $clouds !important;
@@ -18,7 +18,7 @@ a{
 	@media(max-width:767px){
     font-size: 16px !important;
     border: 3px solid $green !important;
-  }	
+  }
 
 
 }
@@ -34,12 +34,7 @@ a{
     	color:$green !important;
     }
 }
-.white1{
-		padding-top: 15px;
 
-    color: $clouds !important;
-
-}
 .link1{
 	font-size: 20px;
 	color:$text-color;
@@ -50,19 +45,4 @@ a{
 	@media(max-width:767px){
     font-size: 16px;
   }
-}
-
-/*nav bar button*/
-.navbar-toggle .collapsed{
-	background: white !important;
-}
-.navbar-header{
-	button{
-
-		padding-top-top: 30px;
-		background: white !important;
-		width:40px;
-		height:40px;
-	}
-	button	:before { content:'\2630'; }
 }

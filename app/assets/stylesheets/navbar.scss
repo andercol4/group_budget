@@ -1,0 +1,25 @@
+.navig-link {
+  padding-top: 30px !important;
+  padding-bottom: 0px !important;
+}
+.white1{
+    color: $clouds !important;
+
+}
+/*nav bar button*/
+.navbar-toggle .collapsed{
+	background: white !important;
+}
+#leave{
+      margin-top: 0px !important;
+}
+.navbar-header{
+	button{
+    margin-top: 30px !important;
+    margin-bottom: 0px !important;
+		background: white !important;
+		width:40px;
+		height:40px;
+	}
+	button	:before { content:'\2630'; }
+}
