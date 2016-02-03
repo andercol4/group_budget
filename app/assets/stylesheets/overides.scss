@@ -56,11 +56,13 @@ a{
 .navbar-toggle .collapsed{
 	background: white !important;
 }
-button{
+.navbar-header{
+	button{
 
-	padding-top-top: 30px;
-	background: white !important;
-	width:40px;
-	height:40px;
+		padding-top-top: 30px;
+		background: white !important;
+		width:40px;
+		height:40px;
+	}
+	button	:before { content:'\2630'; }
 }
-button	:before { content:'\2630'; }

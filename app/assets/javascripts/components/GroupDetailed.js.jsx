@@ -44,8 +44,10 @@ class GroupDetailed extends React.Component {
       return(
         <div>
           <form onSubmit={this.submitName}>
-            <input type='text' ref='nameEdit' defaultValue={this.state.name} />
+            <input type='text' className='input-lg' ref='nameEdit' defaultValue={this.state.name} />
+            <br />
             <button className='btn btn-default' type='submit'>Change</button>
+            <button className='btn btn-default'onClick={this.toggleNameEdit}>Cancel</button>
           </form>
         </div>
       )

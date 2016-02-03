@@ -54,8 +54,8 @@ class BillSimple extends React.Component {
       return(<div>
               <form onSubmit={this.payBill}>
                 <input type="number" step="any" ref="amountPaid" min="0" max={ubOwed} defaultValue={ubOwed} />
-                <button className='btn btn-default'type="submit">Make Payment</button>
-                <div className='btn btn-default'onClick={this.togglePayBill}>cancel</div>
+                <button className='btn btn-default'type="submit">Submit</button>
+                <div className='btn btn-default'onClick={this.togglePayBill}>Cancel</div>
               </form>
             </div>
             );

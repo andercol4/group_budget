@@ -81,6 +81,7 @@
 		justify-content:space-between;
 		align-self: flex-end;
 		width:100%;
+		overflow: hidden;
 		font-size: 18px;
 		font-size: calc(100% + .4vw);
 		color:$panel-text-hover-color;
