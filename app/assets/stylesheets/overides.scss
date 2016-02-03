@@ -15,6 +15,12 @@ a{
 	color:$midnight-blue !important;
 	border: 5px solid $green !important;
 	border-radius: 20px;
+	@media(max-width:767px){
+    font-size: 16px !important;
+    border: 3px solid $green !important;
+  }	
+
+
 }
 .navbar-inverse .navbar-brand {
      color: white !important;
@@ -34,9 +40,13 @@ a{
 
 }
 .link1{
-	font-size: 24px;
+	font-size: 20px;
 	color:$text-color;
+	text-decoration: underline;
 	&:hover{
 		color:$green !important;
 	}
+	@media(max-width:767px){
+    font-size: 16px;
+  }
 }

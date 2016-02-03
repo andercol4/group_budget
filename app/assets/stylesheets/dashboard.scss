@@ -12,10 +12,7 @@
   margin-bottom: 30px;
 }
 .dashboard-link{
-
 	font-size: 36px;
-
-
 	text-align: center;
 	color: $text-color;
 	&:hover{
@@ -30,6 +27,9 @@
   font-size: 36px;
   text-align: center;
   color: $text-color;
+  @media(max-width:767px){
+      font-size: 20px;
+  }
 
 }
 .new-group{
