@@ -19,6 +19,12 @@ body{
 		background: $clouds;
 		color:$green
 	}
+	@media(max-width:767px){
+		width:140px;
+    font-size: 18px;
+    margin: 10px 0 10px 0;
+		padding:5px 5px 5px 5px;
+  }
 }
 .submit-btn-center{
 	/*text-decoration: underline;*/
@@ -26,10 +32,8 @@ body{
 	/*border: 1px solid;*/
 	color: $green;
 	&:hover{
-
 		color: $midnight-blue;
 	}
-
 }
 alert-box{
 	width:200px;
@@ -40,6 +44,9 @@ alert-box{
 }
 label{
 	font-size: 24px;
+	@media(max-width:767px){
+		font-size: 18px;
+  }	
 }
 .icon-link{
   height: 50px;

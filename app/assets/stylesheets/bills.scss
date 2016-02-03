@@ -1,13 +1,3 @@
-body{
-	background: #ddd;
-	/*margin: 100px;*/
-		/*border: 5px solid green;*/
-
-}
-*{
-	/*border: 1px solid;*/
-}
-
 .container-fluid{
 	margin-bottom: 30px;
 }
@@ -43,26 +33,38 @@ body{
 .bill-container{
 	.bill-heading{
 		/*border: 3px solid red;*/
-		padding: 10px 20px 0 20px;
+		padding: 10px 10px 0 10px;
 		width:100%;
 		display: flex;
 		justify-content: space-between;
+		@media(max-width:767px){
+    	padding: 10px 5px 0 5px;
+  		}
 
 		.title{
 			font-size: 36px;
 			/*font-size: calc(120% + 2.0vw);*/
+		@media(max-width:767px){
+    	font-size: 20px;
+  		}
 		}
 		.amount-due{
 			font-size: 24px;
 			/*font-size: calc(120% + 2.0vw);			*/
+		@media(max-width:767px){
+    	font-size: 16px;
+  		}		
 		}
 	}
 	.amount-date{
 		/*border: 3px solid white;*/
 		display: flex;
 		align-items: flex-end;
-		padding: 0 20px 15px 20px;
+		padding: 0 10px 15px 10px;
 		justify-content:space-between;
+		@media(max-width:767px){
+    	padding: 10px 5px 0 5px;
+  		}
 		.total-amount{
 			font-size: 24px;
 			font-size: calc(100% + 1.0vw)
@@ -79,6 +81,7 @@ body{
 		justify-content:space-between;
 		align-self: flex-end;
 		width:100%;
+		overflow: hidden;
 		font-size: 18px;
 		font-size: calc(100% + .4vw);
 		color:$panel-text-hover-color;
@@ -102,10 +105,6 @@ body{
 		display: flex;
     padding-bottom: 5px;
     align-items: baseline;
-		/*flex-direction:column;*/
-
-		/*background: #000;*/
-
 	}
 }
 .small-text{
@@ -124,10 +123,8 @@ canvas{
 	padding: 12px;
 	color: white 	!important;
 	background: $midnight-blue;
-	/*border-radius: 20px;*/
 	&:hover{
 	color:white;
-	/*background: white;*/
 	border: 4px solid white;
 	border-radius: 10px;
 	}
