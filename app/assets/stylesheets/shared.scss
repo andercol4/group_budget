@@ -21,9 +21,9 @@ body{
 	} 
 }
 .submit-btn-center{
-	text-decoration: underline;
+	/*text-decoration: underline;*/
 	text-align: center;
-
+	/*border: 1px solid;*/
 	&:hover{
 	
 		color: $green
