@@ -10,6 +10,7 @@ class BillSimple extends React.Component {
     this.userOwes = this.userOwes.bind(this);
     this.detailedInfo = this.detailedInfo.bind(this);
     this.toggleDetailedView = this.toggleDetailedView.bind(this);
+    this.paid = this.paid.bind(this);
     this.state = {showPay: false}
   }
   payBillAuth(){
@@ -47,7 +48,7 @@ class BillSimple extends React.Component {
         if(this.props.user_bills[i].user_id === this.props.currentUser){
           ubOwed = Math.abs(this.props.user_bills[i].amount_owed).toFixed(2)
         }
-      }  
+      }
     }
     if(this.state.showPay)
       return(<div>
@@ -76,16 +77,16 @@ class BillSimple extends React.Component {
     // if(this.props.dashboard){
     //   return( <div>Personal</div>)
     // }
-  } 
+  }
   //get the amount logged in users owes
   userOwes(){
     let amount_owed = 0;
     if(this.props.dashboard) {
         amount_owed = this.props.amount_owed.toFixed(2)
-    } else {              
+    } else {
       this.props.user_bills.forEach(ub => {
           if(ub.user_id === this.props.currentUser){
-            amount_owed = Math.abs(ub.amount_owed).toFixed(2) 
+            amount_owed = Math.abs(ub.amount_owed).toFixed(2)
           }
         });
     }
@@ -99,14 +100,14 @@ class BillSimple extends React.Component {
           if(ub.user_id !== this.props.currentUser){
             ubs.push(
               <div key={`ubs-${ub.ub_id}`} className='user-amount'>
-                <div>{ub.username}</div> 
+                <div>{ub.username}</div>
                 <div>${Math.abs(ub.amount_owed).toFixed(2)}</div>
               </div>
             )
           }else{
              ubs.push(
               <div key={`ubs-${ub.ub_id}`} className='user-amount'>
-               <div>You owe</div> 
+               <div>You owe</div>
                <div>${Math.abs(ub.amount_owed).toFixed(2)}</div>
               </div>
             )
@@ -118,11 +119,11 @@ class BillSimple extends React.Component {
       <div className ='user-bills'>
         <div className='user-amount'>
          Created by: {this.props.first_name}
-        </div> 
+        </div>
          {userBills}
       </div>)
     }
-       
+
 
   }
   toggleDetailedView(){
@@ -140,7 +141,23 @@ class BillSimple extends React.Component {
      d = new Date(d.getTime() + d.getTimezoneOffset()*60000);
      return d.toDateString().split(' ').slice(1,3).join(' ');
   }
-
+  paid(){
+    let dashboard = this.props.dashboard
+    let ubPaid = false;
+    if (dashboard){
+    } else {
+      for(i = 0; i < this.props.user_bills.length; i++){
+        if(this.props.user_bills[i].user_id === this.props.currentUser){
+          ubPaid = this.props.user_bills[i].is_paid;
+        }
+      }
+    }
+    if(ubPaid){
+      return("PAID");
+    } else {
+      return(`$${this.userOwes()}`);
+    }
+  }
   render(){
       let billPaid = this.props.is_paid ? "paid":"not-paid";
       let billStyle ="panel panel-default bs col-sm-8 col-md-offset-2 col-xs-12 col-xs-offset-0";
@@ -157,14 +174,14 @@ class BillSimple extends React.Component {
               {this.props.name}
             </div>
             <div className='amount-due'>
-              <span className='small-text'>you:</span> ${this.userOwes()}
-            </div>            
-          </div> 
+              <span className='small-text'>you:</span> {this.paid()}
+            </div>
+          </div>
           <div className='amount-date'>
             <div className="due-date">
               <span className='small-text'>due:</span>  {this.formatDate(this.props.due_date)}
             </div>
-            <div className="total-amount"> 
+            <div className="total-amount">
               <span className='small-text'>total:</span>  ${this.props.amount_total.toFixed(2)}
             </div>
           </div>
@@ -178,7 +195,7 @@ class BillSimple extends React.Component {
             {this.deleteBillAuth()}
             {this.showDetailToggler()}
           </div>
-        </div>      
+        </div>
       )
   }
 }
