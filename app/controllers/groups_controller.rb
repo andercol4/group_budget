@@ -45,7 +45,7 @@ class GroupsController < ApplicationController
       UserGroup.create({group_id: @group.id, user_id: @user.id})
       head :ok
     else
-      render json: {error: 'Could not find user. Please make sure user has registered before inviting to group'}
+      render json: {error: 'Could not find user or user is already in your group. Please make sure user has registered before inviting to group'}
     end
   end
 
