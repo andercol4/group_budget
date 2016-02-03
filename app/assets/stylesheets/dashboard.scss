@@ -23,7 +23,7 @@
 	}
 }
 .dashboard-nolink{
-  
+
   font-size: 36px;
   text-align: center;
   color: $text-color;
@@ -87,10 +87,16 @@ box-shadow: inset 0px -6px 5px rgba(50, 50, 50, 0.75);
 .txt {
   font-size:45px;
   color:#000;
-  width:auto;
-  background:#F9B802;
-  background:rgba(249, 184, 2, 0.60);
+  width:50%;
+  background:#27AE60;
+  background:rgba(39, 173, 96, 0.60);
   padding:5px 10px;
+}
+.cont{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 .txt.right {
   margin: 150px 100px 0 0;
@@ -108,7 +114,6 @@ box-shadow: inset 0px -6px 5px rgba(50, 50, 50, 0.75);
   background:rgba(0,0,0,0.60);
   font-size:25px;
   color:#ccc;
-  margin: 0 100px 0 100px;
 }
 .content {
   box-sizing:border-box;-moz-box-sizing:border-box;
