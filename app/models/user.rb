@@ -22,7 +22,7 @@ class User < ActiveRecord::Base
     bills = self.bills.select("bills.*, ub.amount_owed, ub.is_paid as debt_paid, u.first_name")
         .joins("INNER JOIN user_bills ub ON ub.bill_id = bills.id")
         .joins("INNER JOIN users u ON u.id = bills.creator_id")
-        .where("ub.user_id = ? AND due_date <= ? AND bills.is_paid = ?", self.id, 2.weeks.from_now,show_paid)
+        .where("ub.user_id = ? AND due_date <= ? AND ub.is_paid = ?", self.id, 2.weeks.from_now,show_paid)
         .order("due_date")
     bills
   end

@@ -4,12 +4,12 @@ class Group < ActiveRecord::Base
   has_many :user_groups, dependent: :destroy
   has_many :users, through: :user_groups
 
-  def bills_breakdown
+  def bills_breakdown(paid = false)
     bills = self.bills.select("bills.*, u.first_name")
         .joins("INNER JOIN user_bills ub ON ub.bill_id = bills.id")
         .joins("INNER JOIN users u ON u.id = bills.creator_id")
         .joins("INNER JOIN groups g ON g.id = bills.group_id")
-        .where("g.id = ? AND ub.user_id = bills.creator_id", self.id)
+        .where("g.id = ? AND ub.user_id = bills.creator_id AND bills.is_paid = ?", self.id, paid)
         .order("due_date")
     bills
     @bills = []
