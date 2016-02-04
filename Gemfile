@@ -39,13 +39,13 @@ gem 'owlcarousel-rails'
 
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
+gem 'pry'
 
 group :development, :test do
   gem 'faker', '~>1.6'
   gem 'populator', '~>1.0'
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug'
-  gem 'pry'
   gem 'better_errors'
   gem 'rspec-rails', '~>3.0'
   gem 'shoulda-matchers', '~>3.0'
