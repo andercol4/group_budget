@@ -180,7 +180,6 @@ class GroupDetailed extends React.Component {
   render(){
     return(
       <div>
-
         <div className="row">
           <div className="text-center group-head">
             <h1>{this.state.name}
@@ -188,11 +187,11 @@ class GroupDetailed extends React.Component {
             </h1>
             {this.nameForm()}
           </div>
-          <div className="text-center">
+          <div className="text-center col-md-offset-4 col-md-4">
             <div className=''>
-            <h3 className='link submit-btn-center' onClick={this.inviteToggle}>
-              <span className='glyphicon glyphicon-triangle-bottom'></span>Add user to group
-            </h3>
+              <h3 className='link submit-btn-center' onClick={this.inviteToggle}>
+                <span className='glyphicon glyphicon-triangle-bottom'></span>Add user to group
+              </h3>
             </div>
             {this.inviteForm()}
           </div>
@@ -208,7 +207,6 @@ class GroupDetailed extends React.Component {
             {this.getComments()}
           </div>
         </div>
-
       </div>);
   }
 }

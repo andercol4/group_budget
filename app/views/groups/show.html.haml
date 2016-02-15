@@ -1,3 +1,4 @@
 .container-fluid
-	=link_to 'Home', dashboard_path, class:'text-center link1'
+	=link_to 'Home', dashboard_path, class:'link1'
+	=link_to 'Leave Group', user_group_path(@group), method: :delete, class:'link1'
 	= react_component('GroupDetailed', {group: @group, comments: @comments, bills: @bills, dashboard: false, currentUser: current_user.id})
